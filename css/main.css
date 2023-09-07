@@ -17,12 +17,12 @@ body {
 }
 
 *::-moz-selection {
-  color: #25262a;
+  color: #1a1a1a;
   background-color: #87bd25;
 }
 
 *::selection {
-  color: #25262a;
+  color: #1a1a1a;
   background-color: #87bd25;
 }
 
@@ -67,7 +67,7 @@ header .nav-link:hover, header .nav-link.active, header .nav-link:focus {
   color: #87bd25 !important;
 }
 header .dropdown-menu {
-  background-color: #25262a;
+  background-color: #1a1a1a;
 }
 header .dropdown-menu a {
   color: white;
@@ -118,34 +118,30 @@ header .dropdown-menu a:hover {
   color: #191A19;
   border-color: transparent;
 }
-@media (max-width: 991px) {
-  header {
-    margin-bottom: 50px;
-  }
-  .land {
-    height: auto;
-  }
-  .land .content h1 {
-    font-size: 1.5rem;
-  }
-  .land .content p {
-    font-size: 1rem;
-  }
-  .land .content .mobile-photo {
-    display: block;
-  }
-  .land .photo .img-holder {
-    width: 100%;
-    display: none;
-  }
-  .land .photo .img-holder .circle {
-    display: none;
-  }
-  .land .img-container {
-    display: none;
-  }
-  .overlay {
-    height: 100%;
-  }
+.hero .hero-content .land .gallery {
+  position: relative;
 }
+.hero .hero-content .land .gallery div {
+  position: absolute;
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.hero .hero-content .land .gallery .box-1 {
+  top: 0;
+  left: 0;
+}
+.hero .hero-content .land .gallery .box-2 {
+  width: 70%;
+  left: -70px;
+  bottom: 40%;
+  transform: translateY(50%);
+}
+.hero .hero-content .land .gallery .box-3 {
+  bottom: -30px;
+  right: 50%;
+  transform: translateX(50%);
+}
+
 /* End Land *//*# sourceMappingURL=main.css.map */
