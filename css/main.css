@@ -3,6 +3,7 @@
 /* Start Global Rules */
 body {
   font-family: "Open Sans", sans-serif;
+  overflow: hidden;
 }
 
 @font-face {
@@ -98,20 +99,22 @@ header .dropdown-menu a:hover {
   z-index: 20000;
 }
 .hero .hero-content .land .content h1 {
+  overflow-y: hidden;
   font-family: Aquire;
   font-size: 100px;
   color: #87bd25;
-  line-height: 90%;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4), 2px 2px 3px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 .hero .hero-content .land .content p:last-of-type {
   font-size: 1rem;
+  overflow: hidden;
 }
 .hero .hero-content .land .content a.btn {
   border: 4px solid white;
   color: #87bd25;
   text-transform: uppercase;
   transition: 0.4s;
+  transform: translateX(-2000px);
 }
 .hero .hero-content .land .content a.btn:hover {
   background-color: #87bd25;
@@ -127,6 +130,10 @@ header .dropdown-menu a:hover {
   padding: 20px;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  overflow: hidden;
+}
+.hero .hero-content .land .gallery div img {
+  scale: 1.2;
 }
 .hero .hero-content .land .gallery .box-1 {
   top: 0;
