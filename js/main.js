@@ -12,9 +12,9 @@ load
 		stagger: 0.5,
 	})
 	.from(".content h1", {
+		y: 250,
 		height: 0,
-		transformOrigin: "0 100%",
-		rotation: 5,
+		skewY: 20,
 		ease: "power2.out",
 	})
 	.from(".content p", {
@@ -26,12 +26,18 @@ load
 	})
 	.from(".gallery .box-1", {
 		x: 1000,
+		duration: 0.5,
 	})
 	.from(".gallery .box-2", {
 		y: -1000,
+		duration: 0.5,
 	})
 	.from(".gallery .box-3", {
 		y: 1000,
+		duration: 0.5,
+	})
+	.from(".gallery .bg", {
+		height: "0%",
 	})
 	.from(
 		".gallery div img",

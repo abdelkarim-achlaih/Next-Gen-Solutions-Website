@@ -88,7 +88,7 @@ header .dropdown-menu a:hover {
   height: calc(100vh - 72px);
 }
 .hero .hero-content .land .content h1 {
-  overflow-y: hidden;
+  overflow: hidden;
   font-family: Aquire;
   font-size: 100px;
   color: #87bd25;
@@ -114,9 +114,9 @@ header .dropdown-menu a:hover {
   position: relative;
   height: 400px;
 }
-.hero .hero-content .land .gallery .img-container div {
+.hero .hero-content .land .gallery .img-container > div {
   position: absolute;
-  background-color: #1a1a1a;
+  background-color: #0d1710;
   padding: 20px;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -124,8 +124,17 @@ header .dropdown-menu a:hover {
   max-width: 100%;
   max-height: 100%;
 }
-.hero .hero-content .land .gallery .img-container div img {
+.hero .hero-content .land .gallery .img-container > div > .bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #1a1a1a;
+}
+.hero .hero-content .land .gallery .img-container > div img {
   scale: 1.2;
+  background-color: #1a1a1a;
 }
 .hero .hero-content .land .gallery .img-container .box-1 {
   top: 0;

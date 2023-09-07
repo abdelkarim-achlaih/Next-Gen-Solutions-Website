@@ -120,7 +120,7 @@ header {
 			.content {
 
 				h1 {
-					overflow-y: hidden;
+					overflow: hidden;
 					font-family: Aquire;
 					font-size: 100px;
 					color: $main;
@@ -169,9 +169,9 @@ header {
 					position: relative;
 					height: 400px;
 
-					div {
+					>div {
 						position: absolute;
-						background-color: $back2;
+						background-color: #0d1710;
 						padding: 20px;
 						border-radius: 20px;
 						box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
@@ -179,8 +179,18 @@ header {
 						max-width: 100%;
 						max-height: 100%;
 
+						>.bg {
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							height: 100%;
+							width: 100%;
+							background-color: $back2;
+						}
+
 						img {
-							scale: 1.2
+							scale: 1.2;
+							background-color: $back2;
 						}
 					}
 
