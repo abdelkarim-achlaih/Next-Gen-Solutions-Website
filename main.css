@@ -1,0 +1,31 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	height: 100vh;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+}
+
+section {
+	scroll-snap-align: start;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 400px;
+	color: white;
+}
+section:nth-child(1) {
+	background-color: blueviolet;
+}
+section:nth-child(2) {
+	background-color: darkred;
+}
+section:nth-child(3) {
+	background-color: green;
+}
