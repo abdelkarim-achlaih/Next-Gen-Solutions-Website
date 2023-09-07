@@ -5,6 +5,10 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+@font-face {
+  font-family: "Aquire";
+  src: url("../fonts/aquirebold-8ma60.otf");
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -14,12 +18,12 @@ body {
 
 *::-moz-selection {
   color: #25262a;
-  background-color: #64f4ac;
+  background-color: #87bd25;
 }
 
 *::selection {
   color: #25262a;
-  background-color: #64f4ac;
+  background-color: #87bd25;
 }
 
 ul {
@@ -33,9 +37,12 @@ ul {
 /* End Components */
 /* Start Header */
 header {
-  min-width: 72px;
+  max-height: 72px;
   position: relative;
   z-index: 1000;
+}
+header .navbar-brand img {
+  width: 200px;
 }
 header .navbar-toggler {
   border-color: white;
@@ -43,21 +50,21 @@ header .navbar-toggler {
 }
 header .navbar-toggler:focus {
   box-shadow: none;
-  border-color: #64f4ac;
+  border-color: #87bd25;
 }
 header .navbar-brand svg {
   color: white;
   font-size: 30px;
 }
 header .navbar-brand svg:hover {
-  color: #64f4ac;
+  color: #87bd25;
 }
 header .nav-link {
   color: white;
   text-transform: capitalize;
 }
 header .nav-link:hover, header .nav-link.active, header .nav-link:focus {
-  color: #64f4ac !important;
+  color: #87bd25 !important;
 }
 header .dropdown-menu {
   background-color: #25262a;
@@ -67,209 +74,49 @@ header .dropdown-menu a {
   transition: 0.4s;
 }
 header .dropdown-menu a:hover {
-  background-color: #64f4ac;
+  background-color: #87bd25;
 }
 
 /* End Header */
 /* Start Land */
 .hero {
   position: relative;
-  background-color: #2d2e32;
+  background-color: #191A19;
+  height: 100vh;
 }
-
-.hero-content {
+.hero .hero-content {
   overflow: hidden;
   position: relative;
   z-index: 10000;
 }
-
-.land {
+.hero .hero-content .land {
   height: calc(100vh - 72px);
   position: relative;
 }
-.land .content {
+.hero .hero-content .land .content {
   position: relative;
   z-index: 20000;
 }
-.land .content p:first-child {
-  background-color: #64f4ac;
-  width: -moz-fit-content;
-  width: fit-content;
-  font-size: 13px;
+.hero .hero-content .land .content h1 {
+  font-family: Aquire;
+  font-size: 100px;
+  color: #87bd25;
+  line-height: 90%;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4), 2px 2px 3px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
-.land .content h1 {
-  font-size: 2rem;
-}
-.land .content p {
+.hero .hero-content .land .content p:last-of-type {
   font-size: 1rem;
 }
-.land .content .mobile-photo {
-  display: none;
-  max-width: 70%;
-  margin-top: -40px;
-  margin-bottom: 30px;
-}
-.land .content a {
-  color: #64f4ac;
+.hero .hero-content .land .content a.btn {
+  border: 4px solid white;
+  color: #87bd25;
   text-transform: uppercase;
-}
-.land .content .socials a {
-  color: rgba(255, 255, 255, 0.5);
   transition: 0.4s;
-  font-size: 1.35rem;
 }
-.land .content .socials a:hover {
-  color: #64f4ac;
-}
-.land .photo .img-holder {
-  height: 100%;
-  position: relative;
-}
-.land .photo .img-holder .circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background-color: #25262a;
-  width: 35vw;
-  height: 35vw;
-  transform: translate(-50%, -50%);
-  animation: rotate-circle 5s infinite linear;
-}
-.land .photo .img-holder img {
-  max-width: 100%;
-  display: none;
-}
-.land .photo .img-holder .techs {
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-.land .photo .img-holder .techs svg {
-  z-index: 2000 !important;
-  position: absolute;
-  font-size: 50px;
-}
-.land .photo .img-holder .techs svg:nth-child(1) {
-  color: #f7df1e;
-  top: 0;
-  left: 50%;
-  transform: translate(0, -50%);
-  display: block;
-  animation: rotate-js 5s infinite;
-}
-.land .photo .img-holder .techs svg:nth-child(2) {
-  color: #21759b;
-  top: 50%;
-  right: 0;
-  transform: translate(50%, -50%);
-  animation: rotate-wp 5s infinite;
-}
-.land .photo .img-holder .techs svg:nth-child(3) {
-  color: #8892be;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  animation: rotate-php 5s infinite;
-}
-.land .photo .img-holder .techs svg:nth-child(4) {
-  color: #3a2372;
-  top: 50%;
-  left: 0;
-  transform: translate(-50%, -50%);
-  animation: rotate-bs 5s infinite;
-}
-.land .img-container {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 100%;
-  transform: translateX(-50%);
-}
-.land .img-container img {
-  z-index: 1000;
-  position: relative;
-  max-width: 100%;
-}
-
-.flag {
-  transition: 1s ease-in-out;
-  transform: translateX(-5000px);
-}
-.flag.show {
-  transform: translateX(0);
-}
-
-@keyframes showFlag {
-  from {
-    transform: translateX(-5000px);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@keyframes hideFlag {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-5000px);
-  }
-}
-@keyframes rotate-circle {
-  from {
-    transform: translate(-50%, -50%) rotate(0);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-@keyframes rotate-js {
-  0% {
-    transform: translate(0, -50%) rotate(0);
-    opacity: 0;
-    width: 0;
-  }
-  50% {
-    opacity: 1;
-    width: 100%;
-  }
-  100% {
-    width: 0;
-    opacity: 0;
-    transform: translate(0, -50%) rotate(-360deg);
-  }
-}
-@keyframes rotate-wp {
-  0% {
-    transform: translate(50%, -50%) rotate(0);
-    opacity: 0;
-    width: 100%;
-  }
-  75% {
-    opacity: 1;
-    width: 0;
-  }
-  100% {
-    width: 100%;
-    opacity: 0;
-    transform: translate(50%, -50%) rotate(-360deg);
-  }
-}
-@keyframes rotate-php {
-  from {
-    transform: translate(-50%, 50%) rotate(0);
-  }
-  to {
-    transform: translate(-50%, 50%) rotate(-360deg);
-  }
-}
-@keyframes rotate-bs {
-  from {
-    transform: translate(-50%, -50%) rotate(0);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(-360deg);
-  }
+.hero .hero-content .land .content a.btn:hover {
+  background-color: #87bd25;
+  color: #191A19;
+  border-color: transparent;
 }
 @media (max-width: 991px) {
   header {
