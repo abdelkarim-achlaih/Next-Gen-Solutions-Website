@@ -45,4 +45,5 @@ load
 	})
 	.to(".gallery div img", {
 		scale: 1,
+		margin: 0,
 	});

@@ -3,7 +3,6 @@
 /* Start Global Rules */
 body {
   font-family: "Open Sans", sans-serif;
-  overflow: hidden;
 }
 
 @font-face {
@@ -38,7 +37,7 @@ ul {
 /* End Components */
 /* Start Header */
 header {
-  max-height: 72px;
+  height: 72px;
   position: relative;
   z-index: 1000;
 }
@@ -81,22 +80,12 @@ header .dropdown-menu a:hover {
 /* End Header */
 /* Start Land */
 .hero {
-  position: relative;
   background-color: #191A19;
   height: 100vh;
-}
-.hero .hero-content {
   overflow: hidden;
-  position: relative;
-  z-index: 10000;
 }
 .hero .hero-content .land {
   height: calc(100vh - 72px);
-  position: relative;
-}
-.hero .hero-content .land .content {
-  position: relative;
-  z-index: 20000;
 }
 .hero .hero-content .land .content h1 {
   overflow-y: hidden;
@@ -121,34 +110,55 @@ header .dropdown-menu a:hover {
   color: #191A19;
   border-color: transparent;
 }
-.hero .hero-content .land .gallery {
+.hero .hero-content .land .gallery .img-container {
   position: relative;
+  height: 400px;
 }
-.hero .hero-content .land .gallery div {
+.hero .hero-content .land .gallery .img-container div {
   position: absolute;
   background-color: #1a1a1a;
   padding: 20px;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
 }
-.hero .hero-content .land .gallery div img {
+.hero .hero-content .land .gallery .img-container div img {
   scale: 1.2;
 }
-.hero .hero-content .land .gallery .box-1 {
+.hero .hero-content .land .gallery .img-container .box-1 {
   top: 0;
   left: 0;
 }
-.hero .hero-content .land .gallery .box-2 {
+.hero .hero-content .land .gallery .img-container .box-2 {
   width: 70%;
-  left: -70px;
-  bottom: 40%;
-  transform: translateY(50%);
+  left: -12%;
+  bottom: 50%;
+  transform: translate(0, 90%);
 }
-.hero .hero-content .land .gallery .box-3 {
-  bottom: -30px;
-  right: 50%;
-  transform: translateX(50%);
+.hero .hero-content .land .gallery .img-container .box-3 {
+  bottom: -7%;
+  left: 50%;
+  transform: translate(-50%, 50%);
 }
 
+@media (max-width: 991px) {
+  header {
+    height: auto;
+    margin-bottom: 50px;
+  }
+  .hero {
+    overflow: auto;
+  }
+  .hero .hero-content .land .gallery .img-container {
+    display: none;
+  }
+}
+@media (max-width: 575px) {
+  .hero h1 {
+    font-size: 30px !important;
+    margin-bottom: 20px !important;
+  }
+}
 /* End Land *//*# sourceMappingURL=main.css.map */
