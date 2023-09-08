@@ -53,3 +53,15 @@ load
 		scale: 1,
 		margin: 0,
 	});
+gsap.registerPlugin(ScrollTrigger);
+gsap.to(".animate img", {
+	scrollTrigger: {
+		trigger: ".animate video",
+		start: "top top",
+		pin: true,
+	},
+	scale: 52,
+	ease: "ease",
+	duration: 4,
+	opacity: 0,
+});
