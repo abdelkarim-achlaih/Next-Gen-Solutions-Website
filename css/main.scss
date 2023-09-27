@@ -43,6 +43,18 @@ ul {
 	padding-left: 0;
 }
 
+.page {
+	// height: 100vh;
+	// overflow-y: scroll;
+	// overflow-x: hidden;
+	// perspective: 10px;
+	// scroll-snap-type: y mandatory;
+}
+
+.page section {
+	// scroll-snap-align: start;
+}
+
 /* End Global Rules */
 /* Start Components */
 .btn {
@@ -270,9 +282,31 @@ header {
 	height: 100vh;
 	position: relative;
 	overflow: hidden;
+	transform-style: preserve-3d;
 
-	img {
-		width: 100%;
+	.content h2 {
+		font-family: Aquire;
+		color: $main;
+		font-size: 60px;
+
+	}
+
+	// img {
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	transform: translateZ(-10px);
+	// 	width: 100%;
+	// }
+	.stagger {
+		img {
+			position: absolute;
+			bottom: 200px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 60px;
+			border-radius: 50%;
+		}
 	}
 
 	.video-container {
@@ -297,6 +331,18 @@ header {
 		}
 	}
 }
+
+
+img.bg {
+	width: 60px;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	visibility: hidden;
+}
+
 
 /* End Animate */
 /* Start Collection */

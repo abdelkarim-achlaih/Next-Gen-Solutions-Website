@@ -188,9 +188,20 @@ header .dropdown-menu a:hover {
   height: 100vh;
   position: relative;
   overflow: hidden;
+  transform-style: preserve-3d;
 }
-.animate img {
-  width: 100%;
+.animate .content h2 {
+  font-family: Aquire;
+  color: #87bd25;
+  font-size: 60px;
+}
+.animate .stagger img {
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  border-radius: 50%;
 }
 .animate .video-container {
   position: absolute;
@@ -211,6 +222,16 @@ header .dropdown-menu a:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 300;
+}
+
+img.bg {
+  width: 60px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
 }
 
 /* End Animate */
