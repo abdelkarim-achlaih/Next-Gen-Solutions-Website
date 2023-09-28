@@ -183,73 +183,54 @@ header .dropdown-menu a:hover {
   }
 }
 /* End Land */
-/* Start Animate */
-.animate {
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-  transform-style: preserve-3d;
+/* Start Missions */
+.sections-container .sections-progress {
+  position: fixed;
+  bottom: 20px;
+  left: 100px;
 }
-.animate .content h2 {
-  font-family: Aquire;
+
+.missions {
+  height: 300vh;
+}
+
+.sec-color {
+  color: #c5f404;
+}
+
+.panel,
+.years,
+.solutions,
+.impacts {
+  height: 100vh;
+  border: 1px solid red;
+  background-color: #191A19;
+}
+.panel .title,
+.years .title,
+.solutions .title,
+.impacts .title {
+  margin-top: 10vh;
+  font-size: 12vh;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.years .description {
   color: #87bd25;
-  font-size: 60px;
+  padding: 0 25vw 10vh;
+  line-height: 1.8;
+  color: white;
 }
-.animate .stagger img {
-  position: absolute;
-  bottom: 200px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  border-radius: 50%;
+.years .discover {
+  padding: 0 15vw;
 }
-.animate .video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
+.years .discover a {
+  color: white;
+  text-decoration: none;
 }
-.animate .video-container video {
-  height: 100%;
-  width: 177.7777777778vh;
-  min-width: 100%;
-  min-height: 56.25vw;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 300;
+.years .discover a span {
+  padding: 20px;
+  border: 1px solid white;
 }
 
-img.bg {
-  width: 60px;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  visibility: hidden;
-}
-
-/* End Animate */
-/* Start Collection */
-.collection {
-  background-color: #4d4e52;
-  height: 100vh;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-}
-.collection .title {
-  min-height: 200px;
-  margin-bottom: 20px;
-}
-.collection .product {
-  height: 200px;
-  background-color: #87bd25;
-  margin-bottom: 20px;
-}
-
-/* End Collection *//*# sourceMappingURL=main.css.map */
+/* End Missions *//*# sourceMappingURL=main.css.map */

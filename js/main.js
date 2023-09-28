@@ -62,54 +62,27 @@ gsap.registerPlugin(ScrollTrigger);
 // const collection = document.querySelector(".collection .row");
 // console.log(content);
 // h2.onclick = () => {};
-let grand = gsap.timeline();
+// let grand = gsap.timeline();
+// grand.from(".panel .stagger", {
+// 	opacity: 0,
+// 	ease: "ease",
+// 	delay: 2,
+// 	duration: 0.5,
+// 	stagger: 6,
+// });
 
-grand
-	.from(".animate .stagger", {
-		opacity: 0,
-		ease: "ease",
-		delay: 2,
-		duration: 0.5,
-		stagger: 6,
-	})
-	.to(".try", {
-		duration: 1,
-		visibility: "hidden",
-	})
-	.to(
-		".bg",
-		{
-			duration: 5,
-			y: -150,
-		},
-		"-=0"
-	)
-	.to(
-		".bg",
-		{
-			duration: 5,
-			visibility: "visible",
-		},
-		"+=1"
-	)
-	.to(".bg", {
-		duration: 5,
-		width: "30%",
-	});
-
-const video = document.querySelector(".animate video");
-ScrollTrigger.create({
-	animation: grand,
-	trigger: ".animate",
-	pin: true,
-	scrub: 1,
-	// onScrubComplete: () => {
-	// 	// const hi = tra.cloneNode();
-	// 	// content.removeChild(tra);
-	// 	collection.appendChild(tra);
-	// },
-	// onEnter: () => video.play(),
-});
+// ScrollTrigger.create({
+// 	animation: grand,
+// 	trigger: ".panel",
+// 	pin: true,
+// 	scrub: 1,
+// onScrubComplete: () => {
+// 	// const hi = tra.cloneNode();
+// 	// content.removeChild(tra);
+// 	collection.appendChild(tra);
+// },
+// onEnter: () => video.play(),
+// });
 // gsap.to(video, {
 // 	scrollTrigger: {
 // 		start: "top top",
@@ -123,16 +96,3 @@ ScrollTrigger.create({
 // 	opacity: 0,
 // 	duration: 1,
 // });
-gsap.from(".collection .product", {
-	scrollTrigger: {
-		// start: "top end",
-		trigger: ".collection",
-		pin: true,
-		scrub: 0.5,
-		// markers: true,
-	},
-	opacity: 0,
-	ease: "ease",
-	duration: 0.5,
-	stagger: 0.5,
-});
