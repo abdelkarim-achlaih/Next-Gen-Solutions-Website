@@ -213,6 +213,7 @@ header .dropdown-menu a:hover {
   margin-top: 10vh;
   font-size: 12vh;
   font-family: "Bebas Neue", sans-serif;
+  padding: 0 10vw;
 }
 
 .years .description {
@@ -220,6 +221,7 @@ header .dropdown-menu a:hover {
   padding: 0 25vw 10vh;
   line-height: 1.8;
   color: white;
+  font-size: 22px;
 }
 .years .discover {
   padding: 0 15vw;
@@ -231,6 +233,59 @@ header .dropdown-menu a:hover {
 .years .discover a span {
   padding: 20px;
   border: 1px solid white;
+}
+
+.solutions .title {
+  margin-top: 0;
+  padding-top: 10vh;
+  height: 50vh;
+}
+.solutions .description {
+  height: 50vh;
+}
+
+.bordred-p {
+  line-height: 1.8;
+  position: relative;
+  font-size: 22px;
+}
+.bordred-p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50px;
+  background-color: white;
+  height: 100%;
+  width: 1px;
+  border-radius: 1px;
+}
+
+.impacts {
+  height: auto;
+}
+.impacts .impact {
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  border-radius: 50%;
+  padding: 20px;
+  color: #c5f404;
+  border: 1px solid #c5f404;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.impacts .impact.rounded-pill {
+  aspect-ratio: unset;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.impacts .impact h3 {
+  font-size: 5rem;
+}
+.impacts .impact p {
+  font-size: 1.5rem;
 }
 
 /* End Missions *//*# sourceMappingURL=main.css.map */

@@ -309,6 +309,7 @@ header {
 		margin-top: 10vh;
 		font-size: 12vh;
 		font-family: 'Bebas Neue', sans-serif;
+		padding: 0 10vw;
 	}
 }
 
@@ -319,6 +320,7 @@ header {
 		padding: 0 25vw 10vh;
 		line-height: 1.8;
 		color: white;
+		font-size: 22px;
 	}
 
 	.discover {
@@ -332,6 +334,69 @@ header {
 				padding: 20px;
 				border: 1px solid white;
 			}
+		}
+	}
+}
+
+.solutions {
+	.title {
+		margin-top: 0;
+		padding-top: 10vh;
+		height: 50vh;
+	}
+
+	.description {
+		height: 50vh;
+
+
+	}
+}
+
+.bordred-p {
+	line-height: 1.8;
+	position: relative;
+	font-size: 22px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -50px;
+		background-color: white;
+		height: 100%;
+		width: 1px;
+		border-radius: 1px;
+	}
+}
+
+.impacts {
+	height: auto;
+
+	.impact {
+		text-align: center;
+		font-family: 'Bebas Neue', sans-serif;
+		border-radius: 50%;
+		padding: 20px;
+		color: $second;
+		border: 1px solid $second;
+		aspect-ratio: 1/1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		&.rounded-pill {
+			aspect-ratio: unset;
+			padding-top: 70px;
+			padding-bottom: 70px;
+		}
+
+		h3 {
+			font-size: 5rem;
+		}
+
+		p {
+			font-size: 1.5rem;
 		}
 	}
 }
