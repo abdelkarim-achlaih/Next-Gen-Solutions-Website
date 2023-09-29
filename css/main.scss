@@ -283,7 +283,26 @@ header {
 	.sections-progress {
 		position: fixed;
 		bottom: 20px;
-		left: 100px;
+		left: 20px;
+
+		li {
+			border: 1px solid white;
+			color: white;
+			height: 20px;
+			width: 20px;
+			font-size: 13px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 50%;
+
+			&.active {
+				height: 50px;
+				background-color: white;
+				color: black;
+				border-radius: 7px;
+			}
+		}
 	}
 }
 
