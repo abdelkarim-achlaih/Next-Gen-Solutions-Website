@@ -236,7 +236,14 @@ header .dropdown-menu a:hover {
 }
 .years .discover a span {
   padding: 20px;
+  background-color: transparent;
   border: 1px solid white;
+  transition: 0.4s;
+  transition-timing-function: ease-in;
+}
+.years .discover:hover span {
+  background-color: white;
+  color: black;
 }
 
 .solutions .title {
@@ -322,7 +329,7 @@ header .dropdown-menu a:hover {
 }
 .steps .steps-nav li {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 30px;
+  font-size: 4vw;
   color: white;
   border-left: 2px solid gray;
   padding: 0 0 10px 20px;
@@ -359,6 +366,7 @@ header .dropdown-menu a:hover {
   height: auto;
   padding-top: 100px;
   padding-bottom: 100px;
+  border-bottom: 1px solid;
 }
 .studies .title-container {
   background-color: white;
