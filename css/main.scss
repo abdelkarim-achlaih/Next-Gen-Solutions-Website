@@ -510,16 +510,20 @@ header {
 	}
 
 	.steps-nav {
+		padding: 100px 40px 0;
+
 		li {
 			font-family: 'Bebas Neue',
 				sans-serif;
-			font-size: 4vw;
+			font-size: 3vw;
 			color: white;
 			border-left: 2px solid gray;
 			padding: 0 0 10px 20px;
 			letter-spacing: -1px;
 			opacity: 0.7;
 			color: gray;
+			cursor: pointer;
+			width: fit-content;
 
 			&.active {
 				opacity: 1;

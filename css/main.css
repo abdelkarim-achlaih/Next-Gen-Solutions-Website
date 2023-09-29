@@ -373,15 +373,21 @@ header .dropdown-menu a:hover {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.steps .steps-nav {
+  padding: 100px 40px 0;
+}
 .steps .steps-nav li {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 4vw;
+  font-size: 3vw;
   color: white;
   border-left: 2px solid gray;
   padding: 0 0 10px 20px;
   letter-spacing: -1px;
   opacity: 0.7;
   color: gray;
+  cursor: pointer;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .steps .steps-nav li.active {
   opacity: 1;
