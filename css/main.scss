@@ -23,8 +23,6 @@ body {
 	src: url('../fonts/aquirebold-8ma60.otf');
 }
 
-;
-
 * {
 	box-sizing: border-box;
 	padding: 0;
@@ -320,7 +318,8 @@ header {
 .solutions,
 .impacts,
 .steps,
-.studies {
+.studies,
+.partners {
 	height: 100vh;
 	// padding: 20vh;
 	border: 1px solid red;
@@ -594,7 +593,7 @@ header {
 	}
 
 	.studies-container {
-		padding: 0 3vw;
+		padding: 0 1vw;
 
 		.study:first-of-type {
 
@@ -695,6 +694,14 @@ header {
 				}
 			}
 		}
+	}
+}
+
+.partners {
+	overflow-x: hidden;
+
+	svg {
+		font-size: 60px;
 	}
 }
 

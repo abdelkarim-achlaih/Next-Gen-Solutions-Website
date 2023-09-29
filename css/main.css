@@ -220,7 +220,8 @@ header .dropdown-menu a:hover {
 .solutions,
 .impacts,
 .steps,
-.studies {
+.studies,
+.partners {
   height: 100vh;
   border: 1px solid red;
   background-color: #111111;
@@ -230,7 +231,8 @@ header .dropdown-menu a:hover {
 .solutions .title,
 .impacts .title,
 .steps .title,
-.studies .title {
+.studies .title,
+.partners .title {
   margin-top: 10vh;
   font-size: 12vh;
   font-family: "Bebas Neue", sans-serif;
@@ -445,7 +447,7 @@ header .dropdown-menu a:hover {
   padding: 0;
 }
 .studies .studies-container {
-  padding: 0 3vw;
+  padding: 0 1vw;
 }
 .studies .studies-container .study:first-of-type .layer {
   background-size: cover;
@@ -519,6 +521,13 @@ header .dropdown-menu a:hover {
 }
 .studies .studies-container .study:hover .face-2 {
   opacity: 1;
+}
+
+.partners {
+  overflow-x: hidden;
+}
+.partners svg {
+  font-size: 60px;
 }
 
 /* End Missions *//*# sourceMappingURL=main.css.map */
