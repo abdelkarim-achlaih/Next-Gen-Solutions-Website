@@ -202,7 +202,8 @@ header .dropdown-menu a:hover {
 .years,
 .solutions,
 .impacts,
-.steps {
+.steps,
+.studies {
   height: 100vh;
   border: 1px solid red;
   background-color: #111111;
@@ -211,7 +212,8 @@ header .dropdown-menu a:hover {
 .years .title,
 .solutions .title,
 .impacts .title,
-.steps .title {
+.steps .title,
+.studies .title {
   margin-top: 10vh;
   font-size: 12vh;
   font-family: "Bebas Neue", sans-serif;
@@ -351,6 +353,95 @@ header .dropdown-menu a:hover {
   display: block;
   position: relative;
   top: 5px;
+}
+
+.studies {
+  height: auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.studies .title-container {
+  background-color: white;
+  padding-bottom: 50px;
+}
+.studies .title {
+  padding: 0;
+}
+.studies .studies-container {
+  padding: 0 3vw;
+}
+.studies .studies-container .study:first-of-type .layer {
+  background-size: cover;
+  background-image: url("../images/Study-2.jpg");
+  opacity: 0.7;
+}
+.studies .studies-container .study:nth-of-type(2) .layer {
+  background-image: url("../images/Study-1.jpg");
+  opacity: 0.7;
+  background-size: cover;
+}
+.studies .studies-container .study {
+  overflow: hidden;
+  height: 80vh;
+  position: relative;
+}
+.studies .studies-container .study .face-1,
+.studies .studies-container .study .face-2,
+.studies .studies-container .study .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.studies .studies-container .study .face-1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  opacity: 1;
+  transition: 0.4s;
+}
+.studies .studies-container .study .face-1 .tag {
+  position: absolute;
+  border: 1px solid black;
+  color: black;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  top: 10px;
+  left: 20px;
+}
+.studies .studies-container .study .face-1 .study-infos {
+  padding: 20px;
+  width: 100%;
+}
+.studies .studies-container .study .face-1 .study-infos h5 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 40px;
+}
+.studies .studies-container .study .face-1 .study-infos p {
+  width: 100%;
+  border-bottom: 1px solid;
+  padding-bottom: 15px;
+}
+.studies .studies-container .study .face-2 {
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #c5f404;
+  padding: 20px;
+  opacity: 0;
+}
+.studies .studies-container .study .face-2 h5 {
+  border-top: 1px solid;
+  padding-top: 10px;
+}
+.studies .studies-container .study:hover .face-1 {
+  opacity: 0;
+}
+.studies .studies-container .study:hover .face-2 {
+  opacity: 1;
 }
 
 /* End Missions *//*# sourceMappingURL=main.css.map */
