@@ -784,6 +784,32 @@ header {
 	}
 }
 
-footer {}
+footer {
+
+	nav {
+		ul {
+			li {
+				a {
+					font-family: 'Bebas Neue', sans-serif;
+					color: black;
+					font-size: 25px;
+					font-weight: 400;
+					text-decoration: none;
+				}
+
+				padding-bottom: 10px;
+			}
+		}
+	}
+
+	svg {
+		color: black;
+		font-size: 30px;
+	}
+
+	.container:first-of-type {
+		border-bottom: 1px solid;
+	}
+}
 
 /* End Missions */

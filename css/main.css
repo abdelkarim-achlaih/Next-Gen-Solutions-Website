@@ -597,4 +597,22 @@ header .dropdown-menu a:hover {
   height: 150%;
 }
 
+footer nav ul li {
+  padding-bottom: 10px;
+}
+footer nav ul li a {
+  font-family: "Bebas Neue", sans-serif;
+  color: black;
+  font-size: 25px;
+  font-weight: 400;
+  text-decoration: none;
+}
+footer svg {
+  color: black;
+  font-size: 30px;
+}
+footer .container:first-of-type {
+  border-bottom: 1px solid;
+}
+
 /* End Missions *//*# sourceMappingURL=main.css.map */
