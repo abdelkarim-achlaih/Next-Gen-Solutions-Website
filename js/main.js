@@ -96,3 +96,11 @@ gsap.registerPlugin(ScrollTrigger);
 // 	opacity: 0,
 // 	duration: 1,
 // });
+gsap.to(".studies .col-7", {
+	scrollTrigger: {
+		trigger: ".studies",
+		pin: ".studies .col-7",
+	},
+	duration: 0.3,
+	scrub: 0.3,
+});

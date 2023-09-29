@@ -277,11 +277,12 @@ header {
 /* End Land */
 /* Start Missions */
 .sections-container {
+	// position: relative;
 
 	.sections-progress {
-		position: fixed;
-		bottom: 20px;
-		left: 20px;
+		// position: absolute;
+		// bottom: 20px;
+		// left: 20px;
 
 		li {
 			border: 1px solid white;
@@ -583,6 +584,7 @@ header {
 	padding-top: 100px;
 	padding-bottom: 100px;
 	border-bottom: 1px solid;
+	overflow: hidden;
 
 	.title-container {
 		background-color: white;

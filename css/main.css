@@ -184,11 +184,6 @@ header .dropdown-menu a:hover {
 }
 /* End Land */
 /* Start Missions */
-.sections-container .sections-progress {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-}
 .sections-container .sections-progress li {
   border: 1px solid white;
   color: white;
@@ -440,6 +435,7 @@ header .dropdown-menu a:hover {
   padding-top: 100px;
   padding-bottom: 100px;
   border-bottom: 1px solid;
+  overflow: hidden;
 }
 .studies .title-container {
   background-color: white;
