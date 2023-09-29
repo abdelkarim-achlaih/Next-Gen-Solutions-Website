@@ -283,6 +283,7 @@ header .dropdown-menu a:hover {
   padding-bottom: 100px;
 }
 .impacts .impact {
+  position: relative;
   text-align: center;
   font-family: "Bebas Neue", sans-serif;
   border-radius: 50%;
@@ -295,15 +296,60 @@ header .dropdown-menu a:hover {
   justify-content: center;
   align-items: center;
 }
-.impacts .impact.rounded-pill {
+.impacts .impact.impact-1 {
   aspect-ratio: unset;
   padding-top: 70px;
   padding-bottom: 70px;
+  height: 300px;
 }
-.impacts .impact h3 {
+.impacts .impact .impact-bg,
+.impacts .impact .impact-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50rem;
+  height: 100%;
+  width: 100%;
+}
+.impacts .impact .impact-bg {
+  background-size: cover;
+  opacity: 0;
+  z-index: 1;
+  transition: 0.4s;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+}
+.impacts .impact:hover .impact-bg {
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+}
+.impacts .impact.impact-1 .impact-bg {
+  background-image: url("../images/Impact-1.jpg");
+}
+.impacts .impact.impact-2 .impact-bg {
+  background-image: url("../images/Impact-2.jpg");
+}
+.impacts .impact.impact-3 .impact-bg {
+  background-image: url("../images/Impact-3.jpg");
+}
+.impacts .impact.impact-4 .impact-bg {
+  background-image: url("../images/Impact-4.jpg");
+}
+.impacts .impact .impact-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.impacts .impact .impact-content h3 {
   font-size: 5rem;
 }
-.impacts .impact p {
+.impacts .impact .impact-content p {
   font-size: 1.5rem;
 }
 
