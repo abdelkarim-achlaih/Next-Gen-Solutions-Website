@@ -221,7 +221,8 @@ header .dropdown-menu a:hover {
 .impacts,
 .steps,
 .studies,
-.partners {
+.partners,
+.contact {
   height: 100vh;
   border: 1px solid red;
   background-color: #111111;
@@ -232,7 +233,8 @@ header .dropdown-menu a:hover {
 .impacts .title,
 .steps .title,
 .studies .title,
-.partners .title {
+.partners .title,
+.contact .title {
   margin-top: 10vh;
   font-size: 12vh;
   font-family: "Bebas Neue", sans-serif;
@@ -528,6 +530,71 @@ header .dropdown-menu a:hover {
 }
 .partners svg {
   font-size: 60px;
+}
+
+.contact {
+  background-color: #c5f404;
+}
+.contact .title {
+  padding: 0;
+  margin-bottom: 40px;
+}
+.contact .box {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border: 1px solid black;
+  border-radius: 0.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.contact .box .overlay,
+.contact .box .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 0.8rem;
+  transform: translate(-50%, -50%);
+}
+.contact .box .overlay {
+  background-color: #111111;
+  width: 0;
+  height: 0;
+  transition: 0.4s;
+}
+.contact .box .content {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact .box p {
+  position: relative;
+  top: 20px;
+  transition: 0.4s;
+  color: black;
+}
+.contact .box svg {
+  opacity: 0;
+  transition: 0.4s;
+  color: #c5f404;
+}
+.contact .box:hover p {
+  color: #c5f404;
+  top: 0;
+}
+.contact .box:hover svg {
+  opacity: 1;
+}
+.contact .box:hover .overlay {
+  z-index: 1;
+  width: 150%;
+  height: 150%;
 }
 
 /* End Missions *//*# sourceMappingURL=main.css.map */

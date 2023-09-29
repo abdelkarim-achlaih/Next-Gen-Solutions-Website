@@ -319,7 +319,8 @@ header {
 .impacts,
 .steps,
 .studies,
-.partners {
+.partners,
+.contact {
 	height: 100vh;
 	// padding: 20vh;
 	border: 1px solid red;
@@ -702,6 +703,84 @@ header {
 
 	svg {
 		font-size: 60px;
+	}
+}
+
+.contact {
+	background-color: $second;
+
+	.title {
+		padding: 0;
+		margin-bottom: 40px;
+	}
+
+	.box {
+		width: 100%;
+		aspect-ratio: 1/1;
+		border: 1px solid black;
+		border-radius: 0.8rem;
+		text-transform: uppercase;
+		font-weight: bold;
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+
+		.overlay,
+		.content {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			border-radius: 0.8rem;
+			transform: translate(-50%, -50%);
+		}
+
+		.overlay {
+			background-color: $back1;
+			width: 0;
+			height: 0;
+			transition: $duration;
+		}
+
+		.content {
+			z-index: 2;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+
+		p {
+			position: relative;
+			top: 20px;
+			transition: $duration;
+			color: black;
+		}
+
+		svg {
+			opacity: 0;
+			transition: $duration;
+			color: $second;
+		}
+
+		&:hover {
+			p {
+				color: $second;
+				top: 0;
+			}
+
+			svg {
+				opacity: 1;
+			}
+
+			.overlay {
+				z-index: 1;
+				width: 150%;
+				height: 150%;
+			}
+		}
 	}
 }
 
