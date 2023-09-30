@@ -184,6 +184,20 @@ header .dropdown-menu a:hover {
 }
 /* End Land */
 /* Start Missions */
+.sections-container {
+  position: relative;
+}
+.sections-container .sections-progress {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  z-index: 1000;
+}
+.sections-container .sections-progress nav {
+  position: sticky;
+  top: calc(100vh - 200px);
+}
 .sections-container .sections-progress li {
   border: 1px solid white;
   color: white;
@@ -219,7 +233,7 @@ header .dropdown-menu a:hover {
 .partners,
 .contact {
   height: 100vh;
-  border: 1px solid red;
+  padding-top: 10vh;
   background-color: #111111;
 }
 .panel .title,
@@ -230,12 +244,14 @@ header .dropdown-menu a:hover {
 .studies .title,
 .partners .title,
 .contact .title {
-  margin-top: 10vh;
   font-size: 12vh;
   font-family: "Bebas Neue", sans-serif;
   padding: 0 10vw;
 }
 
+.years {
+  margin-top: 300vh;
+}
 .years .description {
   color: #87bd25;
   padding: 0 25vw 10vh;
@@ -436,10 +452,6 @@ header .dropdown-menu a:hover {
   padding-bottom: 100px;
   border-bottom: 1px solid;
   overflow: hidden;
-}
-.studies .title-container {
-  background-color: white;
-  padding-bottom: 50px;
 }
 .studies .title {
   padding: 0;

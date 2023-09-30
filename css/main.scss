@@ -277,12 +277,20 @@ header {
 /* End Land */
 /* Start Missions */
 .sections-container {
-	// position: relative;
+	position: relative;
 
 	.sections-progress {
-		// position: absolute;
-		// bottom: 20px;
-		// left: 20px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 20px;
+		// display: none;
+		z-index: 1000;
+
+		nav {
+			position: sticky;
+			top: calc(100vh - 200px);
+		}
 
 		li {
 			border: 1px solid white;
@@ -323,12 +331,10 @@ header {
 .partners,
 .contact {
 	height: 100vh;
-	// padding: 20vh;
-	border: 1px solid red;
+	padding-top: 10vh;
 	background-color: $back1;
 
 	.title {
-		margin-top: 10vh;
 		font-size: 12vh;
 		font-family: 'Bebas Neue', sans-serif;
 		padding: 0 10vw;
@@ -336,6 +342,7 @@ header {
 }
 
 .years {
+	margin-top: 300vh;
 
 	.description {
 		color: $main;
@@ -585,11 +592,6 @@ header {
 	padding-bottom: 100px;
 	border-bottom: 1px solid;
 	overflow: hidden;
-
-	.title-container {
-		background-color: white;
-		padding-bottom: 50px;
-	}
 
 	.title {
 		padding: 0;

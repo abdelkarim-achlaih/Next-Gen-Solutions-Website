@@ -96,11 +96,56 @@ gsap.registerPlugin(ScrollTrigger);
 // 	opacity: 0,
 // 	duration: 1,
 // });
-gsap.to(".studies .col-7", {
-	scrollTrigger: {
-		trigger: ".studies",
-		pin: ".studies .col-7",
-	},
-	duration: 0.3,
-	scrub: 0.3,
+// gsap.to(".sections-progress", {
+// 	scrollTrigger: {
+// 		trigger: ".hero",
+// 		start: `150px top`,
+// 		end: "bottom bottom",
+// 		toogleActions: "restart reset restart reset",
+// 		markers: true,
+// 	},
+// 	x: 200,
+// });
+// gsap.to(".sections-progress", {
+// 	scrollTrigger: {
+// 		trigger: ".partners",
+// 		start: "100px top",
+// 		end: "bottom bottom",
+// 		toogleActions: "restart none none reset",
+// 	},
+// 	display: "none",
+// });
+
+const panels = document.querySelectorAll(".missions .panel");
+console.log(panels);
+panels.forEach((panel) => {
+	gsap.from(panel.querySelectorAll(".stagger"), {
+		scrollTrigger: {
+			trigger: panel,
+			pin: panel,
+			scrub: 0.3,
+		},
+		opacity: 0,
+		duration: 0.3,
+		stagger: 0.3,
+	});
 });
+gsap.from(".years .container-fluid div, .years .stagger", {
+	scrollTrigger: {
+		trigger: ".years",
+	},
+	opacity: 0,
+	duration: 0.8,
+	stagger: 0.3,
+});
+// gsap.from(".studies .holder", {
+// 	scrollTrigger: {
+// 		start: "100px top",
+// 		end: "bottom bottom",
+// 		trigger: ".studies",
+// 		pin: ".studies .holder",
+// 		markers: true,
+// 	},
+// 	opacity: 0,
+// 	duration: 1,
+// });
