@@ -115,9 +115,24 @@ gsap.registerPlugin(ScrollTrigger);
 // 	},
 // 	display: "none",
 // });
+const navsSections = document.querySelectorAll("[data-nav]");
+
+const navTogglers = document.querySelectorAll(".sections-progress li");
+const stepsTogglers = document.querySelectorAll(".steps .steps-nav li");
+toogleClass(navTogglers);
+toogleClass(stepsTogglers);
+function toogleClass(array) {
+	array.forEach((button) => {
+		button.onclick = (_) => {
+			array.forEach((button) => {
+				button.classList.remove("active");
+			});
+			button.classList.add("active");
+		};
+	});
+}
 
 const panels = document.querySelectorAll(".missions .panel");
-console.log(panels);
 panels.forEach((panel) => {
 	gsap.from(panel.querySelectorAll(".stagger"), {
 		scrollTrigger: {

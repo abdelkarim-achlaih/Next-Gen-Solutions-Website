@@ -284,7 +284,6 @@ header {
 		position: absolute;
 		top: 0;
 		left: 20px;
-		// display: none;
 		z-index: 1000;
 
 		nav {
@@ -294,7 +293,6 @@ header {
 
 		li {
 			border: 1px solid white;
-			color: white;
 			height: 20px;
 			width: 20px;
 			font-size: 13px;
@@ -306,8 +304,17 @@ header {
 			&.active {
 				height: 50px;
 				background-color: white;
-				color: black;
+
+				a {
+					color: black;
+				}
+
 				border-radius: 7px;
+			}
+
+			a {
+				color: white;
+				text-decoration: none;
 			}
 		}
 	}
@@ -536,14 +543,28 @@ header {
 		}
 	}
 
+	.steps-container {
+		position: relative;
+	}
+
 	.steps-nav {
+		border: 1px solid red;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 20px;
+		z-index: 1000;
 		padding: 100px 40px 0;
+
+		nav {
+			position: sticky;
+			top: 100px
+		}
 
 		li {
 			font-family: 'Bebas Neue',
 				sans-serif;
 			font-size: 3vw;
-			color: white;
 			border-left: 2px solid gray;
 			padding: 0 0 10px 20px;
 			letter-spacing: -1px;
@@ -554,8 +575,16 @@ header {
 
 			&.active {
 				opacity: 1;
-				color: $second;
+
+				a {
+					color: $second;
+				}
+
 				border-color: $second;
+			}
+
+			a {
+				color: white;
 			}
 		}
 	}

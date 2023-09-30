@@ -200,7 +200,6 @@ header .dropdown-menu a:hover {
 }
 .sections-container .sections-progress li {
   border: 1px solid white;
-  color: white;
   height: 20px;
   width: 20px;
   font-size: 13px;
@@ -212,8 +211,14 @@ header .dropdown-menu a:hover {
 .sections-container .sections-progress li.active {
   height: 50px;
   background-color: white;
-  color: black;
   border-radius: 7px;
+}
+.sections-container .sections-progress li.active a {
+  color: black;
+}
+.sections-container .sections-progress li a {
+  color: white;
+  text-decoration: none;
 }
 
 .missions {
@@ -405,13 +410,25 @@ header .dropdown-menu a:hover {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.steps .steps-container {
+  position: relative;
+}
 .steps .steps-nav {
+  border: 1px solid red;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  z-index: 1000;
   padding: 100px 40px 0;
+}
+.steps .steps-nav nav {
+  position: sticky;
+  top: 100px;
 }
 .steps .steps-nav li {
   font-family: "Bebas Neue", sans-serif;
   font-size: 3vw;
-  color: white;
   border-left: 2px solid gray;
   padding: 0 0 10px 20px;
   letter-spacing: -1px;
@@ -423,8 +440,13 @@ header .dropdown-menu a:hover {
 }
 .steps .steps-nav li.active {
   opacity: 1;
-  color: #c5f404;
   border-color: #c5f404;
+}
+.steps .steps-nav li.active a {
+  color: #c5f404;
+}
+.steps .steps-nav li a {
+  color: white;
 }
 .steps .step-content {
   padding: 20vh 7vw;
