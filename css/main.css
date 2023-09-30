@@ -488,14 +488,13 @@ header .dropdown-menu a:hover {
   padding: 0 1vw;
 }
 .studies .studies-container .study:first-of-type .layer {
-  background-size: cover;
   background-image: url("../images/Study-2.jpg");
-  opacity: 0.7;
 }
 .studies .studies-container .study:nth-of-type(2) .layer {
   background-image: url("../images/Study-1.jpg");
-  opacity: 0.7;
-  background-size: cover;
+}
+.studies .studies-container .study:nth-of-type(3) .layer {
+  background-image: url("../images/Study-3.jpg");
 }
 .studies .studies-container .study {
   overflow: hidden;
@@ -559,6 +558,10 @@ header .dropdown-menu a:hover {
 }
 .studies .studies-container .study:hover .face-2 {
   opacity: 1;
+}
+.studies .studies-container .study .layer {
+  opacity: 0.7;
+  background-size: cover;
 }
 
 .partners {

@@ -1,59 +1,62 @@
 gsap.registerPlugin(ScrollTrigger);
-// let load = gsap.timeline({
-// 	defaults: {
-// 		duration: 0.3,
-// 	},
-// });
-// load
-// 	.from(".navbar-brand", {
-// 		x: -2000,
-// 	})
-// 	.from(".nav-link", {
-// 		y: -200,
-// 		stagger: 0.5,
-// 	})
-// 	.from(".content h1", {
-// 		y: 250,
-// 		height: 0,
-// 		skewY: 20,
-// 		ease: "power2.out",
-// 	})
-// 	.from(".content p", {
-// 		opacity: 0,
-// 		y: -50,
-// 	})
-// 	.to(".content a", {
-// 		x: 0,
-// 	})
-// 	.from(".gallery .box-1", {
-// 		x: 1000,
-// 		duration: 0.5,
-// 	})
-// 	.from(".gallery .box-2", {
-// 		y: -1000,
-// 		duration: 0.5,
-// 	})
-// 	.from(".gallery .box-3", {
-// 		y: 1000,
-// 		duration: 0.5,
-// 	})
-// 	.from(".gallery .bg", {
-// 		height: "0%",
-// 	})
-// 	.from(
-// 		".gallery div img",
-// 		{
-// 			opacity: 0,
-// 		},
-// 		"<"
-// 	)
-// 	.from(".gallery div img", {
-// 		y: 500,
-// 	})
-// 	.to(".gallery div img", {
-// 		scale: 1,
-// 		margin: 0,
-// 	});
+
+// ------------------------------------------- Hero Animations
+
+let load = gsap.timeline({
+	defaults: {
+		duration: 0.3,
+	},
+});
+load
+	.from(".hero .navbar-brand", {
+		x: -2000,
+	})
+	.from(".hero .nav-link", {
+		y: -200,
+		stagger: 0.5,
+	})
+	.from(".hero .content h1", {
+		y: 250,
+		height: 0,
+		skewY: 20,
+		ease: "power2.out",
+	})
+	.from(".hero .content p", {
+		opacity: 0,
+		y: -50,
+	})
+	.to(".hero .content a", {
+		x: 0,
+	})
+	.from(".hero .gallery .box-1", {
+		x: 1000,
+		duration: 0.5,
+	})
+	.from(".hero .gallery .box-2", {
+		y: -1000,
+		duration: 0.5,
+	})
+	.from(".hero .gallery .box-3", {
+		y: 1000,
+		duration: 0.5,
+	})
+	.from(".hero .gallery .bg", {
+		height: "0%",
+	})
+	.from(
+		".hero .gallery div img",
+		{
+			opacity: 0,
+		},
+		"<"
+	)
+	.from(".hero .gallery div img", {
+		y: 500,
+	})
+	.to(".hero .gallery div img", {
+		scale: 1,
+		margin: 0,
+	});
 
 // const tra = document.querySelector("img.bg");
 // console.log(tra);
@@ -115,6 +118,9 @@ gsap.registerPlugin(ScrollTrigger);
 // 	},
 // 	display: "none",
 // });
+
+// ------------------------------------------- Navs Logic
+
 const navsSections = document.querySelectorAll(
 	".sections-container > div:not(:first-of-type)"
 );
@@ -167,6 +173,8 @@ function toogleClass(array) {
 	});
 }
 
+// ------------------------------------------- Panels Animations
+
 const panels = document.querySelectorAll(".missions .panel");
 panels.forEach((panel) => {
 	gsap.from(panel.querySelectorAll(".stagger"), {
@@ -185,17 +193,19 @@ gsap.from(".years .container-fluid div, .years .stagger", {
 		trigger: ".years",
 	},
 	opacity: 0,
-	duration: 0.8,
+	duration: 0.5,
 	stagger: 0.3,
 });
-// gsap.from(".studies .holder", {
-// 	scrollTrigger: {
-// 		start: "100px top",
-// 		end: "bottom bottom",
-// 		trigger: ".studies",
-// 		pin: ".studies .holder",
-// 		markers: true,
-// 	},
-// 	opacity: 0,
-// 	duration: 1,
-// });
+
+// ------------------------------------------- Studies Animations
+
+gsap.from(".studies .holder", {
+	scrollTrigger: {
+		start: "100px top",
+		end: "bottom bottom",
+		trigger: ".studies",
+		pin: ".studies .holder",
+	},
+	opacity: 0,
+	duration: 1,
+});

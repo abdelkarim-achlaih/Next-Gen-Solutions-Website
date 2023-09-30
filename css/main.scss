@@ -640,9 +640,7 @@ header {
 		.study:first-of-type {
 
 			.layer {
-				background-size: cover;
 				background-image: url('../images/Study-2.jpg');
-				opacity: 0.7;
 			}
 
 		}
@@ -651,8 +649,14 @@ header {
 
 			.layer {
 				background-image: url('../images/Study-1.jpg');
-				opacity: 0.7;
-				background-size: cover;
+			}
+
+		}
+
+		.study:nth-of-type(3) {
+
+			.layer {
+				background-image: url('../images/Study-3.jpg');
 			}
 
 		}
@@ -734,6 +738,11 @@ header {
 				.face-2 {
 					opacity: 1;
 				}
+			}
+
+			.layer {
+				opacity: 0.7;
+				background-size: cover;
 			}
 		}
 	}
