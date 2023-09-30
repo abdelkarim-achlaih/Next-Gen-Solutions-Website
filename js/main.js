@@ -116,9 +116,33 @@ gsap.registerPlugin(ScrollTrigger);
 // 	display: "none",
 // });
 const navsSections = document.querySelectorAll("[data-nav-section]");
-
 const navTogglers = document.querySelectorAll(".sections-progress li");
 const stepsTogglers = document.querySelectorAll(".steps .steps-nav li");
+
+function toogleLisOnScroll(section) {
+	navTogglers.forEach((button) => {
+		button.classList.remove("active");
+	});
+	document
+		.querySelector(
+			`.sections-progress li:nth-child(${section.dataset.navSection})`
+		)
+		.classList.add("active");
+}
+navsSections.forEach((section) => {
+	gsap.from(".sections-progress li", {
+		scrollTrigger: {
+			trigger: section,
+			onEnterBack: (_) => {
+				toogleLisOnScroll(section);
+			},
+			onEnter: (_) => {
+				toogleLisOnScroll(section);
+			},
+		},
+	});
+});
+
 toogleClass(navTogglers);
 toogleClass(stepsTogglers);
 function toogleClass(array) {

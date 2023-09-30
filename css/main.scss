@@ -300,12 +300,14 @@ header {
 			justify-content: center;
 			align-items: center;
 			border-radius: 50%;
+			transition: $duration;
 
 			&.active {
 				height: 50px;
 				background-color: white;
 
 				a {
+					transition: $duration;
 					color: black;
 				}
 

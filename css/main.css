@@ -207,6 +207,7 @@ header .dropdown-menu a:hover {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  transition: 0.4s;
 }
 .sections-container .sections-progress li.active {
   height: 50px;
@@ -214,6 +215,7 @@ header .dropdown-menu a:hover {
   border-radius: 7px;
 }
 .sections-container .sections-progress li.active a {
+  transition: 0.4s;
   color: black;
 }
 .sections-container .sections-progress li a {
