@@ -188,12 +188,22 @@ panels.forEach((panel) => {
 		stagger: 0.3,
 	});
 });
+
+// ------------------------------------------- Years Animations
+
 gsap.from(".years .container-fluid div, .years .stagger", {
 	scrollTrigger: {
+		toggleActions: "play none reverse none",
 		trigger: ".years",
+		start: "-200px top",
+		end: "bottom center",
+		markers: true,
 	},
 	opacity: 0,
-	duration: 0.5,
+	y: 250,
+	skewY: 20,
+	ease: "power2.out",
+	duration: 0.3,
 	stagger: 0.3,
 });
 
