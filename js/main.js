@@ -115,7 +115,7 @@ gsap.registerPlugin(ScrollTrigger);
 // 	},
 // 	display: "none",
 // });
-const navsSections = document.querySelectorAll("[data-nav]");
+const navsSections = document.querySelectorAll("[data-nav-section]");
 
 const navTogglers = document.querySelectorAll(".sections-progress li");
 const stepsTogglers = document.querySelectorAll(".steps .steps-nav li");
