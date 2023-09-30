@@ -195,7 +195,6 @@ header .dropdown-menu a:hover {
   z-index: 1000;
 }
 .sections-container .sections-nav nav {
-  border: 1px solid red;
   position: sticky;
   top: calc(100vh - 230px);
   margin-bottom: 10px;
