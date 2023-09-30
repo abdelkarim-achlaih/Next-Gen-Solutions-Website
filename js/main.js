@@ -115,33 +115,44 @@ gsap.registerPlugin(ScrollTrigger);
 // 	},
 // 	display: "none",
 // });
-const navsSections = document.querySelectorAll("[data-nav-section]");
-const navTogglers = document.querySelectorAll(".sections-progress li");
-const stepsTogglers = document.querySelectorAll(".steps .steps-nav li");
+const navsSections = document.querySelectorAll(
+	".sections-container > div:not(:first-of-type)"
+);
+const navsSteps = document.querySelectorAll(".steps-container .step-img");
+const navTogglers = document.querySelectorAll(".sections-nav li");
+const stepsTogglers = document.querySelectorAll(".steps-nav li");
 
-function toogleLisOnScroll(section) {
-	navTogglers.forEach((button) => {
-		button.classList.remove("active");
+toogleLisClassOnScroll(navsSections);
+toogleLisClassOnScroll(navsSteps);
+
+function toogleLisClassOnScroll(triggers) {
+	triggers.forEach((triggerEle) => {
+		gsap.from(`.${triggerEle.dataset.navClass} li`, {
+			scrollTrigger: {
+				trigger: triggerEle,
+				onEnter: (_) => {
+					toogleLisClass(triggerEle);
+				},
+				onEnterBack: (_) => {
+					toogleLisClass(triggerEle);
+				},
+			},
+		});
 	});
+}
+
+function toogleLisClass(triggerEle) {
+	document
+		.querySelectorAll(`.${triggerEle.dataset.navClass} li`)
+		.forEach((button) => {
+			button.classList.remove("active");
+		});
 	document
 		.querySelector(
-			`.sections-progress li:nth-child(${section.dataset.navSection})`
+			`.${triggerEle.dataset.navClass} li:nth-child(${triggerEle.dataset.navNum})`
 		)
 		.classList.add("active");
 }
-navsSections.forEach((section) => {
-	gsap.from(".sections-progress li", {
-		scrollTrigger: {
-			trigger: section,
-			onEnterBack: (_) => {
-				toogleLisOnScroll(section);
-			},
-			onEnter: (_) => {
-				toogleLisOnScroll(section);
-			},
-		},
-	});
-});
 
 toogleClass(navTogglers);
 toogleClass(stepsTogglers);
