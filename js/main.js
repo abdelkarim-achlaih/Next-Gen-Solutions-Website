@@ -197,7 +197,7 @@ gsap.from(".years .container-fluid div, .years .stagger", {
 		trigger: ".years",
 		start: "-200px top",
 		end: "bottom center",
-		markers: true,
+		// markers: true,
 	},
 	opacity: 0,
 	y: 250,
@@ -206,6 +206,19 @@ gsap.from(".years .container-fluid div, .years .stagger", {
 	duration: 0.3,
 	stagger: 0.3,
 });
+
+// ------------------------------------------- Steps Animations
+
+// navsSteps.forEach((step) => {
+// 	gsap.from(".step-imgs-container", {
+// 		scrollTrigger: {
+// 			start: "100px top",
+// 			end: "bottom bottom",
+// 			trigger: ".steps-container",
+// 			pin: step,
+// 		},
+// 	});
+// });
 
 // ------------------------------------------- Studies Animations
 
@@ -219,3 +232,14 @@ gsap.from(".studies .holder", {
 	opacity: 0,
 	duration: 1,
 });
+
+// const lenis = new Lenis({
+// 	smoothTouch: true,
+// });
+// lenis.on("scroll", ScrollTrigger.update);
+
+// gsap.ticker.add((time) => {
+// 	lenis.raf(time * 1000);
+// });
+
+// gsap.ticker.lagSmoothing(0);
