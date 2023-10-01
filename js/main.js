@@ -224,10 +224,13 @@ gsap.from(".years .container-fluid div, .years .stagger", {
 
 gsap.from(".studies .holder", {
 	scrollTrigger: {
-		start: "100px top",
-		end: "bottom bottom",
+		start: "100px 25%",
+		end: `100%-=100px 25%+=${
+			document.querySelector(".studies .holder").getBoundingClientRect().height
+		}px`,
 		trigger: ".studies",
 		pin: ".studies .holder",
+		markers: true,
 	},
 	opacity: 0,
 	duration: 1,

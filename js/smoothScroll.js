@@ -1,4 +1,7 @@
-const lenis = new Lenis();
+const lenis = new Lenis({
+	duration: 3,
+	easing: (x) => Math.sqrt(1 - Math.pow(x - 1, 2)),
+});
 
 function raf(time) {
 	lenis.raf(time);
