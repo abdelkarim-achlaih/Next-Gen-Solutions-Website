@@ -307,10 +307,32 @@ header {
 		z-index: 1000;
 
 		nav {
+			transition: $duration;
 			position: sticky;
 			top: calc(100vh - 230px);
 			margin-bottom: 10px;
+
+			&.dark {
+
+				li {
+					border-color: black;
+
+					&:hover,
+					&.active {
+						background-color: black;
+
+						a {
+							color: white;
+						}
+					}
+
+					a {
+						color: black;
+					}
+				}
+			}
 		}
+
 
 		li {
 			border: 1px solid white;
@@ -319,6 +341,7 @@ header {
 			font-size: 13px;
 			border-radius: 50%;
 			transition: $duration;
+
 
 			&.active,
 			&:hover {
@@ -554,11 +577,8 @@ header {
 
 	.title-container {
 		background-color: white;
-		padding-bottom: 50px;
-	}
-
-	.title {
-		padding: 0;
+		padding-top: 200px;
+		padding-bottom: 200px;
 	}
 
 	.step-img {

@@ -173,6 +173,21 @@ function toogleClass(array) {
 	});
 }
 
+toggleNavClassForWhiteBgSections(".steps .title-container", ".studies");
+
+function toggleNavClassForWhiteBgSections(...whiteSections) {
+	whiteSections.forEach((whiteSection) => {
+		gsap.from(".sections-nav nav", {
+			scrollTrigger: {
+				start: "-200px 200px",
+				end: "100% 100%",
+				trigger: whiteSection,
+				toggleClass: { className: "dark", targets: ".sections-nav nav" },
+			},
+			duration: 1,
+		});
+	});
+}
 // ------------------------------------------- Panels Animations
 
 const panels = document.querySelectorAll(".missions .panel");
@@ -221,6 +236,7 @@ gsap.from(".years .container-fluid div, .years .stagger", {
 // });
 
 // ------------------------------------------- Studies Animations
+
 window.onload = (_) => {
 	studiesScroll();
 };

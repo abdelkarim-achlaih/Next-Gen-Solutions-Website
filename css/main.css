@@ -215,9 +215,22 @@ header .dropdown-menu a:hover {
   z-index: 1000;
 }
 .sections-container .sections-nav nav {
+  transition: 0.4s;
   position: sticky;
   top: calc(100vh - 230px);
   margin-bottom: 10px;
+}
+.sections-container .sections-nav nav.dark li {
+  border-color: black;
+}
+.sections-container .sections-nav nav.dark li:hover, .sections-container .sections-nav nav.dark li.active {
+  background-color: black;
+}
+.sections-container .sections-nav nav.dark li:hover a, .sections-container .sections-nav nav.dark li.active a {
+  color: white;
+}
+.sections-container .sections-nav nav.dark li a {
+  color: black;
 }
 .sections-container .sections-nav li {
   border: 1px solid white;
@@ -424,10 +437,8 @@ header .dropdown-menu a:hover {
 }
 .steps .title-container {
   background-color: white;
-  padding-bottom: 50px;
-}
-.steps .title {
-  padding: 0;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 .steps .step-img {
   overflow: hidden;
