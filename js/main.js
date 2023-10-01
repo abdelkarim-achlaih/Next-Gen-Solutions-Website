@@ -230,7 +230,6 @@ gsap.from(".studies .holder", {
 		}px`,
 		trigger: ".studies",
 		pin: ".studies .holder",
-		markers: true,
 	},
 	opacity: 0,
 	duration: 1,

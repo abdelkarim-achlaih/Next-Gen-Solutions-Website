@@ -509,9 +509,6 @@ header .dropdown-menu a:hover {
   padding: 0;
   font-size: 7vw;
 }
-.studies .holder {
-  border: 1px solid red;
-}
 .studies .description {
   font-size: 1.5vw;
   line-height: 1.2;
