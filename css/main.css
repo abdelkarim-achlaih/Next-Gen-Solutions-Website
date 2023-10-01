@@ -219,6 +219,11 @@ header .dropdown-menu a:hover {
   position: sticky;
   top: calc(100vh - 230px);
   margin-bottom: 10px;
+  transition: 0.4s;
+  opacity: 0;
+}
+.sections-container .sections-nav nav.show {
+  opacity: 1;
 }
 .sections-container .sections-nav nav.dark li {
   border-color: black;

@@ -188,6 +188,18 @@ function toggleNavClassForWhiteBgSections(...whiteSections) {
 		});
 	});
 }
+
+gsap.from(".sections-nav nav", {
+	scrollTrigger: {
+		start: "top top",
+		end: "bottom bottom",
+		trigger: ".sections-container",
+		toggleClass: { className: "show", targets: ".sections-nav nav" },
+		toggleActions: "restart reset restart reset",
+	},
+	duration: 1,
+	x: -200,
+});
 // ------------------------------------------- Panels Animations
 
 const panels = document.querySelectorAll(".missions .panel");
