@@ -221,19 +221,30 @@ gsap.from(".years .container-fluid div, .years .stagger", {
 // });
 
 // ------------------------------------------- Studies Animations
+window.onload = (_) => {
+	studiesScroll();
+};
+window.onresize = (_) => {
+	ScrollTrigger.getById("studies").kill(true);
+	studiesScroll();
+};
 
-gsap.from(".studies .holder", {
-	scrollTrigger: {
-		start: "100px 25%",
-		end: `100%-=100px 25%+=${
-			document.querySelector(".studies .holder").getBoundingClientRect().height
-		}px`,
-		trigger: ".studies",
-		pin: ".studies .holder",
-	},
-	opacity: 0,
-	duration: 1,
-});
+function studiesScroll() {
+	gsap.from(".studies .holder", {
+		scrollTrigger: {
+			id: "studies",
+			start: "100px 25%",
+			end: `100%-=100px 25%+=${
+				document.querySelector(".studies .holder").getBoundingClientRect()
+					.height
+			}px`,
+			trigger: ".studies",
+			pin: ".studies .holder",
+		},
+		opacity: 0,
+		duration: 1,
+	});
+}
 
 // const lenis = new Lenis({
 // 	smoothTouch: true,
