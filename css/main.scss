@@ -814,10 +814,40 @@ header {
 }
 
 .partners {
+	height: auto;
 	overflow-x: hidden;
 
 	svg {
 		font-size: 60px;
+	}
+
+	.partners-holder {
+		width: fit-content;
+		animation-name: infiniteScroll;
+		animation-duration: 20s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		animation-play-state: running;
+
+		&:hover {
+			animation-play-state: paused;
+		}
+
+		&.partners-holder-2 {
+			animation-direction: reverse;
+
+		}
+
+	}
+}
+
+@keyframes infiniteScroll {
+	from {
+		transform: translateX(0)
+	}
+
+	to {
+		transform: translateX(calc(0px - 50% - 1.5rem));
 	}
 }
 

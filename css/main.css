@@ -617,12 +617,36 @@ header .dropdown-menu a:hover {
 }
 
 .partners {
+  height: auto;
   overflow-x: hidden;
 }
 .partners svg {
   font-size: 60px;
 }
+.partners .partners-holder {
+  width: -moz-fit-content;
+  width: fit-content;
+  animation-name: infiniteScroll;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
+}
+.partners .partners-holder:hover {
+  animation-play-state: paused;
+}
+.partners .partners-holder.partners-holder-2 {
+  animation-direction: reverse;
+}
 
+@keyframes infiniteScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(0px - 50% - 1.5rem));
+  }
+}
 .contact {
   background-color: #c5f404;
 }
