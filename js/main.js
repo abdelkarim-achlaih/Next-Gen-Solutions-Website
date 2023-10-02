@@ -307,19 +307,20 @@ gsap.from(".steps .stagger", {
 
 navsStepsPinAnimation(navsSteps[0]);
 navsStepsPinAnimation(navsSteps[1]);
-navsStepsPinAnimation(navsSteps[2], false, "bottom");
+navsStepsPinAnimation(navsSteps[2], "transform");
 
-function navsStepsPinAnimation(step, scrub = 1, endVpScroll = "top") {
+function navsStepsPinAnimation(step, pinType = "fixed") {
 	gsap.from(step.querySelector("img"), {
 		scrollTrigger: {
 			trigger: step,
 			start: "top top",
-			end: `bottom ${endVpScroll}`,
-			scrub: scrub,
+			end: "bottom top",
+			scrub: 1,
 			toggleActions: "restart none reverse none",
 			pin: step.querySelector(".step-img-holder"),
+			pinType: pinType,
 		},
-		scale: 1.2,
+		scale: 1.5,
 		duration: 5,
 	});
 }
