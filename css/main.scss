@@ -595,9 +595,11 @@ header {
 	.step-img {
 		overflow: hidden !important;
 		height: 100vh;
+
 		.step-img-holder {
 			overflow: hidden;
 		}
+
 		img {
 			width: 100%;
 			height: 100vh;
@@ -657,7 +659,6 @@ header {
 	.step-content {
 		padding: 20vh 7vw;
 		height: 100vh;
-		border: 1px solid red;
 
 		h5 {
 			font-size: 18px;

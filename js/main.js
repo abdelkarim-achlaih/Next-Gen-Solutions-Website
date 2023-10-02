@@ -136,6 +136,8 @@ function toogleLisClassOnScroll(triggers) {
 		gsap.from(`.${triggerEle.dataset.navClass} li`, {
 			scrollTrigger: {
 				trigger: triggerEle,
+				start: "top 100%-=200px",
+				end: "bottom 100%-=200px",
 				onEnter: (_) => {
 					toogleLisClass(triggerEle);
 				},
@@ -179,8 +181,8 @@ function toggleNavClassForWhiteBgSections(...whiteSections) {
 	whiteSections.forEach((whiteSection) => {
 		gsap.from(".sections-nav nav", {
 			scrollTrigger: {
-				start: "-200px 200px",
-				end: "100% 100%",
+				start: "top 100%-=200px",
+				end: "bottom 100%-=200px",
 				trigger: whiteSection,
 				toggleClass: { className: "dark", targets: ".sections-nav nav" },
 			},
@@ -191,8 +193,8 @@ function toggleNavClassForWhiteBgSections(...whiteSections) {
 
 gsap.from(".sections-nav nav", {
 	scrollTrigger: {
-		start: "top top",
-		end: "bottom bottom",
+		start: "top 100%-=200px",
+		end: "bottom 100%-=200px",
 		trigger: ".sections-container",
 		toggleClass: { className: "show", targets: ".sections-nav nav" },
 		toggleActions: "restart reset restart reset",
@@ -316,7 +318,6 @@ function navsStepsPinAnimation(step, scrub = 1, endVpScroll = "top") {
 			scrub: scrub,
 			toggleActions: "restart none reverse none",
 			pin: step.querySelector(".step-img-holder"),
-			markers: true,
 		},
 		scale: 1.2,
 		duration: 5,

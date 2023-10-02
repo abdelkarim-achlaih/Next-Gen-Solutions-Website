@@ -504,7 +504,6 @@ header .dropdown-menu a:hover {
 .steps .step-content {
   padding: 20vh 7vw;
   height: 100vh;
-  border: 1px solid red;
 }
 .steps .step-content h5 {
   font-size: 18px;
