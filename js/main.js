@@ -58,67 +58,6 @@ load
 		margin: 0,
 	});
 
-// const tra = document.querySelector("img.bg");
-// console.log(tra);
-// const content = document.querySelector(".animate .content");
-// const h2 = document.querySelector(".animate h2");
-// const collection = document.querySelector(".collection .row");
-// console.log(content);
-// h2.onclick = () => {};
-// let grand = gsap.timeline();
-// grand.from(".panel .stagger", {
-// 	opacity: 0,
-// 	ease: "ease",
-// 	delay: 2,
-// 	duration: 0.5,
-// 	stagger: 6,
-// });
-
-// ScrollTrigger.create({
-// 	animation: grand,
-// 	trigger: ".panel",
-// 	pin: true,
-// 	scrub: 1,
-// onScrubComplete: () => {
-// 	// const hi = tra.cloneNode();
-// 	// content.removeChild(tra);
-// 	collection.appendChild(tra);
-// },
-// onEnter: () => video.play(),
-// });
-// gsap.to(video, {
-// 	scrollTrigger: {
-// 		start: "top top",
-// 		end: "bottom bottom",
-// 		trigger: ".animate",
-// 		id: "video",
-// 		scrub: 0.5,
-// 		markers: true,
-// 	},
-// 	delay: 2.5,
-// 	opacity: 0,
-// 	duration: 1,
-// });
-// gsap.to(".sections-progress", {
-// 	scrollTrigger: {
-// 		trigger: ".hero",
-// 		start: `150px top`,
-// 		end: "bottom bottom",
-// 		toogleActions: "restart reset restart reset",
-// 		markers: true,
-// 	},
-// 	x: 200,
-// });
-// gsap.to(".sections-progress", {
-// 	scrollTrigger: {
-// 		trigger: ".partners",
-// 		start: "100px top",
-// 		end: "bottom bottom",
-// 		toogleActions: "restart none none reset",
-// 	},
-// 	display: "none",
-// });
-
 // ------------------------------------------- Navs Logic
 
 const navsSections = document.querySelectorAll(
