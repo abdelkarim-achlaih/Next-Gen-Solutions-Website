@@ -234,19 +234,35 @@ gsap.from(".years .container-fluid div, .years .stagger", {
 	stagger: 0.3,
 });
 
-// ------------------------------------------- Solutions Animations
+// ------------------------------------------- Solutions + Impacts Animations
 
-gsap.from(".solutions .stagger", {
+let animatedTitleSections = [".solutions", ".impacts"];
+animatedTitleSections.forEach((title) => {
+	gsap.from(`${title + " .stagger"}`, {
+		scrollTrigger: {
+			trigger: title,
+			start: "-300px top",
+			end: "bottom center",
+			toggleActions: "restart none none none",
+			markers: true,
+		},
+		opacity: 0,
+		duration: 0.7,
+		stagger: 0.7,
+	});
+});
+gsap.from(".impacts .description", {
 	scrollTrigger: {
-		trigger: ".solutions",
+		trigger: ".impacts",
 		start: "-300px top",
 		end: "bottom center",
 		toggleActions: "restart none none none",
 		markers: true,
 	},
+	y: 300,
 	opacity: 0,
-	duration: 0.3,
-	stagger: 0.3,
+	duration: 0.7,
+	stagger: 0.7,
 });
 
 // ------------------------------------------- Steps Animations
