@@ -303,16 +303,25 @@ gsap.from(".steps .stagger", {
 	stagger: 0.3,
 });
 
-// navsSteps.forEach((step) => {
-// 	gsap.from(".step-imgs-container", {
-// 		scrollTrigger: {
-// 			start: "100px top",
-// 			end: "bottom bottom",
-// 			trigger: ".steps-container",
-// 			pin: step,
-// 		},
-// 	});
-// });
+navsStepsPinAnimation(navsSteps[0]);
+navsStepsPinAnimation(navsSteps[1]);
+navsStepsPinAnimation(navsSteps[2], false, "bottom");
+
+function navsStepsPinAnimation(step, scrub = 1, endVpScroll = "top") {
+	gsap.from(step.querySelector("img"), {
+		scrollTrigger: {
+			trigger: step,
+			start: "top top",
+			end: `bottom ${endVpScroll}`,
+			scrub: scrub,
+			toggleActions: "restart none reverse none",
+			pin: step.querySelector(".step-img-holder"),
+			markers: true,
+		},
+		scale: 1.2,
+		duration: 5,
+	});
+}
 
 // ------------------------------------------- Studies Animations
 

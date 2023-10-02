@@ -449,14 +449,18 @@ header .dropdown-menu a:hover {
   padding-left: 40px;
 }
 .steps .step-img {
-  overflow: hidden;
+  overflow: hidden !important;
   height: 100vh;
+}
+.steps .step-img .step-img-holder {
+  overflow: hidden;
 }
 .steps .step-img img {
   width: 100%;
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
 }
 .steps .steps-container {
   position: relative;
@@ -500,6 +504,7 @@ header .dropdown-menu a:hover {
 .steps .step-content {
   padding: 20vh 7vw;
   height: 100vh;
+  border: 1px solid red;
 }
 .steps .step-content h5 {
   font-size: 18px;
