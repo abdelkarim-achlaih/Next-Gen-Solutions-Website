@@ -236,7 +236,7 @@ gsap.from(".years .container-fluid div, .years .stagger", {
 
 // ------------------------------------------- Solutions + Impacts Animations
 
-let animatedTitleSections = [".solutions", ".impacts"];
+let animatedTitleSections = [".solutions", ".impacts", ".steps"];
 animatedTitleSections.forEach((title) => {
 	gsap.from(`${title + " .stagger"}`, {
 		scrollTrigger: {
@@ -263,6 +263,33 @@ gsap.from(".impacts .description", {
 	opacity: 0,
 	duration: 0.7,
 	stagger: 0.7,
+});
+
+gsap.from(".impacts .impact .number", {
+	scrollTrigger: {
+		trigger: ".impacts .container",
+		start: "-300px top",
+		end: "bottom center",
+		toggleActions: "restart none none none",
+		markers: true,
+	},
+	innerHTML: 0,
+	snap: { innerHTML: 1 },
+	duration: 2,
+});
+
+gsap.from(".impacts .impact-2, .impacts .impact-3, .impacts .impact-4", {
+	scrollTrigger: {
+		trigger: ".impacts .container",
+		start: "-600px top",
+		end: "bottom center",
+		toggleActions: "restart none none none",
+		markers: true,
+	},
+	y: 300,
+	opacity: 0,
+	duration: 0.3,
+	stagger: 0.3,
 });
 
 // ------------------------------------------- Steps Animations
