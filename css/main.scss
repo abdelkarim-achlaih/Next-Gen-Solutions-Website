@@ -586,6 +586,11 @@ header {
 		background-color: white;
 		padding-top: 200px;
 		padding-bottom: 200px;
+
+		.title {
+			padding-left: 40px;
+			border: 1px solid red;
+		}
 	}
 
 	.step-img {
