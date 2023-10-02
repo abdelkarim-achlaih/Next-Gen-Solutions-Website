@@ -220,9 +220,9 @@ panels.forEach((panel) => {
 
 gsap.from(".years .container-fluid div, .years .stagger", {
 	scrollTrigger: {
-		toggleActions: "play none reverse none",
+		toggleActions: "restart none none none",
 		trigger: ".years",
-		start: "-200px top",
+		start: "-600px top",
 		end: "bottom center",
 		// markers: true,
 	},
@@ -230,6 +230,21 @@ gsap.from(".years .container-fluid div, .years .stagger", {
 	y: 250,
 	skewY: 20,
 	ease: "power2.out",
+	duration: 0.3,
+	stagger: 0.3,
+});
+
+// ------------------------------------------- Solutions Animations
+
+gsap.from(".solutions .stagger", {
+	scrollTrigger: {
+		trigger: ".solutions",
+		start: "-300px top",
+		end: "bottom center",
+		toggleActions: "restart none none none",
+		markers: true,
+	},
+	opacity: 0,
 	duration: 0.3,
 	stagger: 0.3,
 });
