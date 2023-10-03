@@ -191,18 +191,22 @@ animatedTitleSections.forEach((title) => {
 	});
 });
 
-gsap.from(".impacts .description", {
-	scrollTrigger: {
-		trigger: ".impacts",
-		start: "-300px top",
-		end: "bottom center",
-		toggleActions: "restart none none none",
-	},
-	y: 300,
-	opacity: 0,
-	duration: 0.7,
-	stagger: 0.7,
-});
+translateDescription(".impacts", 300);
+
+function translateDescription(str, y) {
+	gsap.from(`${str} .description`, {
+		scrollTrigger: {
+			trigger: `${str}`,
+			start: "-300px top",
+			end: "bottom center",
+			toggleActions: "restart none none reverse",
+		},
+		y: y,
+		opacity: 0,
+		duration: 0.7,
+		stagger: 0.7,
+	});
+}
 
 gsap.from(".impacts .impact .number", {
 	scrollTrigger: {
@@ -325,3 +329,5 @@ function gsapAnimationInit(x) {
 		x: x,
 	});
 }
+
+translateDescription(".contact", 150);
