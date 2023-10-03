@@ -267,19 +267,19 @@ function navsStepsPinAnimation(step, pinType = "fixed") {
 // ------------------------------------------- Studies Animations
 
 window.onload = (_) => {
-	pinTitleOnScroll(".studies");
-	pinTitleOnScroll(".contact");
+	pinTitleOnScroll(".studies", 0);
+	pinTitleOnScroll(".contact", 1);
 	animateContactSectionsHolder();
 };
 window.onresize = (_) => {
 	ScrollTrigger.getById(".studies").kill(true);
 	ScrollTrigger.getById(".contact").kill(true);
-	pinTitleOnScroll(".studies");
-	pinTitleOnScroll(".contact");
+	pinTitleOnScroll(".studies", 0);
+	pinTitleOnScroll(".contact", 1);
 	animateContactSectionsHolder();
 };
 
-function pinTitleOnScroll(str) {
+function pinTitleOnScroll(str, fromOpacity) {
 	gsap.from(`${str} .holder`, {
 		scrollTrigger: {
 			id: `${str}`,
@@ -290,7 +290,7 @@ function pinTitleOnScroll(str) {
 			trigger: `${str}`,
 			pin: `${str} .holder`,
 		},
-		opacity: 0,
+		opacity: fromOpacity,
 		duration: 1,
 	});
 }
