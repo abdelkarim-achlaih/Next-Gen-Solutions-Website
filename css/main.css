@@ -364,7 +364,6 @@ header .dropdown-menu a:hover {
 .impacts {
   height: auto;
   padding-top: 200px;
-  padding-bottom: 100px;
 }
 .impacts .impact {
   position: relative;
@@ -439,6 +438,8 @@ header .dropdown-menu a:hover {
 
 .steps {
   height: auto;
+  position: relative;
+  z-index: 100;
 }
 .steps .title-container {
   background-color: white;

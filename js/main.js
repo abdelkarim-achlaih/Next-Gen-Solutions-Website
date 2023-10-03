@@ -220,17 +220,27 @@ gsap.from(".impacts .impact .number", {
 	duration: 2,
 });
 
-gsap.from(".impacts .impact-2, .impacts .impact-3, .impacts .impact-4", {
+gsap.from(".impacts .impact", {
 	scrollTrigger: {
 		trigger: ".impacts .container",
 		start: "-600px top",
 		end: "bottom center",
-		toggleActions: "restart none none none",
+		toggleActions: "restart none none reset",
 	},
 	y: 300,
 	opacity: 0,
-	duration: 0.3,
-	stagger: 0.3,
+	duration: 1,
+	stagger: 0.5,
+});
+
+gsap.from(".impacts", {
+	scrollTrigger: {
+		trigger: ".impacts-pinned",
+		start: `bottom center`,
+		markers: true,
+		pin: true,
+		pinSpacing: false,
+	},
 });
 
 // ------------------------------------------- Steps Animations
