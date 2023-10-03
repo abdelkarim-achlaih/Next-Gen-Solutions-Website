@@ -735,6 +735,9 @@ header .dropdown-menu a:hover {
   padding: 10px;
   border: 1px solid #111111;
 }
+.contact .contact-form .iam .contact-type {
+  text-transform: lowercase;
+}
 .contact .contact-form .form input[type=text],
 .contact .contact-form .form input[type=email],
 .contact .contact-form .form textarea {

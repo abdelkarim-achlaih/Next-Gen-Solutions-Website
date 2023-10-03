@@ -957,6 +957,10 @@ header {
 				padding: 10px;
 				border: 1px solid $back1;
 			}
+
+			.contact-type {
+				text-transform: lowercase;
+			}
 		}
 
 		.form {
