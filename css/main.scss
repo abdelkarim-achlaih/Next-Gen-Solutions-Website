@@ -580,6 +580,7 @@ header {
 }
 
 .steps {
+	padding-top: 0;
 	height: auto;
 	position: relative;
 	z-index: 100;
@@ -856,6 +857,7 @@ header {
 .contact {
 	background-color: $second;
 	height: auto;
+	padding-top: 100px;
 
 	.title {
 		padding: 0;

@@ -437,6 +437,7 @@ header .dropdown-menu a:hover {
 }
 
 .steps {
+  padding-top: 0;
   height: auto;
   position: relative;
   z-index: 100;
@@ -651,6 +652,7 @@ header .dropdown-menu a:hover {
 .contact {
   background-color: #c5f404;
   height: auto;
+  padding-top: 100px;
 }
 .contact .title {
   padding: 0;

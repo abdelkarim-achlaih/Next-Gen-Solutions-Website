@@ -233,15 +233,22 @@ gsap.from(".impacts .impact", {
 	stagger: 0.5,
 });
 
-gsap.from(".impacts", {
-	scrollTrigger: {
-		trigger: ".impacts-pinned",
-		start: `bottom center`,
-		markers: true,
-		pin: true,
-		pinSpacing: false,
-	},
-});
+function pinImpactsBoxes() {
+	let impactBoxHeight = document
+		.querySelector(".impact-2")
+		.getBoundingClientRect().height;
+	gsap.from(".impacts", {
+		scrollTrigger: {
+			id: "impacts-pinned",
+			trigger: ".impacts-pinned",
+			start: `100% ${impactBoxHeight}px`,
+			end: `200% ${impactBoxHeight * 1.5}px`,
+			pin: true,
+			pinSpacing: false,
+			pinnedContainer: ".impacts",
+		},
+	});
+}
 
 // ------------------------------------------- Steps Animations
 
@@ -283,25 +290,27 @@ function navsStepsPinAnimation(step, pinType = "fixed") {
 window.onload = (_) => {
 	pinTitleOnScroll(".studies", 0.1);
 	pinTitleOnScroll(".contact", 1);
+	pinImpactsBoxes();
 	animateContactSectionsHolder();
 };
 window.onresize = (_) => {
 	ScrollTrigger.getById(".studies").kill(true);
 	ScrollTrigger.getById(".contact").kill(true);
+	ScrollTrigger.getById("impacts-pinned").kill(true);
 	pinTitleOnScroll(".studies", 0.1);
 	pinTitleOnScroll(".contact", 1);
+	pinImpactsBoxes();
 	animateContactSectionsHolder();
 };
 
 function pinTitleOnScroll(str, fromOpacity) {
+	let coor = document.querySelector(`${str} .holder`).getBoundingClientRect();
 	gsap.from(`${str} .holder .title`, {
 		scrollTrigger: {
 			id: `${str}`,
 			toggleActions: "restart none none reverse",
-			start: "100px 25%",
-			end: `100%-=100px 25%+=${
-				document.querySelector(`${str} .holder`).getBoundingClientRect().height
-			}px`,
+			start: `100px 25%`,
+			end: `100%-=100px 25%+=${coor.height}px`,
 			trigger: `${str}`,
 			pin: `${str} .holder`,
 		},
@@ -340,4 +349,4 @@ function gsapAnimationInit(x) {
 	});
 }
 
-translateDescription(".contact", 150);
+// translateDescription(".contact", 150);
