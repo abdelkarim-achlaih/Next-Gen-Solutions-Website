@@ -289,7 +289,6 @@ function pinTitleOnScroll(str) {
 			}px`,
 			trigger: `${str}`,
 			pin: `${str} .holder`,
-			markers: true,
 		},
 		opacity: 0,
 		duration: 1,
