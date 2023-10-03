@@ -272,8 +272,8 @@ window.onload = (_) => {
 	animateContactSectionsHolder();
 };
 window.onresize = (_) => {
-	ScrollTrigger.getById("studies").kill(true);
-	ScrollTrigger.getById("contact").kill(true);
+	ScrollTrigger.getById(".studies").kill(true);
+	ScrollTrigger.getById(".contact").kill(true);
 	pinTitleOnScroll(".studies");
 	pinTitleOnScroll(".contact");
 	animateContactSectionsHolder();
@@ -289,6 +289,7 @@ function pinTitleOnScroll(str) {
 			}px`,
 			trigger: `${str}`,
 			pin: `${str} .holder`,
+			markers: true,
 		},
 		opacity: 0,
 		duration: 1,
