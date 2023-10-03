@@ -268,10 +268,12 @@ function navsStepsPinAnimation(step, pinType = "fixed") {
 
 window.onload = (_) => {
 	studiesScroll();
+	animateContactSectionsHolder();
 };
 window.onresize = (_) => {
 	ScrollTrigger.getById("studies").kill(true);
 	studiesScroll();
+	animateContactSectionsHolder();
 };
 
 function studiesScroll() {
@@ -298,9 +300,6 @@ let contactTypes = SelectContactType.querySelectorAll(".box");
 let contactForm = document.querySelector(".contact-form");
 let contactFormType = contactForm.querySelector(".iam .contact-type");
 let iamBtn = contactForm.querySelector(".iam");
-
-window.onload = (_) => animateContactSectionsHolder();
-window.onresize = (_) => animateContactSectionsHolder();
 
 function animateContactSectionsHolder() {
 	let x = -(SelectContactType.getBoundingClientRect().width + 48);
