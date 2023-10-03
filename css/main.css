@@ -655,11 +655,17 @@ header .dropdown-menu a:hover {
   padding: 0;
   margin-bottom: 40px;
 }
-.contact .select-contact-type {
-  display: block;
+.contact .col-4 {
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
 }
-.contact .select-contact-type.show {
-  display: none;
+.contact .contact-sections-holder {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.contact .contact-sections-holder > div {
+  min-width: 100%;
 }
 .contact .box {
   width: 100%;
@@ -717,12 +723,6 @@ header .dropdown-menu a:hover {
   z-index: 1;
   width: 150%;
   height: 150%;
-}
-.contact .contact-form {
-  display: none;
-}
-.contact .contact-form.show {
-  display: block;
 }
 .contact .contact-form .iam {
   background-color: transparent;

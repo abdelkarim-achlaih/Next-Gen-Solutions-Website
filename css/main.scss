@@ -860,11 +860,17 @@ header {
 		margin-bottom: 40px;
 	}
 
-	.select-contact-type {
-		display: block;
+	.col-4 {
+		overflow: hidden;
+		padding-left: 0;
+		padding-right: 0;
+	}
 
-		&.show {
-			display: none;
+	.contact-sections-holder {
+		width: fit-content;
+
+		&>div {
+			min-width: 100%;
 		}
 	}
 
@@ -878,7 +884,7 @@ header {
 		position: relative;
 		overflow: hidden;
 		cursor: pointer;
-		
+
 		.overlay,
 		.content {
 			position: absolute;
@@ -939,11 +945,6 @@ header {
 
 	.contact-form {
 
-		display: none;
-
-		&.show {
-			display: block;
-		}
 
 		.iam {
 			background-color: transparent;

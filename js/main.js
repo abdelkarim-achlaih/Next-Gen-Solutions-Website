@@ -299,14 +299,27 @@ let contactForm = document.querySelector(".contact-form");
 let contactFormType = contactForm.querySelector(".iam .contact-type");
 let iamBtn = contactForm.querySelector(".iam");
 
-contactTypes.forEach((type) => {
-	type.addEventListener("click", (e) => {
-		contactFormType.innerText = e.target.querySelector("p").innerHTML;
-		contactForm.classList.toggle("show");
-		SelectContactType.classList.toggle("show");
+window.onload = (_) => animateContactSectionsHolder();
+window.onresize = (_) => animateContactSectionsHolder();
+
+function animateContactSectionsHolder() {
+	let x = -(SelectContactType.getBoundingClientRect().width + 48);
+	contactTypes.forEach((type) => {
+		type.addEventListener("click", (e) => {
+			contactFormType.innerHTML = type.querySelector("p").innerText;
+			gsapAnimationInit(x);
+		});
 	});
-});
-iamBtn.addEventListener("click", (e) => {
-	contactForm.classList.toggle("show");
-	SelectContactType.classList.toggle("show");
-});
+
+	iamBtn.addEventListener("click", (e) => {
+		gsapAnimationInit(0);
+	});
+}
+
+function gsapAnimationInit(x) {
+	gsap.to(".contact-sections-holder", {
+		duration: 1,
+		ease: "power4.out",
+		x: x,
+	});
+}
