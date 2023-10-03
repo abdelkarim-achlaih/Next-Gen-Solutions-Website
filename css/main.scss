@@ -860,6 +860,14 @@ header {
 		margin-bottom: 40px;
 	}
 
+	.select-contact-type {
+		display: block;
+
+		&.show {
+			display: none;
+		}
+	}
+
 	.box {
 		width: 100%;
 		aspect-ratio: 1/1;
@@ -870,7 +878,7 @@ header {
 		position: relative;
 		overflow: hidden;
 		cursor: pointer;
-
+		
 		.overlay,
 		.content {
 			position: absolute;
@@ -930,6 +938,13 @@ header {
 	}
 
 	.contact-form {
+
+		display: none;
+
+		&.show {
+			display: block;
+		}
+
 		.iam {
 			background-color: transparent;
 			display: flex;

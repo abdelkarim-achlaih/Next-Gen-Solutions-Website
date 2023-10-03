@@ -655,6 +655,12 @@ header .dropdown-menu a:hover {
   padding: 0;
   margin-bottom: 40px;
 }
+.contact .select-contact-type {
+  display: block;
+}
+.contact .select-contact-type.show {
+  display: none;
+}
 .contact .box {
   width: 100%;
   aspect-ratio: 1/1;
@@ -711,6 +717,12 @@ header .dropdown-menu a:hover {
   z-index: 1;
   width: 150%;
   height: 150%;
+}
+.contact .contact-form {
+  display: none;
+}
+.contact .contact-form.show {
+  display: block;
 }
 .contact .contact-form .iam {
   background-color: transparent;

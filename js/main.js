@@ -291,4 +291,22 @@ function studiesScroll() {
 	});
 }
 
-// ------------------------------------------- Partners Animations
+// ------------------------------------------- Contact Section Logic
+
+let SelectContactType = document.querySelector(".contact .select-contact-type");
+let contactTypes = SelectContactType.querySelectorAll(".box");
+let contactForm = document.querySelector(".contact-form");
+let contactFormType = contactForm.querySelector(".iam .contact-type");
+let iamBtn = contactForm.querySelector(".iam");
+
+contactTypes.forEach((type) => {
+	type.addEventListener("click", (e) => {
+		contactFormType.innerText = e.target.querySelector("p").innerHTML;
+		contactForm.classList.toggle("show");
+		SelectContactType.classList.toggle("show");
+	});
+});
+iamBtn.addEventListener("click", (e) => {
+	contactForm.classList.toggle("show");
+	SelectContactType.classList.toggle("show");
+});
