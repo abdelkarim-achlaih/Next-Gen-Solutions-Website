@@ -772,12 +772,16 @@ header {
 
 	.title {
 		padding: 0;
-		font-size: 7vw;
 	}
 
 	.description {
-		font-size: 1.5vw;
 		line-height: 1.2;
+		font-size: 22px;
+
+		@include breakpoints('md') {
+			font-size: 15px;
+			margin-bottom: 70px;
+		}
 	}
 
 	.studies-container {

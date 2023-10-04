@@ -599,11 +599,16 @@ header .dropdown-menu a:hover {
 }
 .studies .title {
   padding: 0;
-  font-size: 7vw;
 }
 .studies .description {
-  font-size: 1.5vw;
   line-height: 1.2;
+  font-size: 22px;
+}
+@media (max-width: 991px) {
+  .studies .description {
+    font-size: 15px;
+    margin-bottom: 70px;
+  }
 }
 .studies .studies-container {
   padding: 0 1vw;
