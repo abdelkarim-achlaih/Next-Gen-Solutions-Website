@@ -476,6 +476,7 @@ header {
 .solutions {
 	height: auto;
 
+
 	.title {
 		margin-top: 0;
 		padding-top: 10vh;
@@ -487,12 +488,31 @@ header {
 
 
 	}
+
+	@include breakpoints('md') {
+		height: auto;
+
+		.title {
+			margin-top: 0;
+			padding: 10vh 0;
+			height: auto;
+		}
+
+		.description {
+			height: auto;
+		}
+	}
 }
 
 .bordred-p {
 	line-height: 1.8;
 	position: relative;
 	font-size: 22px;
+
+	@include breakpoints('md') {
+		font-size: 15px;
+
+	}
 
 	&::before {
 		content: '';
@@ -503,6 +523,15 @@ header {
 		height: 100%;
 		width: 1px;
 		border-radius: 1px;
+
+		@include breakpoints('md') {
+			height: 1px;
+			width: 80%;
+			top: calc(100% + 50px);
+			left: 50%;
+			transform: translateX(-50%);
+
+		}
 	}
 }
 

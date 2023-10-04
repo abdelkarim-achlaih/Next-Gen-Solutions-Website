@@ -361,11 +361,29 @@ header .dropdown-menu a:hover {
 .solutions .description {
   height: 50vh;
 }
+@media (max-width: 991px) {
+  .solutions {
+    height: auto;
+  }
+  .solutions .title {
+    margin-top: 0;
+    padding: 10vh 0;
+    height: auto;
+  }
+  .solutions .description {
+    height: auto;
+  }
+}
 
 .bordred-p {
   line-height: 1.8;
   position: relative;
   font-size: 22px;
+}
+@media (max-width: 991px) {
+  .bordred-p {
+    font-size: 15px;
+  }
 }
 .bordred-p::before {
   content: "";
@@ -376,6 +394,15 @@ header .dropdown-menu a:hover {
   height: 100%;
   width: 1px;
   border-radius: 1px;
+}
+@media (max-width: 991px) {
+  .bordred-p::before {
+    height: 1px;
+    width: 80%;
+    top: calc(100% + 50px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .bordred-p-black {
