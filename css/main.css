@@ -1,3 +1,5 @@
+/* Start Import Mixins */
+/* End Import Mixins */
 /* Start Variables */
 /* End Variables */
 /* Start Global Rules */
@@ -128,7 +130,7 @@ header .dropdown-menu a:hover {
 .hero .hero-content .land .content h1 {
   overflow: hidden;
   font-family: Aquire;
-  font-size: 100px;
+  font-size: 5vw;
   color: #87bd25;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4), 2px 2px 3px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
@@ -190,7 +192,7 @@ header .dropdown-menu a:hover {
   transform: translate(-50%, 50%);
 }
 
-@media (max-width: 991px) {
+@media (max-width: 575px) {
   header {
     height: auto;
     margin-bottom: 50px;
