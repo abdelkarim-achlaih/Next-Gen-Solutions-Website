@@ -508,6 +508,7 @@ header .dropdown-menu a:hover {
   height: auto;
   position: relative;
   z-index: 100;
+  min-height: auto;
 }
 .steps .title-container {
   background-color: white;
@@ -588,6 +589,27 @@ header .dropdown-menu a:hover {
   display: block;
   position: relative;
   top: 5px;
+}
+.steps .step-mobile {
+  border-bottom: 1px solid gray;
+}
+.steps .step-mobile .step-mobile-toogler {
+  color: #c5f404;
+  margin: 0;
+}
+.steps .step-mobile .step-mobile-toogler h5 {
+  font-family: "Bebas Neue", sans-serif;
+}
+.steps .step-mobile .step-mobile-content {
+  height: 0;
+  overflow-y: hidden;
+}
+.steps .step-mobile .step-mobile-content.show {
+  height: auto;
+}
+.steps .step-mobile .step-content {
+  height: auto;
+  padding: 0;
 }
 
 .studies {

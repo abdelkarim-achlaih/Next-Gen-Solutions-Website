@@ -659,6 +659,7 @@ header {
 	height: auto;
 	position: relative;
 	z-index: 100;
+	min-height: auto;
 
 	.title-container {
 		background-color: white;
@@ -756,6 +757,34 @@ header {
 			}
 
 
+		}
+	}
+
+	.step-mobile {
+		border-bottom: 1px solid gray;
+
+		.step-mobile-toogler {
+			color: $second;
+			margin: 0;
+
+			h5 {
+				font-family: 'Bebas Neue', sans-serif;
+			}
+
+		}
+
+		.step-mobile-content {
+			height: 0;
+			overflow-y: hidden;
+
+			&.show {
+				height: auto;
+			}
+		}
+
+		.step-content {
+			height: auto;
+			padding: 0;
 		}
 	}
 }

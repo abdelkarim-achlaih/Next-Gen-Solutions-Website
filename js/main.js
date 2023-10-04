@@ -285,6 +285,8 @@ function navsStepsPinAnimation(step, pinType = "fixed") {
 	});
 }
 
+// ------------------------------------------- Steps Container Mobile Logic
+
 // ------------------------------------------- Studies + Contact Pin Animations
 let allowedWidth = 992;
 window.onload = (_) => {
