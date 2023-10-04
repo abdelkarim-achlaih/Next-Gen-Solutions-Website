@@ -546,8 +546,19 @@ header {
 .impacts {
 	height: auto;
 	padding-top: 200px;
-	// padding-bottom: 100px;
 
+	@include breakpoints('md') {
+		padding-top: 0;
+
+		.title {
+			margin-top: 0;
+			padding: 10vh 0;
+		}
+	}
+
+	.container {
+		margin-top: 100px;
+	}
 
 	.impact {
 		position: relative;
@@ -569,6 +580,11 @@ header {
 			padding-top: 70px;
 			padding-bottom: 70px;
 			height: 300px;
+
+			@include breakpoints('md') {
+				aspect-ratio: 1/1;
+				height: auto;
+			}
 		}
 
 		.impact-bg,
@@ -625,15 +641,14 @@ header {
 
 
 		.impact-content {
+			padding: 0 20px;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			z-index: 2;
 
-			h3 {
-				font-size: 5rem;
-			}
+			h3 {}
 
 			p {
 				font-size: 1.5rem;

@@ -416,6 +416,18 @@ header .dropdown-menu a:hover {
   height: auto;
   padding-top: 200px;
 }
+@media (max-width: 991px) {
+  .impacts {
+    padding-top: 0;
+  }
+  .impacts .title {
+    margin-top: 0;
+    padding: 10vh 0;
+  }
+}
+.impacts .container {
+  margin-top: 100px;
+}
 .impacts .impact {
   position: relative;
   text-align: center;
@@ -435,6 +447,12 @@ header .dropdown-menu a:hover {
   padding-top: 70px;
   padding-bottom: 70px;
   height: 300px;
+}
+@media (max-width: 991px) {
+  .impacts .impact.impact-1 {
+    aspect-ratio: 1/1;
+    height: auto;
+  }
 }
 .impacts .impact .impact-bg,
 .impacts .impact .impact-content {
@@ -474,14 +492,12 @@ header .dropdown-menu a:hover {
   background-image: url("../images/Impact-4.jpg");
 }
 .impacts .impact .impact-content {
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 2;
-}
-.impacts .impact .impact-content h3 {
-  font-size: 5rem;
 }
 .impacts .impact .impact-content p {
   font-size: 1.5rem;
