@@ -158,6 +158,14 @@ header {
 		.land {
 			height: calc(100vh - 72px);
 
+			.container {
+				height: 100%;
+
+				.row {
+					height: 100%;
+				}
+			}
+
 			.content {
 
 				h1 {
@@ -270,9 +278,19 @@ header {
 
 	.hero {
 		overflow: auto;
+		height: auto;
+
+		.container {
+			height: auto;
+
+			.row {
+				height: auto;
+			}
+		}
 
 		.hero-content {
 			.land {
+				height: auto;
 
 				.gallery {
 

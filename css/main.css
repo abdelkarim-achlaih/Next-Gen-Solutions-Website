@@ -119,6 +119,12 @@ header .dropdown-menu a:hover {
 .hero .hero-content .land {
   height: calc(100vh - 72px);
 }
+.hero .hero-content .land .container {
+  height: 100%;
+}
+.hero .hero-content .land .container .row {
+  height: 100%;
+}
 .hero .hero-content .land .content h1 {
   overflow: hidden;
   font-family: Aquire;
@@ -191,6 +197,16 @@ header .dropdown-menu a:hover {
   }
   .hero {
     overflow: auto;
+    height: auto;
+  }
+  .hero .container {
+    height: auto;
+  }
+  .hero .container .row {
+    height: auto;
+  }
+  .hero .hero-content .land {
+    height: auto;
   }
   .hero .hero-content .land .gallery .img-container {
     display: none;
