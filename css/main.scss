@@ -476,7 +476,6 @@ header {
 .solutions {
 	height: auto;
 
-
 	.title {
 		margin-top: 0;
 		padding-top: 10vh;
@@ -485,8 +484,6 @@ header {
 
 	.description {
 		height: 50vh;
-
-
 	}
 
 	@include breakpoints('md') {
@@ -775,12 +772,15 @@ header {
 	}
 
 	.description {
-		line-height: 1.2;
+		padding: 0 0 0;
 		font-size: 22px;
 
 		@include breakpoints('md') {
+			padding: 0 20vw 10vh;
+		}
+
+		@include breakpoints_xs {
 			font-size: 15px;
-			margin-bottom: 70px;
 		}
 	}
 
@@ -901,6 +901,25 @@ header {
 .partners {
 	height: auto;
 	overflow-x: hidden;
+
+	.title {
+		@include breakpoints('md') {
+			margin-bottom: 60px;
+		}
+	}
+
+	.description {
+		padding: 0 0 0;
+		font-size: 22px;
+
+		@include breakpoints('md') {
+			padding: 0 20vw 10vh;
+		}
+
+		@include breakpoints_xs {
+			font-size: 15px;
+		}
+	}
 
 	svg {
 		font-size: 60px;

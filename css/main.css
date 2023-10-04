@@ -601,13 +601,17 @@ header .dropdown-menu a:hover {
   padding: 0;
 }
 .studies .description {
-  line-height: 1.2;
+  padding: 0 0 0;
   font-size: 22px;
 }
 @media (max-width: 991px) {
   .studies .description {
+    padding: 0 20vw 10vh;
+  }
+}
+@media (max-width: 575px) {
+  .studies .description {
     font-size: 15px;
-    margin-bottom: 70px;
   }
 }
 .studies .studies-container {
@@ -693,6 +697,25 @@ header .dropdown-menu a:hover {
 .partners {
   height: auto;
   overflow-x: hidden;
+}
+@media (max-width: 991px) {
+  .partners .title {
+    margin-bottom: 60px;
+  }
+}
+.partners .description {
+  padding: 0 0 0;
+  font-size: 22px;
+}
+@media (max-width: 991px) {
+  .partners .description {
+    padding: 0 20vw 10vh;
+  }
+}
+@media (max-width: 575px) {
+  .partners .description {
+    font-size: 15px;
+  }
 }
 .partners svg {
   font-size: 60px;
