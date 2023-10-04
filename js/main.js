@@ -285,20 +285,34 @@ function navsStepsPinAnimation(step, pinType = "fixed") {
 	});
 }
 
-// ------------------------------------------- Studies Animations
-
+// ------------------------------------------- Studies + Contact Pin Animations
+let allowedWidth = 992;
 window.onload = (_) => {
-	pinTitleOnScroll(".studies", 0.1);
-	pinTitleOnScroll(".contact", 1);
+	if (screen.width > allowedWidth) {
+		pinTitleOnScroll(".studies", 0.1);
+		pinTitleOnScroll(".contact", 1);
+	}
 	pinImpactsBoxes();
 	animateContactSectionsHolder();
 };
+console.log(typeof ScrollTrigger.getById(".studies"));
 window.onresize = (_) => {
-	ScrollTrigger.getById(".studies").kill(true);
-	ScrollTrigger.getById(".contact").kill(true);
+	console.log(screen.width);
+	if (screen.width > allowedWidth) {
+		if (typeof ScrollTrigger.getById(".studies") !== "undefined") {
+			ScrollTrigger.getById(".studies").kill(true);
+			ScrollTrigger.getById(".contact").kill(true);
+		}
+		pinTitleOnScroll(".studies", 0.1);
+		pinTitleOnScroll(".contact", 1);
+	} else {
+		if (typeof ScrollTrigger.getById(".studies") !== "undefined") {
+			ScrollTrigger.getById(".studies").kill(true);
+			ScrollTrigger.getById(".contact").kill(true);
+		}
+	}
+
 	ScrollTrigger.getById("impacts-pinned").kill(true);
-	pinTitleOnScroll(".studies", 0.1);
-	pinTitleOnScroll(".contact", 1);
 	pinImpactsBoxes();
 	animateContactSectionsHolder();
 };
@@ -349,4 +363,4 @@ function gsapAnimationInit(x) {
 	});
 }
 
-// translateDescription(".contact", 150);
+translateDescription(".contact", 150);
