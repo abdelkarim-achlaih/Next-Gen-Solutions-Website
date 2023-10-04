@@ -762,11 +762,15 @@ header {
 
 	.step-mobile {
 		border-bottom: 1px solid gray;
+		overflow: hidden;
 
 		.step-mobile-toogler {
-			color: $second;
+			color: white;
 			margin: 0;
-
+			transition: $duration;
+			&.active {
+				color: $second;
+			}
 			h5 {
 				font-family: 'Bebas Neue', sans-serif;
 			}
@@ -774,11 +778,14 @@ header {
 		}
 
 		.step-mobile-content {
+			// position: relative;
+			// z-index: -1;
 			height: 0;
 			overflow-y: hidden;
 
+
 			&.show {
-				height: auto;
+				height: 100%;
 			}
 		}
 

@@ -592,10 +592,15 @@ header .dropdown-menu a:hover {
 }
 .steps .step-mobile {
   border-bottom: 1px solid gray;
+  overflow: hidden;
 }
 .steps .step-mobile .step-mobile-toogler {
-  color: #c5f404;
+  color: white;
   margin: 0;
+  transition: 0.4s;
+}
+.steps .step-mobile .step-mobile-toogler.active {
+  color: #c5f404;
 }
 .steps .step-mobile .step-mobile-toogler h5 {
   font-family: "Bebas Neue", sans-serif;
@@ -605,7 +610,7 @@ header .dropdown-menu a:hover {
   overflow-y: hidden;
 }
 .steps .step-mobile .step-mobile-content.show {
-  height: auto;
+  height: 100%;
 }
 .steps .step-mobile .step-content {
   height: auto;
