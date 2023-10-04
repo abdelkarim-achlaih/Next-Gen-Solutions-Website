@@ -1,9 +1,9 @@
-/* Start Import Mixins */
+// Start Import Mixins
 
 @use './helpers/_mixins' as *;
 
-/* End Import Mixins */
-/* Start Variables */
+// End Import Mixins
+// Start Variables
 
 $main: #87bd25;
 $second: #c5f404;
@@ -17,8 +17,8 @@ $duration: 0.4s;
 // $second-dark: #152744;
 // $white-50: rgba(255, 255, 255, .5);
 
-/* End Variables */
-/* Start Global Rules */
+// End Variables
+// Start Global Rules
 body {
 	font-family: 'Inter', sans-serif;
 }
@@ -78,8 +78,8 @@ html.lenis {
 	// scroll-snap-align: start;
 }
 
-/* End Global Rules */
-/* Start Components */
+// End Global Rules
+// Start Components
 .btn {
 	border: 4px solid white;
 	color: $main;
@@ -93,7 +93,7 @@ html.lenis {
 	}
 }
 
-/* End Components */
+// End Components
 /* Start Header */
 header {
 	height: 72px;
@@ -174,23 +174,26 @@ header {
 			.content {
 
 				h1 {
+					@include breakpoints_xs {
+						margin-bottom: 20px !important;
+					}
+
 					overflow: hidden;
 					font-family: Aquire;
-					font-size: 5vw;
 					color: $main;
 					text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4),
-						2px 2px 3px rgba(0, 0, 0, 0.4),
-						2px 2px 4px rgba(0, 0, 0, 0.4),
-						2px 2px 5px rgba(0, 0, 0, 0.4),
-						2px 2px 5px rgba(0, 0, 0, 0.4),
-						2px 2px 5px rgba(0, 0, 0, 0.4),
-						2px 2px 5px rgba(0, 0, 0, 0.6),
-						2px 2px 5px rgba(0, 0, 0, 0.6),
-						2px 2px 5px rgba(0, 0, 0, 0.6),
-						2px 2px 5px rgba(0, 0, 0, 0.6),
-						2px 2px 5px rgba(0, 0, 0, 0.6),
-						2px 2px 5px rgba(0, 0, 0, 0.6),
-						2px 2px 3px rgba(0, 0, 0, 0.6);
+					2px 2px 3px rgba(0, 0, 0, 0.4),
+					2px 2px 4px rgba(0, 0, 0, 0.4),
+					2px 2px 5px rgba(0, 0, 0, 0.4),
+					2px 2px 5px rgba(0, 0, 0, 0.4),
+					2px 2px 5px rgba(0, 0, 0, 0.4),
+					2px 2px 5px rgba(0, 0, 0, 0.6),
+					2px 2px 5px rgba(0, 0, 0, 0.6),
+					2px 2px 5px rgba(0, 0, 0, 0.6),
+					2px 2px 5px rgba(0, 0, 0, 0.6),
+					2px 2px 5px rgba(0, 0, 0, 0.6),
+					2px 2px 5px rgba(0, 0, 0, 0.6),
+					2px 2px 3px rgba(0, 0, 0, 0.6);
 				}
 
 				p:last-of-type {
@@ -275,7 +278,7 @@ header {
 	}
 }
 
-@include breakpoints('xs') {
+@include breakpoints('md') {
 	header {
 		height: auto;
 		margin-bottom: 50px;
@@ -311,14 +314,13 @@ header {
 @include breakpoints_xs {
 	.hero {
 		h1 {
-			font-size: 30px !important;
 			margin-bottom: 20px !important;
 		}
 	}
 }
 
 /* End Land */
-/* Start Missions */
+/* Start Sections Container */
 .sections-container {
 	position: relative;
 
@@ -328,6 +330,10 @@ header {
 		top: 0;
 		left: 20px;
 		z-index: 1000;
+
+		@include breakpoints('sm') {
+			display: none;
+		}
 
 		nav {
 			transition: $duration;
@@ -398,11 +404,6 @@ header {
 	}
 }
 
-.missions {
-	height: 300vh;
-
-}
-
 .sec-color {
 	color: $second;
 }
@@ -415,19 +416,17 @@ header {
 .studies,
 .partners,
 .contact {
-	height: 100vh;
+	min-height: 100vh;
 	padding-top: 10vh;
 	background-color: $back1;
 
 	.title {
-		font-size: 12vh;
 		font-family: 'Bebas Neue', sans-serif;
 		padding: 0 10vw;
 	}
 }
 
 .years {
-	margin-top: 300vh;
 
 	.description {
 		color: $main;

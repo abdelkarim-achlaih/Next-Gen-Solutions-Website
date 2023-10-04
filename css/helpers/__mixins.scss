@@ -1,3 +1,5 @@
+// Use these mixins only between the specified breakpoints
+
 @mixin breakpoints_xs() {
   @media (max-width: 575px) {
     @content;
@@ -33,6 +35,8 @@
     @content;
   }
 }
+
+//  Use this mixin for the specified breakpoints and bellow
 
 @mixin breakpoints($point) {
   @if($point ==xs) {

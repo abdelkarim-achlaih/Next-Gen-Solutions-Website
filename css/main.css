@@ -1,8 +1,3 @@
-/* Start Import Mixins */
-/* End Import Mixins */
-/* Start Variables */
-/* End Variables */
-/* Start Global Rules */
 body {
   font-family: "Inter", sans-serif;
 }
@@ -54,8 +49,6 @@ html.lenis {
   pointer-events: none;
 }
 
-/* End Global Rules */
-/* Start Components */
 .btn {
   border: 4px solid white;
   color: #87bd25;
@@ -68,7 +61,6 @@ html.lenis {
   border-color: transparent;
 }
 
-/* End Components */
 /* Start Header */
 header {
   height: 72px;
@@ -130,9 +122,13 @@ header .dropdown-menu a:hover {
 .hero .hero-content .land .content h1 {
   overflow: hidden;
   font-family: Aquire;
-  font-size: 5vw;
   color: #87bd25;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4), 2px 2px 3px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 575px) {
+  .hero .hero-content .land .content h1 {
+    margin-bottom: 20px !important;
+  }
 }
 .hero .hero-content .land .content p:last-of-type {
   font-size: 1rem;
@@ -192,7 +188,7 @@ header .dropdown-menu a:hover {
   transform: translate(-50%, 50%);
 }
 
-@media (max-width: 575px) {
+@media (max-width: 991px) {
   header {
     height: auto;
     margin-bottom: 50px;
@@ -216,12 +212,11 @@ header .dropdown-menu a:hover {
 }
 @media (max-width: 575px) {
   .hero h1 {
-    font-size: 30px !important;
     margin-bottom: 20px !important;
   }
 }
 /* End Land */
-/* Start Missions */
+/* Start Sections Container */
 .sections-container {
   position: relative;
 }
@@ -231,6 +226,11 @@ header .dropdown-menu a:hover {
   top: 0;
   left: 20px;
   z-index: 1000;
+}
+@media (max-width: 767px) {
+  .sections-container .sections-nav {
+    display: none;
+  }
 }
 .sections-container .sections-nav nav {
   transition: 0.4s;
@@ -282,10 +282,6 @@ header .dropdown-menu a:hover {
   text-decoration: none;
 }
 
-.missions {
-  height: 300vh;
-}
-
 .sec-color {
   color: #c5f404;
 }
@@ -298,7 +294,7 @@ header .dropdown-menu a:hover {
 .studies,
 .partners,
 .contact {
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 10vh;
   background-color: #111111;
 }
@@ -310,14 +306,10 @@ header .dropdown-menu a:hover {
 .studies .title,
 .partners .title,
 .contact .title {
-  font-size: 12vh;
   font-family: "Bebas Neue", sans-serif;
   padding: 0 10vw;
 }
 
-.years {
-  margin-top: 300vh;
-}
 .years .description {
   color: #87bd25;
   padding: 0 25vw 10vh;
