@@ -295,9 +295,7 @@ window.onload = (_) => {
 	pinImpactsBoxes();
 	animateContactSectionsHolder();
 };
-console.log(typeof ScrollTrigger.getById(".studies"));
 window.onresize = (_) => {
-	console.log(screen.width);
 	if (screen.width > allowedWidth) {
 		if (typeof ScrollTrigger.getById(".studies") !== "undefined") {
 			ScrollTrigger.getById(".studies").kill(true);
