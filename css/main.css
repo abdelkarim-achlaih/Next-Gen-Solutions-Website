@@ -534,6 +534,12 @@ header .dropdown-menu a:hover {
 }
 .steps .steps-container {
   position: relative;
+  display: none;
+}
+@media (min-width: 992px) {
+  .steps .steps-container {
+    display: block;
+  }
 }
 .steps .steps-nav {
   height: 100%;
@@ -590,29 +596,38 @@ header .dropdown-menu a:hover {
   position: relative;
   top: 5px;
 }
-.steps .step-mobile {
+.steps .steps-container-mobile {
+  display: none;
+}
+@media (max-width: 991px) {
+  .steps .steps-container-mobile {
+    display: block;
+  }
+}
+.steps .steps-container-mobile .step-mobile {
   border-bottom: 1px solid gray;
   overflow: hidden;
 }
-.steps .step-mobile .step-mobile-toogler {
+.steps .steps-container-mobile .step-mobile .step-mobile-toogler {
   color: white;
   margin: 0;
   transition: 0.4s;
 }
-.steps .step-mobile .step-mobile-toogler.active {
+.steps .steps-container-mobile .step-mobile .step-mobile-toogler.active {
   color: #c5f404;
 }
-.steps .step-mobile .step-mobile-toogler h5 {
+.steps .steps-container-mobile .step-mobile .step-mobile-toogler h5 {
   font-family: "Bebas Neue", sans-serif;
 }
-.steps .step-mobile .step-mobile-content {
-  height: 0;
+.steps .steps-container-mobile .step-mobile .step-mobile-content {
   overflow-y: hidden;
+  max-height: 0;
+  transition: max-height 1.5s;
 }
-.steps .step-mobile .step-mobile-content.show {
-  height: 100%;
+.steps .steps-container-mobile .step-mobile .step-mobile-content.show {
+  max-height: 999px;
 }
-.steps .step-mobile .step-content {
+.steps .steps-container-mobile .step-mobile .step-content {
   height: auto;
   padding: 0;
 }

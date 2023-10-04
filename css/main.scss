@@ -689,6 +689,11 @@ header {
 
 	.steps-container {
 		position: relative;
+		display: none;
+
+		@media (min-width: 992px) {
+			display: block;
+		}
 	}
 
 	.steps-nav {
@@ -760,39 +765,48 @@ header {
 		}
 	}
 
-	.step-mobile {
-		border-bottom: 1px solid gray;
-		overflow: hidden;
+	.steps-container-mobile {
+		display: none;
 
-		.step-mobile-toogler {
-			color: white;
-			margin: 0;
-			transition: $duration;
-			&.active {
-				color: $second;
-			}
-			h5 {
-				font-family: 'Bebas Neue', sans-serif;
-			}
-
+		@media (max-width: 991px) {
+			display: block;
 		}
 
-		.step-mobile-content {
-			// position: relative;
-			// z-index: -1;
-			height: 0;
-			overflow-y: hidden;
+		.step-mobile {
+			border-bottom: 1px solid gray;
+			overflow: hidden;
 
 
-			&.show {
-				height: 100%;
+			.step-mobile-toogler {
+				color: white;
+				margin: 0;
+				transition: $duration;
+
+				&.active {
+					color: $second;
+				}
+
+				h5 {
+					font-family: 'Bebas Neue', sans-serif;
+				}
+			}
+
+			.step-mobile-content {
+				overflow-y: hidden;
+				max-height: 0;
+				transition: max-height 1.5s;
+
+				&.show {
+					max-height: 999px;
+				}
+			}
+
+			.step-content {
+				height: auto;
+				padding: 0;
 			}
 		}
 
-		.step-content {
-			height: auto;
-			padding: 0;
-		}
 	}
 }
 
