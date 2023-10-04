@@ -310,15 +310,29 @@ header .dropdown-menu a:hover {
   padding: 0 10vw;
 }
 
+.years .title {
+  margin-bottom: 40px;
+}
 .years .description {
   color: #87bd25;
-  padding: 0 25vw 10vh;
+  padding: 0 20vw 10vh;
   line-height: 1.8;
   color: white;
   font-size: 22px;
 }
+@media (max-width: 575px) {
+  .years .description {
+    padding: 0 0 10vh;
+    font-size: 15px;
+  }
+}
 .years .discover {
   padding: 0 15vw;
+}
+@media (max-width: 575px) {
+  .years .discover {
+    padding: 0;
+  }
 }
 .years .discover a {
   color: white;
