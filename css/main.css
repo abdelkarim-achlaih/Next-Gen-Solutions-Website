@@ -106,7 +106,8 @@ header .dropdown-menu a:hover {
 /* End Header */
 /* Start Land */
 .hero {
-  background-color: #111111;
+  background-image: url(../images/hero.jpg);
+  background-size: cover;
   height: 100vh;
   overflow: hidden;
 }
@@ -118,6 +119,14 @@ header .dropdown-menu a:hover {
 }
 .hero .hero-content .land .container .row {
   height: 100%;
+  border: 1px solid red;
+}
+.hero .hero-content .land .container .row > div {
+  height: 100%;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .hero .hero-content .land .content h1 {
   overflow: hidden;
@@ -139,55 +148,12 @@ header .dropdown-menu a:hover {
   color: #87bd25;
   text-transform: uppercase;
   transition: 0.4s;
-  transform: translateX(-2000px);
 }
 .hero .hero-content .land .content a.btn:hover {
   background-color: #87bd25;
   color: #111111;
   border-color: transparent;
 }
-.hero .hero-content .land .gallery .img-container {
-  position: relative;
-  height: 400px;
-}
-.hero .hero-content .land .gallery .img-container > div {
-  position: absolute;
-  background-color: #0d1710;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  overflow: hidden;
-  max-width: 100%;
-  max-height: 100%;
-}
-.hero .hero-content .land .gallery .img-container > div > .bg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #1a1a1a;
-}
-.hero .hero-content .land .gallery .img-container > div img {
-  scale: 1.2;
-  background-color: #1a1a1a;
-}
-.hero .hero-content .land .gallery .img-container .box-1 {
-  top: 0;
-  left: 0;
-}
-.hero .hero-content .land .gallery .img-container .box-2 {
-  width: 70%;
-  left: -12%;
-  bottom: 50%;
-  transform: translate(0, 90%);
-}
-.hero .hero-content .land .gallery .img-container .box-3 {
-  bottom: -7%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-}
-
 @media (max-width: 991px) {
   header {
     height: auto;

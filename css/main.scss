@@ -154,7 +154,8 @@ header {
 /* End Header */
 /* Start Land */
 .hero {
-	background-color: $back1;
+	background-image: url(../images/hero.jpg);
+	background-size: cover;
 	height: 100vh;
 	overflow: hidden;
 
@@ -168,6 +169,15 @@ header {
 
 				.row {
 					height: 100%;
+					border: 1px solid red;
+
+					>div {
+						height: 100%;
+						border: 1px solid red;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
 				}
 			}
 
@@ -208,7 +218,7 @@ header {
 					color: $main;
 					text-transform: uppercase;
 					transition: $duration;
-					transform: translateX(-2000px);
+					// transform: translateX(-2000px);
 
 					&:hover {
 						background-color: $main;
@@ -216,63 +226,10 @@ header {
 						border-color: transparent;
 					}
 				}
-
-
 			}
 
-			.gallery {
-
-				.img-container {
-					position: relative;
-					height: 400px;
-
-					>div {
-						position: absolute;
-						background-color: #0d1710;
-						padding: 20px;
-						border-radius: 20px;
-						box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
-						overflow: hidden;
-						max-width: 100%;
-						max-height: 100%;
-
-						>.bg {
-							position: absolute;
-							bottom: 0;
-							left: 0;
-							height: 100%;
-							width: 100%;
-							background-color: $back2;
-						}
-
-						img {
-							scale: 1.2;
-							background-color: $back2;
-						}
-					}
-
-					.box-1 {
-						top: 0;
-						left: 0;
-
-					}
-
-					.box-2 {
-						width: 70%;
-						left: -12%;
-						bottom: 50%;
-						transform: translate(0, 90%);
-					}
-
-					.box-3 {
-						bottom: -7%;
-						left: 50%;
-						transform: translate(-50%, 50%);
-					}
-				}
-
-
-
+			.ring {
+				img {}
 			}
 		}
 	}
