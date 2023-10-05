@@ -183,6 +183,7 @@ header .dropdown-menu a:hover {
     margin-bottom: 50px;
   }
   .hero {
+    min-height: 100vh;
     overflow: auto;
     height: auto;
   }
@@ -245,11 +246,18 @@ header .dropdown-menu a:hover {
 }
 .site-loader .container .row .rings .ring {
   position: absolute;
+  width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(calc(-100% - 12px), -50%);
   transition: 1s;
   transition-delay: 4.5s;
+  text-align: center;
+}
+@media (max-width: 991px) {
+  .site-loader .container .row .rings .ring {
+    transform: translate(-50%, -50%);
+  }
 }
 .site-loader .container .row .rings .ring img {
   transition: 1s;
@@ -258,17 +266,32 @@ header .dropdown-menu a:hover {
   position: relative;
   animation: rotateLoader infinite 2s linear;
 }
+@media (max-width: 991px) {
+  .site-loader .container .row .rings .ring img {
+    width: 100%;
+  }
+}
 .site-loader .container .row .rings .ring.ring-2 img {
   animation-delay: 0.5s;
 }
 .site-loader.loaded {
   background-color: transparent;
 }
+@media (max-width: 991px) {
+  .site-loader.loaded {
+    opacity: 0;
+  }
+}
 .site-loader.loaded .container .row .rings .ring {
   transform: translate(-50%, -50%);
 }
 .site-loader.loaded .container .row .rings .ring img {
   width: 20vw;
+}
+@media (max-width: 991px) {
+  .site-loader.loaded .container .row .rings .ring img {
+    width: 100%;
+  }
 }
 
 @keyframes rotateLoader {

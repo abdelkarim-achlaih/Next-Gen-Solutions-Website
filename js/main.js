@@ -38,13 +38,9 @@ function heroAnimationMobile() {
 		},
 	});
 	loadMobile
-		.from(
-			".hero .navbar-brand",
-			{
-				x: -1500,
-			},
-			5
-		)
+		.from(".hero .navbar-brand", {
+			x: -1500,
+		})
 		.from(".hero .content h1", {
 			y: 250,
 			height: 0,
@@ -308,7 +304,6 @@ mobileStepsTogglers.forEach((toogler) => {
 let allowedWidth = 992;
 
 window.onload = (_) => {
-	document.querySelector(".site-loader").classList.add("loaded");
 	document.querySelector(".page").style.display = "block";
 	/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
 	particlesJS.load("particles-js", "assets/particles.json", function () {
@@ -318,13 +313,10 @@ window.onload = (_) => {
 	if (screen.width > allowedWidth) {
 		pinTitleOnScroll(".studies", 0.1);
 		pinTitleOnScroll(".contact", 1);
+		document.querySelector(".site-loader").classList.add("loaded");
 		heroAnimationWide();
-		// setTimeout(() => {
-		// 	document.querySelectorAll(".ring img").forEach((img) => {
-		// 		img.classList.add("reseized");
-		// 	});
-		// }, 10000);
 	} else {
+		document.querySelector(".site-loader").classList.add("loaded");
 		heroAnimationMobile();
 	}
 	pinImpactsBoxes();

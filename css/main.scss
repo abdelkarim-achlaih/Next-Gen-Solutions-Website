@@ -262,6 +262,7 @@ header {
 	}
 
 	.hero {
+		min-height: 100vh;
 		overflow: auto;
 		height: auto;
 
@@ -340,11 +341,17 @@ header {
 
 				.ring {
 					position: absolute;
+					width: 100%;
 					top: 50%;
 					left: 50%;
 					transform: translate(calc(-100% - 12px), -50%);
 					transition: 1s;
 					transition-delay: 4.5s;
+					text-align: center;
+
+					@include breakpoints('md') {
+						transform: translate(-50%, -50%);
+					}
 
 					img {
 						transition: 1s;
@@ -352,6 +359,10 @@ header {
 						width: 40vw;
 						position: relative;
 						animation: rotateLoader infinite 2s linear;
+
+						@include breakpoints('md') {
+							width: 100%;
+						}
 					}
 
 					&.ring-2 {
@@ -367,6 +378,11 @@ header {
 	&.loaded {
 		background-color: transparent;
 
+		@include breakpoints('md') {
+			opacity: 0;
+
+		}
+
 		.container {
 			.row {
 				.rings {
@@ -376,6 +392,10 @@ header {
 
 						img {
 							width: 20vw;
+
+							@include breakpoints('md') {
+								width: 100%;
+							}
 						}
 					}
 				}
