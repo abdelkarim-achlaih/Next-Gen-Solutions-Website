@@ -346,9 +346,11 @@ header {
 					left: 50%;
 					transform: translate(calc(-100% - 12px), -50%);
 					transition: 1s;
+					transition-delay: 4.5s;
 
 					img {
-						transition: $duration;
+						transition: 1s;
+						transition-delay: 4.5s;
 						width: 40vw;
 						position: relative;
 						animation: rotateLoader infinite 2s linear;

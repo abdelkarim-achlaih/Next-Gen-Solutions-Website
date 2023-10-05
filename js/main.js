@@ -14,13 +14,9 @@ function heroAnimationWide() {
 		},
 	});
 	load
-		.from(
-			".hero .navbar-brand",
-			{
-				x: -1500,
-			},
-			3
-		)
+		.from(".hero .navbar-brand", {
+			x: -1500,
+		})
 		.from(".hero .nav-link", {
 			y: -200,
 			stagger: 0.5,
@@ -322,7 +318,7 @@ window.onload = (_) => {
 	if (screen.width > allowedWidth) {
 		pinTitleOnScroll(".studies", 0.1);
 		pinTitleOnScroll(".contact", 1);
-		// heroAnimationWide();
+		heroAnimationWide();
 		// setTimeout(() => {
 		// 	document.querySelectorAll(".ring img").forEach((img) => {
 		// 		img.classList.add("reseized");

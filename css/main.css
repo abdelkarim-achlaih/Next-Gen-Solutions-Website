@@ -249,9 +249,11 @@ header .dropdown-menu a:hover {
   left: 50%;
   transform: translate(calc(-100% - 12px), -50%);
   transition: 1s;
+  transition-delay: 4.5s;
 }
 .site-loader .container .row .rings .ring img {
-  transition: 0.4s;
+  transition: 1s;
+  transition-delay: 4.5s;
   width: 40vw;
   position: relative;
   animation: rotateLoader infinite 2s linear;
