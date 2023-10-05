@@ -247,6 +247,7 @@ header {
 					padding: 10%;
 					position: relative;
 					left: calc(-50% - 12px);
+
 					&.reseized {
 						left: 0;
 					}
@@ -298,6 +299,17 @@ header {
 }
 
 /* End Land */
+
+.bg-particles {
+	position: absolute;
+	width: 100%;
+	height: 900vh;
+	top: 100vh;
+	left: 0;
+	background-color: red;
+	z-index: -1;
+}
+
 /* Start Sections Container */
 .sections-container {
 	position: relative;
@@ -396,7 +408,7 @@ header {
 .contact {
 	min-height: 100vh;
 	padding-top: 10vh;
-	background-color: $back1;
+	// background-color: $back1;
 
 	.title {
 		font-family: 'Bebas Neue', sans-serif;

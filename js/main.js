@@ -36,7 +36,7 @@ function heroAnimationWide() {
 		.from(
 			".hero .navbar-brand",
 			{
-				x: -500,
+				x: -1500,
 			},
 			5
 		)
@@ -57,7 +57,7 @@ function heroAnimationWide() {
 			y: -50,
 		})
 		.from(".hero .content .cta", {
-			x: -500,
+			x: -1500,
 		});
 }
 function heroAnimationMobile() {
@@ -71,7 +71,7 @@ function heroAnimationMobile() {
 		.from(
 			".hero .navbar-brand",
 			{
-				x: -500,
+				x: -1500,
 			},
 			5
 		)
@@ -85,7 +85,7 @@ function heroAnimationMobile() {
 			y: -50,
 		})
 		.from(".hero .content .cta", {
-			x: -500,
+			x: -1500,
 		});
 }
 
