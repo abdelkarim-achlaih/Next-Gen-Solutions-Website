@@ -1,61 +1,89 @@
 gsap.registerPlugin(ScrollTrigger);
 
 // ------------------------------------------- Hero Animations
-
-let load = gsap.timeline({
-	defaults: {
-		duration: 1,
-		ease: Expo.easeInOut,
-	},
-});
-gsap.to(".land .ring-1 img", {
-	rotation: 360,
-	duration: 2,
-	ease: "linear",
-	repeat: -1,
-});
-gsap.to(".land .ring-2 img", {
-	delay: 1,
-	rotation: 360,
-	duration: 2,
-	ease: "linear",
-	repeat: -1,
-});
-load
-	.from(
-		".land .ring img",
-		{
-			y: "100%",
+function heroAnimationWide() {
+	let load = gsap.timeline({
+		defaults: {
+			duration: 1,
+			ease: Expo.easeInOut,
 		},
-		2
-	)
-	.from(
-		".hero .navbar-brand",
-		{
-			x: -500,
-		},
-		5
-	)
-	.from(".hero .nav-link", {
-		y: -200,
-		stagger: 0.5,
-	})
-	.to(".land .ring img", {
-		left: 0,
-	})
-	.from(".hero .content h1", {
-		y: 250,
-		height: 0,
-		skewY: 20,
-		ease: "power2.out",
-	})
-	.from(".hero .content p", {
-		opacity: 0,
-		y: -50,
-	})
-	.from(".hero .content .cta", {
-		x: -500,
 	});
+	gsap.to(".land .ring-1 img", {
+		rotation: 360,
+		duration: 2,
+		ease: "linear",
+		repeat: -1,
+	});
+	gsap.to(".land .ring-2 img", {
+		delay: 1,
+		rotation: 360,
+		duration: 2,
+		ease: "linear",
+		repeat: -1,
+	});
+	load
+		.from(
+			".land .ring img",
+			{
+				y: "100%",
+			},
+			2
+		)
+		.from(
+			".hero .navbar-brand",
+			{
+				x: -500,
+			},
+			5
+		)
+		.from(".hero .nav-link", {
+			y: -200,
+			stagger: 0.5,
+		})
+		.to(".land .ring img", {
+			left: 0,
+		})
+		.from(".hero .content h1", {
+			y: 250,
+			height: 0,
+			skewY: 20,
+		})
+		.from(".hero .content p", {
+			opacity: 0,
+			y: -50,
+		})
+		.from(".hero .content .cta", {
+			x: -500,
+		});
+}
+function heroAnimationMobile() {
+	let loadMobile = gsap.timeline({
+		defaults: {
+			duration: 1,
+			ease: Expo.easeInOut,
+		},
+	});
+	loadMobile
+		.from(
+			".hero .navbar-brand",
+			{
+				x: -500,
+			},
+			5
+		)
+		.from(".hero .content h1", {
+			y: 250,
+			height: 0,
+			skewY: 20,
+		})
+		.from(".hero .content p", {
+			opacity: 0,
+			y: -50,
+		})
+		.from(".hero .content .cta", {
+			x: -500,
+		});
+}
 
 // ------------------------------------------- Navs Logic
 
@@ -307,6 +335,9 @@ window.onload = (_) => {
 	if (screen.width > allowedWidth) {
 		pinTitleOnScroll(".studies", 0.1);
 		pinTitleOnScroll(".contact", 1);
+		heroAnimationWide();
+	} else {
+		heroAnimationMobile();
 	}
 	pinImpactsBoxes();
 	animateContactSectionsHolder();

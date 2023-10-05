@@ -146,7 +146,6 @@ header .dropdown-menu a:hover {
   color: #87bd25;
   text-transform: uppercase;
   transition: 0.4s;
-  display: block;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -160,6 +159,11 @@ header .dropdown-menu a:hover {
   width: 100%;
   height: 100%;
 }
+@media (max-width: 991px) {
+  .hero .hero-content .land .rings {
+    display: none;
+  }
+}
 .hero .hero-content .land .ring {
   position: absolute;
   top: 0;
@@ -170,6 +174,7 @@ header .dropdown-menu a:hover {
   align-items: center;
 }
 .hero .hero-content .land .ring img {
+  padding: 10%;
   position: relative;
   left: calc(-50% - 12px);
 }
