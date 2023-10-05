@@ -6,23 +6,7 @@ particlesJS.load("particles-js", "assets/particles.json", function () {
 
 // ------------------------------------------- Hero Animations
 
-function rotateRings() {
-	gsap.to(".land .ring-1 img", {
-		rotation: 360,
-		duration: 2,
-		ease: "linear",
-		repeat: -1,
-	});
-	gsap.to(".land .ring-2 img", {
-		delay: 1,
-		rotation: 360,
-		duration: 2,
-		ease: "linear",
-		repeat: -1,
-	});
-}
 function heroAnimationWide() {
-	rotateRings();
 	let load = gsap.timeline({
 		defaults: {
 			duration: 1,
@@ -30,26 +14,12 @@ function heroAnimationWide() {
 		},
 	});
 	load
-		.from(
-			".land .ring img",
-			{
-				y: "100%",
-			},
-			2
-		)
-		.from(
-			".hero .navbar-brand",
-			{
-				x: -1500,
-			},
-			5
-		)
+		.from(".hero .navbar-brand", {
+			x: -1500,
+		})
 		.from(".hero .nav-link", {
 			y: -200,
 			stagger: 0.5,
-		})
-		.to(".land .ring img", {
-			left: 0,
 		})
 		.from(".hero .content h1", {
 			y: 250,
@@ -338,17 +308,22 @@ mobileStepsTogglers.forEach((toogler) => {
 });
 
 // ------------------------------------------- Studies + Contact Pin Animations
+
 let allowedWidth = 992;
+
 window.onload = (_) => {
+	document.querySelector(".site-loader").classList.add("loaded");
+	document.querySelector(".page").style.display = "block";
+
 	if (screen.width > allowedWidth) {
 		pinTitleOnScroll(".studies", 0.1);
 		pinTitleOnScroll(".contact", 1);
-		heroAnimationWide();
-		setTimeout(() => {
-			document.querySelectorAll(".ring img").forEach((img) => {
-				img.classList.add("reseized");
-			});
-		}, 10000);
+		// heroAnimationWide();
+		// setTimeout(() => {
+		// 	document.querySelectorAll(".ring img").forEach((img) => {
+		// 		img.classList.add("reseized");
+		// 	});
+		// }, 10000);
 	} else {
 		heroAnimationMobile();
 	}
@@ -369,14 +344,13 @@ window.onresize = (_) => {
 			ScrollTrigger.getById(".contact").kill(true);
 		}
 	}
-	if (
-		!document.querySelectorAll(".ring img")[0].classList.contains("reseized")
-	) {
-		document.querySelectorAll(".ring img").forEach((img) => {
-			img.classList.add("reseized");
-		});
-		rotateRings();
-	}
+	// if (
+	// 	!document.querySelectorAll(".ring img")[0].classList.contains("reseized")
+	// ) {
+	// 	document.querySelectorAll(".ring img").forEach((img) => {
+	// 		img.classList.add("reseized");
+	// 	});
+	// }
 	ScrollTrigger.getById("impacts-pinned").kill(true);
 	pinImpactsBoxes();
 	animateContactSectionsHolder();
