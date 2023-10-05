@@ -210,19 +210,15 @@ header {
 				}
 
 
+				.cta {
+					overflow: hidden;
+				}
 
-				a.btn {
-					border: 4px solid white;
-					color: $main;
-					text-transform: uppercase;
-					transition: $duration;
+				a {
 					width: fit-content;
-
-					&:hover {
-						background-color: $main;
-						color: $back1;
-						border-color: transparent;
-					}
+					display: block;
+					border: 1px solid $second;
+					padding: 20px;
 				}
 			}
 
@@ -251,6 +247,9 @@ header {
 					padding: 10%;
 					position: relative;
 					left: calc(-50% - 12px);
+					&.reseized {
+						left: 0;
+					}
 				}
 			}
 		}
@@ -1184,9 +1183,36 @@ header {
 		}
 	}
 
+	&.btn-overlay-white {
+		color: white;
+
+		a {
+			color: white;
+			transition: $duration;
+		}
+
+		&:hover {
+			color: $back1;
+
+			a {
+				color: $back1;
+			}
+		}
+
+		.overlayed-content {
+			&::before {
+				background-color: $second;
+			}
+		}
+	}
+
 	.overlayed-content {
 		position: relative;
 		z-index: 2;
+
+		&.link {
+			text-decoration: none;
+		}
 
 		&::before {
 			content: '';

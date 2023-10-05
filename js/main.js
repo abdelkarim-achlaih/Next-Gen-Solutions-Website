@@ -1,13 +1,8 @@
 gsap.registerPlugin(ScrollTrigger);
 
 // ------------------------------------------- Hero Animations
-function heroAnimationWide() {
-	let load = gsap.timeline({
-		defaults: {
-			duration: 1,
-			ease: Expo.easeInOut,
-		},
-	});
+
+function rotateRings() {
 	gsap.to(".land .ring-1 img", {
 		rotation: 360,
 		duration: 2,
@@ -20,6 +15,15 @@ function heroAnimationWide() {
 		duration: 2,
 		ease: "linear",
 		repeat: -1,
+	});
+}
+function heroAnimationWide() {
+	rotateRings();
+	let load = gsap.timeline({
+		defaults: {
+			duration: 1,
+			ease: Expo.easeInOut,
+		},
 	});
 	load
 		.from(
@@ -356,7 +360,14 @@ window.onresize = (_) => {
 			ScrollTrigger.getById(".contact").kill(true);
 		}
 	}
-
+	if (
+		!document.querySelectorAll(".ring img")[0].classList.contains("reseized")
+	) {
+		document.querySelectorAll(".ring img").forEach((img) => {
+			img.classList.add("reseized");
+		});
+		rotateRings();
+	}
 	ScrollTrigger.getById("impacts-pinned").kill(true);
 	pinImpactsBoxes();
 	animateContactSectionsHolder();
