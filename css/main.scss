@@ -299,15 +299,70 @@ header {
 }
 
 /* End Land */
+.page {
+	height: 100%;
+}
+
+.site-loader {
+	overflow: hidden;
+	background-color: $back1;
+	max-height: 120vh;
+	transition: $duration;
+
+	&.hide {
+		max-height: 0;
+	}
+
+	.container {
+		height: 100vh;
+
+		.rings {
+			position: relative;
+			height: 100%;
+
+			.ring {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+
+				img {
+					width: 40vw;
+					animation: rotateLoader infinite 2s linear;
+				}
+
+				&.ring-2 {
+					img {
+						animation-delay: 0.5s;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+@keyframes rotateLoader {
+	from {
+		transform: rotate(0);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
 
 .bg-particles {
 	position: absolute;
 	width: 100%;
-	height: 900vh;
+	height: 1000vh;
 	top: 100vh;
 	left: 0;
-	background-color: red;
-	z-index: -1;
+	z-index: 1000;
+
+	div {
+		height: 100%;
+	}
 }
 
 /* Start Sections Container */
@@ -408,7 +463,7 @@ header {
 .contact {
 	min-height: 100vh;
 	padding-top: 10vh;
-	// background-color: $back1;
+	background-color: $back1;
 
 	.title {
 		font-family: 'Bebas Neue', sans-serif;
@@ -436,6 +491,8 @@ header {
 
 	.discover {
 		padding: 0 15vw;
+		position: relative;
+		z-index: 80000;
 
 		@include breakpoints_xs {
 			padding: 0;

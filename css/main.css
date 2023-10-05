@@ -207,14 +207,58 @@ header .dropdown-menu a:hover {
   }
 }
 /* End Land */
+.page {
+  height: 100%;
+}
+
+.site-loader {
+  overflow: hidden;
+  background-color: #111111;
+  max-height: 120vh;
+  transition: 0.4s;
+}
+.site-loader.hide {
+  max-height: 0;
+}
+.site-loader .container {
+  height: 100vh;
+}
+.site-loader .container .rings {
+  position: relative;
+  height: 100%;
+}
+.site-loader .container .rings .ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.site-loader .container .rings .ring img {
+  width: 40vw;
+  animation: rotateLoader infinite 2s linear;
+}
+.site-loader .container .rings .ring.ring-2 img {
+  animation-delay: 0.5s;
+}
+
+@keyframes rotateLoader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .bg-particles {
   position: absolute;
   width: 100%;
-  height: 900vh;
+  height: 1000vh;
   top: 100vh;
   left: 0;
-  background-color: red;
-  z-index: -1;
+  z-index: 1000;
+}
+.bg-particles div {
+  height: 100%;
 }
 
 /* Start Sections Container */
@@ -297,6 +341,7 @@ header .dropdown-menu a:hover {
 .contact {
   min-height: 100vh;
   padding-top: 10vh;
+  background-color: #111111;
 }
 .panel .title,
 .years .title,
@@ -328,6 +373,8 @@ header .dropdown-menu a:hover {
 }
 .years .discover {
   padding: 0 15vw;
+  position: relative;
+  z-index: 80000;
 }
 @media (max-width: 575px) {
   .years .discover {
