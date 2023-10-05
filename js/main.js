@@ -340,6 +340,11 @@ window.onload = (_) => {
 		pinTitleOnScroll(".studies", 0.1);
 		pinTitleOnScroll(".contact", 1);
 		heroAnimationWide();
+		setTimeout(() => {
+			document.querySelectorAll(".ring img").forEach((img) => {
+				img.classList.add("reseized");
+			});
+		}, 10000);
 	} else {
 		heroAnimationMobile();
 	}
