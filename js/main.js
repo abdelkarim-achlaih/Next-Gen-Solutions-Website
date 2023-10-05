@@ -14,9 +14,13 @@ function heroAnimationWide() {
 		},
 	});
 	load
-		.from(".hero .navbar-brand", {
-			x: -1500,
-		})
+		.from(
+			".hero .navbar-brand",
+			{
+				x: -1500,
+			},
+			3
+		)
 		.from(".hero .nav-link", {
 			y: -200,
 			stagger: 0.5,

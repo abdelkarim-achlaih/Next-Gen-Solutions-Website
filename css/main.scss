@@ -324,7 +324,7 @@ header {
 	height: 100vh;
 	overflow: hidden;
 	z-index: 3;
-	// background-color: $back1;
+	background-color: $back1;
 	max-height: 120vh;
 	transition: $duration;
 
@@ -365,6 +365,8 @@ header {
 	}
 
 	&.loaded {
+		background-color: transparent;
+
 		.container {
 			.row {
 				.rings {

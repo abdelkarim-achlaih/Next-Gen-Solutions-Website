@@ -232,6 +232,7 @@ header .dropdown-menu a:hover {
   height: 100vh;
   overflow: hidden;
   z-index: 3;
+  background-color: #111111;
   max-height: 120vh;
   transition: 0.4s;
 }
@@ -257,6 +258,9 @@ header .dropdown-menu a:hover {
 }
 .site-loader .container .row .rings .ring.ring-2 img {
   animation-delay: 0.5s;
+}
+.site-loader.loaded {
+  background-color: transparent;
 }
 .site-loader.loaded .container .row .rings .ring {
   transform: translate(-50%, -50%);
