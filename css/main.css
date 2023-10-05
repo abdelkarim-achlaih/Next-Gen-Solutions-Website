@@ -505,6 +505,9 @@ header .dropdown-menu a:hover {
 .impacts .container {
   margin-top: 100px;
 }
+.impacts .impacts-pinned {
+  z-index: 80000;
+}
 .impacts .impact {
   position: relative;
   text-align: center;
@@ -518,6 +521,7 @@ header .dropdown-menu a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 80000;
 }
 .impacts .impact.impact-1 {
   aspect-ratio: unset;
@@ -584,7 +588,7 @@ header .dropdown-menu a:hover {
   padding-top: 0;
   height: auto;
   position: relative;
-  z-index: 100;
+  z-index: 800001;
   min-height: auto;
 }
 .steps .title-container {

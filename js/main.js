@@ -1,8 +1,4 @@
 gsap.registerPlugin(ScrollTrigger);
-/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-particlesJS.load("particles-js", "assets/particles.json", function () {
-	console.log("callback - particles.js config loaded");
-});
 
 // ------------------------------------------- Hero Animations
 
@@ -314,6 +310,10 @@ let allowedWidth = 992;
 window.onload = (_) => {
 	document.querySelector(".site-loader").classList.add("loaded");
 	document.querySelector(".page").style.display = "block";
+	/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+	particlesJS.load("particles-js", "assets/particles.json", function () {
+		console.log("callback - particles.js config loaded");
+	});
 
 	if (screen.width > allowedWidth) {
 		pinTitleOnScroll(".studies", 0.1);

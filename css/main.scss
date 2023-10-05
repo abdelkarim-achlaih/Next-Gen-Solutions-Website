@@ -332,8 +332,6 @@ header {
 		max-height: 0;
 	}
 
-
-
 	.container {
 		.row {
 			.rings {
@@ -648,6 +646,10 @@ header {
 		margin-top: 100px;
 	}
 
+	.impacts-pinned {
+		z-index: 80000;
+	}
+
 	.impact {
 		position: relative;
 		text-align: center;
@@ -662,6 +664,7 @@ header {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		z-index: 80000;
 
 		&.impact-1 {
 			aspect-ratio: unset;
@@ -749,7 +752,7 @@ header {
 	padding-top: 0;
 	height: auto;
 	position: relative;
-	z-index: 100;
+	z-index: 800001;
 	min-height: auto;
 
 	.title-container {
