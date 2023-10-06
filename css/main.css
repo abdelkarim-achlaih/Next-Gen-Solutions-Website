@@ -257,16 +257,18 @@ html.lenis {
 .hero .hero-content .header-mobile.show {
   max-height: 120vh;
 }
+.hero .hero-content .header-mobile div {
+  position: relative;
+  margin-bottom: 20px;
+  counter-increment: linkCounter;
+}
 .hero .hero-content .header-mobile a {
   font-family: "Bebas Neue", sans-serif;
   color: white;
-  position: relative;
   font-size: 7vw;
   padding-left: 80px;
   display: block;
   height: 35px;
-  margin-bottom: 20px;
-  counter-increment: linkCounter;
   transition: 0.4s;
   display: flex;
   align-items: center;
