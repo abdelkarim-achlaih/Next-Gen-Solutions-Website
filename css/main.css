@@ -212,6 +212,12 @@ html.lenis {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  display: none;
+}
+@media (max-width: 991px) {
+  .hero .hero-content header .btn-header {
+    display: flex;
+  }
 }
 .hero .hero-content header .btn-header:focus {
   box-shadow: none;
@@ -253,9 +259,15 @@ html.lenis {
   max-height: 0;
   overflow: hidden;
   transition: 0.4s;
+  display: none;
 }
 .hero .hero-content .header-mobile.show {
   max-height: 120vh;
+}
+@media (max-width: 991px) {
+  .hero .hero-content .header-mobile {
+    display: block;
+  }
 }
 .hero .hero-content .header-mobile div {
   position: relative;

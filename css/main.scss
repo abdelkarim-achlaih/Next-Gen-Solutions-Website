@@ -265,6 +265,12 @@ html.lenis {
 				width: fit-content;
 				cursor: pointer;
 				user-select: none;
+				display: none;
+
+				@include breakpoints('md') {
+					display: flex;
+
+				}
 
 				&:focus {
 					box-shadow: none;
@@ -317,9 +323,14 @@ html.lenis {
 			max-height: 0;
 			overflow: hidden;
 			transition: $duration;
+			display: none;
 
 			&.show {
 				max-height: 120vh;
+			}
+
+			@include breakpoints('md') {
+				display: block;
 			}
 
 			div {
