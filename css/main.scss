@@ -94,70 +94,224 @@ html.lenis {
 }
 
 // End Components
-/* Start Header */
-header {
-	height: 72px;
-	position: relative;
-	z-index: 1000;
+.page {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
 
-	.navbar-brand {
-		img {
-			width: 200px;
+// .site-bg {
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	z-index: 1;
+// 	width: 100%;
+// 	height: 100vh;
+// 	background-image: url(../images/hero.jpg);
+// 	background-size: cover;
+// }
+
+.site-loader {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	overflow: hidden;
+	z-index: 99;
+	background-color: $back1;
+	max-height: 120vh;
+	transition: $duration;
+
+	.container {
+		height: calc(100vh - 72px);
+
+		.row {
+			height: 100%;
+
+			.rings {
+				height: 100%;
+				position: relative;
+				transition: $duration;
+				top: 72px;
+
+				.ring {
+					position: absolute;
+					width: 100%;
+					top: 50%;
+					left: 50%;
+					transform: translate(calc(-100% - 12px), -50%);
+					transition: 1s;
+					transition-delay: 4.5s;
+					text-align: center;
+
+					@include breakpoints('md') {
+						transform: translate(-50%, -50%);
+					}
+
+					img {
+						transition: 1s;
+						transition-delay: 4.5s;
+						width: 40vw;
+						position: relative;
+						animation: rotateLoader infinite 2s linear;
+
+						@include breakpoints('md') {
+							width: 100%;
+						}
+					}
+
+					&.ring-2 {
+						img {
+							animation-delay: 0.5s;
+						}
+					}
+				}
+			}
+		}
+
+		@include breakpoints('md') {
+			height: 100%;
+
+			.row {
+				height: 100%;
+				position: relative;
+
+				.col-lg-6 {
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+					width: 100%;
+
+					.rings {
+						top: unset;
+					}
+				}
+			}
 		}
 	}
 
-	.navbar-toggler {
-		border-color: white;
-		color: white;
+	&.loaded {
+		background-color: transparent;
 
-		&:focus {
-			box-shadow: none;
-			border-color: $main;
+		@include breakpoints('md') {
+			opacity: 0;
+
 		}
-	}
 
-	.navbar-brand svg {
-		color: white;
-		font-size: 30px;
+		.container {
+			.row {
+				.rings {
 
-		&:hover {
-			color: $main;
-		}
-	}
+					.ring {
+						transform: translate(-50%, -50%);
 
-	.nav-link {
-		color: white;
-		text-transform: capitalize;
+						img {
+							width: 25vw;
 
-		&:hover,
-		&.active,
-		&:focus {
-			color: $main !important;
-		}
-	}
-
-	.dropdown-menu {
-		background-color: $back2;
-
-
-		a {
-			color: white;
-			transition: $duration;
-
-			&:hover {
-				background-color: $main;
+							@include breakpoints('md') {
+								width: 100%;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
 }
 
-/* End Header */
-/* Start Land */
+@keyframes rotateLoader {
+	from {
+		transform: rotate(0);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Start Hero */
 .hero {
 	height: 100vh;
 	overflow: hidden;
 
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		background-color: $back1;
+		background-image: url(../images/hero.jpg);
+		background-size: contain;
+	}
+
 	.hero-content {
+		position: absolute;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		z-index: 100;
+		width: 100%;
+		height: 100%;
+
+		header {
+			height: 72px;
+
+			.navbar-brand {
+				img {
+					width: 200px;
+				}
+			}
+
+			.navbar-toggler {
+				border-color: white;
+				color: white;
+
+				&:focus {
+					box-shadow: none;
+					border-color: $main;
+				}
+			}
+
+			.navbar-brand svg {
+				color: white;
+				font-size: 30px;
+
+				&:hover {
+					color: $main;
+				}
+			}
+
+			.nav-link {
+				color: white;
+				text-transform: capitalize;
+
+				&:hover,
+				&.active,
+				&:focus {
+					color: $main !important;
+				}
+			}
+
+			.dropdown-menu {
+				background-color: $back2;
+
+
+				a {
+					color: white;
+					transition: $duration;
+
+					&:hover {
+						background-color: $main;
+					}
+				}
+			}
+		}
 
 		.land {
 			height: calc(100vh - 72px);
@@ -219,48 +373,11 @@ header {
 					padding: 20px;
 				}
 			}
-
-			.rings {
-				position: relative;
-				width: 100%;
-				height: 100%;
-
-				@include breakpoints('md') {
-					display: none;
-				}
-			}
-
-
-
-			.ring {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				display: flex;
-				align-items: center;
-
-				img {
-					padding: 10%;
-					position: relative;
-					left: calc(-50% - 12px);
-
-					&.reseized {
-						left: 0;
-					}
-				}
-			}
 		}
 	}
 }
 
 @include breakpoints('md') {
-	header {
-		height: auto;
-		margin-bottom: 50px;
-	}
-
 	.hero {
 		min-height: 100vh;
 		overflow: auto;
@@ -275,6 +392,11 @@ header {
 		}
 
 		.hero-content {
+			header {
+				height: auto;
+				margin-bottom: 50px;
+			}
+
 			.land {
 				height: auto;
 
@@ -297,122 +419,8 @@ header {
 	}
 }
 
-/* End Land */
-.page {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 3;
-	width: 100%;
-}
+/* End Hero */
 
-.site-bg {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1;
-	width: 100%;
-	height: 100vh;
-	background-image: url(../images/hero.jpg);
-	background-size: cover;
-}
-
-.site-loader {
-	position: absolute;
-	width: 100%;
-	top: 0;
-	left: 0;
-	height: 100vh;
-	overflow: hidden;
-	z-index: 2;
-	background-color: $back1;
-	max-height: 120vh;
-	transition: $duration;
-
-	&.hide {
-		max-height: 0;
-	}
-
-	.container {
-		.row {
-			.rings {
-				height: 100vh;
-				position: relative;
-
-				.ring {
-					position: absolute;
-					width: 100%;
-					top: 50%;
-					left: 50%;
-					transform: translate(calc(-100% - 12px), -50%);
-					transition: 1s;
-					transition-delay: 4.5s;
-					text-align: center;
-
-					@include breakpoints('md') {
-						transform: translate(-50%, -50%);
-					}
-
-					img {
-						transition: 1s;
-						transition-delay: 4.5s;
-						width: 40vw;
-						position: relative;
-						animation: rotateLoader infinite 2s linear;
-
-						@include breakpoints('md') {
-							width: 100%;
-						}
-					}
-
-					&.ring-2 {
-						img {
-							animation-delay: 0.5s;
-						}
-					}
-				}
-			}
-		}
-	}
-
-	&.loaded {
-		background-color: transparent;
-
-		@include breakpoints('md') {
-			opacity: 0;
-
-		}
-
-		.container {
-			.row {
-				.rings {
-
-					.ring {
-						transform: translate(-50%, -50%);
-
-						img {
-							width: 20vw;
-
-							@include breakpoints('md') {
-								width: 100%;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-@keyframes rotateLoader {
-	from {
-		transform: rotate(0);
-	}
-
-	to {
-		transform: rotate(360deg);
-	}
-}
 
 .bg-particles {
 	position: absolute;
