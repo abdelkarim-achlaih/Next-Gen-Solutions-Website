@@ -171,8 +171,9 @@ html.lenis {
 }
 /* Start Hero */
 .hero {
+  min-height: 100vh;
   height: 100vh;
-  overflow: hidden;
+  position: relative;
 }
 .hero::before {
   content: "";
@@ -197,6 +198,7 @@ html.lenis {
 }
 .hero .hero-content header {
   height: 72px;
+  overflow: hidden;
 }
 .hero .hero-content header .navbar-brand img {
   width: 200px;
@@ -273,30 +275,18 @@ html.lenis {
   border: 1px solid #c5f404;
   padding: 20px;
 }
-
 @media (max-width: 991px) {
   .hero {
-    min-height: 100vh;
-    overflow: auto;
-    height: auto;
-  }
-  .hero .container {
-    height: auto;
-  }
-  .hero .container .row {
     height: auto;
   }
   .hero .hero-content header {
     height: auto;
-    margin-bottom: 50px;
   }
   .hero .hero-content .land {
     height: auto;
   }
-  .hero .hero-content .land .gallery .img-container {
-    display: none;
-  }
 }
+
 @media (max-width: 575px) {
   .hero h1 {
     margin-bottom: 20px !important;

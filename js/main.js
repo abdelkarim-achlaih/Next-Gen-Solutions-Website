@@ -10,23 +10,23 @@ function heroAnimationWide() {
 		},
 	});
 	load
-		.from(".hero .navbar-brand", {
+		.from("header .navbar-brand", {
 			x: -1500,
 		})
-		.from(".hero .nav-link", {
+		.from("header .nav-link", {
 			y: -200,
 			stagger: 0.5,
 		})
-		.from(".hero .content h1", {
+		.from(".hero .land h1", {
 			y: 250,
 			height: 0,
 			skewY: 20,
 		})
-		.from(".hero .content p", {
+		.from(".hero .land p", {
 			opacity: 0,
 			y: -50,
 		})
-		.from(".hero .content .cta", {
+		.from(".hero .land .cta", {
 			x: -1500,
 		});
 }
@@ -38,19 +38,19 @@ function heroAnimationMobile() {
 		},
 	});
 	loadMobile
-		.from(".hero .navbar-brand", {
+		.from("header .navbar-brand", {
 			x: -1500,
 		})
-		.from(".hero .content h1", {
+		.from(".hero .land h1", {
 			y: 250,
 			height: 0,
 			skewY: 20,
 		})
-		.from(".hero .content p", {
+		.from(".hero .land p", {
 			opacity: 0,
 			y: -50,
 		})
-		.from(".hero .content .cta", {
+		.from(".hero .land .cta", {
 			x: -1500,
 		});
 }
