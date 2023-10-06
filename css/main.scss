@@ -259,22 +259,23 @@ html.lenis {
 				}
 			}
 
-			.navbar-toggler {
+			.btn-header {
 				border-color: white;
 				color: white;
+				width: fit-content;
+				cursor: pointer;
+				user-select: none;
 
 				&:focus {
 					box-shadow: none;
 					border-color: $main;
 				}
-			}
 
-			.navbar-brand svg {
-				color: white;
-				font-size: 30px;
-
-				&:hover {
-					color: $main;
+				span {
+					width: fit-content;
+					display: block;
+					border: 1px solid $second;
+					padding: 10px 15px;
 				}
 			}
 
@@ -1307,6 +1308,10 @@ html.lenis {
 
 		&:hover {
 			color: $back1;
+
+			.overlayed-content {
+				color: $back1;
+			}
 
 			a {
 				color: $back1;

@@ -203,20 +203,26 @@ html.lenis {
 .hero .hero-content header .navbar-brand img {
   width: 200px;
 }
-.hero .hero-content header .navbar-toggler {
+.hero .hero-content header .btn-header {
   border-color: white;
   color: white;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
-.hero .hero-content header .navbar-toggler:focus {
+.hero .hero-content header .btn-header:focus {
   box-shadow: none;
   border-color: #87bd25;
 }
-.hero .hero-content header .navbar-brand svg {
-  color: white;
-  font-size: 30px;
-}
-.hero .hero-content header .navbar-brand svg:hover {
-  color: #87bd25;
+.hero .hero-content header .btn-header span {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
+  border: 1px solid #c5f404;
+  padding: 10px 15px;
 }
 .hero .hero-content header .nav-link {
   color: white;
@@ -1057,6 +1063,9 @@ html.lenis {
   transition: 0.4s;
 }
 .btn-overlay.btn-overlay-white:hover {
+  color: #111111;
+}
+.btn-overlay.btn-overlay-white:hover .overlayed-content {
   color: #111111;
 }
 .btn-overlay.btn-overlay-white:hover a {
