@@ -305,6 +305,74 @@ html.lenis {
 			}
 		}
 
+		.header-mobile {
+			position: absolute;
+			top: 72px;
+			left: 0;
+			z-index: 100;
+			width: 100%;
+			height: calc(100% - 72px);
+			background-color: $back1;
+			padding-top: 20px;
+			max-height: 0;
+			overflow: hidden;
+			transition: $duration;
+
+			&.show {
+				max-height: 120vh;
+			}
+
+			a {
+				font-family: 'Bebas Neue', sans-serif;
+				color: white;
+				position: relative;
+				font-size: 7vw;
+				padding-left: 80px;
+				display: block;
+				height: 35px;
+				margin-bottom: 20px;
+				counter-increment: linkCounter;
+				transition: $duration;
+				display: flex;
+				align-items: center;
+				transform: scaleY(1.3);
+
+				&:hover,
+				&[aria-current="page"] {
+					color: $second;
+					height: 60px;
+
+					&::after {
+						height: 40px;
+						color: $back1;
+						background-color: $second;
+						border-color: transparent;
+					}
+				}
+
+				&::after {
+					transform: scaleY(1);
+					content: counter(linkCounter);
+					position: absolute;
+					top: 50%;
+					left: 40px;
+					transform: translate(-50%, -50%);
+					width: 30px;
+					height: 30px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					color: white;
+					border: 1px solid white;
+					z-index: 100;
+					background-color: transparent;
+					border-radius: 50rem;
+					transition: $duration;
+					font-size: 5vw;
+				}
+			}
+		}
+
 		.land {
 			height: calc(100vh - 72px);
 

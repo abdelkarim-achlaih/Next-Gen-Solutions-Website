@@ -241,6 +241,67 @@ html.lenis {
 .hero .hero-content header .dropdown-menu a:hover {
   background-color: #87bd25;
 }
+.hero .hero-content .header-mobile {
+  position: absolute;
+  top: 72px;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: calc(100% - 72px);
+  background-color: #111111;
+  padding-top: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s;
+}
+.hero .hero-content .header-mobile.show {
+  max-height: 120vh;
+}
+.hero .hero-content .header-mobile a {
+  font-family: "Bebas Neue", sans-serif;
+  color: white;
+  position: relative;
+  font-size: 7vw;
+  padding-left: 80px;
+  display: block;
+  height: 35px;
+  margin-bottom: 20px;
+  counter-increment: linkCounter;
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+  transform: scaleY(1.3);
+}
+.hero .hero-content .header-mobile a:hover, .hero .hero-content .header-mobile a[aria-current=page] {
+  color: #c5f404;
+  height: 60px;
+}
+.hero .hero-content .header-mobile a:hover::after, .hero .hero-content .header-mobile a[aria-current=page]::after {
+  height: 40px;
+  color: #111111;
+  background-color: #c5f404;
+  border-color: transparent;
+}
+.hero .hero-content .header-mobile a::after {
+  transform: scaleY(1);
+  content: counter(linkCounter);
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: 1px solid white;
+  z-index: 100;
+  background-color: transparent;
+  border-radius: 50rem;
+  transition: 0.4s;
+  font-size: 5vw;
+}
 .hero .hero-content .land {
   height: calc(100vh - 72px);
 }
