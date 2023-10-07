@@ -203,6 +203,13 @@ html.lenis {
 .hero .hero-content header .navbar-brand img {
   width: 200px;
 }
+@media (max-width: 575px) {
+  .hero .hero-content header .navbar-brand img {
+    width: -moz-fit-content;
+    width: fit-content;
+    width: 45vw;
+  }
+}
 .hero .hero-content header .btn-header {
   border-color: white;
   color: white;

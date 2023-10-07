@@ -256,6 +256,11 @@ html.lenis {
 			.navbar-brand {
 				img {
 					width: 200px;
+
+					@include breakpoints('xs') {
+						width: fit-content;
+						width: 45vw;
+					}
 				}
 			}
 
