@@ -63,6 +63,9 @@ function heroAnimationMobile() {
 		.from("header .navbar-brand", {
 			x: -1500,
 		})
+		.from("header .btn-header span", {
+			x: 1500,
+		})
 		.from(".hero .land h1", {
 			y: 250,
 			height: 0,
