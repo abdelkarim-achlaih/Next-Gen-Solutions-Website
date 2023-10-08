@@ -110,12 +110,17 @@ html.lenis {
 	overflow: hidden;
 	z-index: 99;
 	background-color: $back1;
-	max-height: 120vh;
 	transition: $duration;
 
 	.container {
 		position: relative;
-		height: calc(100vh - 100px);
+		height: calc(100% - 100px);
+		top: 100px;
+
+		@include breakpoints('md') {
+			height: 100%;
+			top: 0;
+		}
 
 		.row {
 			height: 100%;
@@ -124,7 +129,6 @@ html.lenis {
 				height: 100%;
 				position: relative;
 				transition: $duration;
-				top: 100px;
 
 				.ring {
 					position: absolute;
@@ -132,9 +136,11 @@ html.lenis {
 					top: 50%;
 					left: 50%;
 					transform: translate(calc(-100% - 12px), -50%);
-					text-align: center;
 					transition-duration: 1s;
 					transition-delay: 4.5s;
+					display: flex;
+					align-items: center;
+					justify-content: center;
 
 					@include breakpoints('md') {
 						transform: translate(-50%, -50%);
@@ -142,7 +148,6 @@ html.lenis {
 
 					img {
 						width: 40vw;
-						position: relative;
 						animation: rotateLoader infinite 2s linear;
 						transition-duration: 1s;
 						transition-delay: 4.5s;

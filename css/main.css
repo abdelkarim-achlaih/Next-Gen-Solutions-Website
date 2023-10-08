@@ -77,12 +77,18 @@ html.lenis {
   overflow: hidden;
   z-index: 99;
   background-color: #111111;
-  max-height: 120vh;
   transition: 0.4s;
 }
 .site-loader .container {
   position: relative;
-  height: calc(100vh - 100px);
+  height: calc(100% - 100px);
+  top: 100px;
+}
+@media (max-width: 991px) {
+  .site-loader .container {
+    height: 100%;
+    top: 0;
+  }
 }
 .site-loader .container .row {
   height: 100%;
@@ -91,7 +97,6 @@ html.lenis {
   height: 100%;
   position: relative;
   transition: 0.4s;
-  top: 100px;
 }
 .site-loader .container .row .rings .ring {
   position: absolute;
@@ -99,9 +104,11 @@ html.lenis {
   top: 50%;
   left: 50%;
   transform: translate(calc(-100% - 12px), -50%);
-  text-align: center;
   transition-duration: 1s;
   transition-delay: 4.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 991px) {
   .site-loader .container .row .rings .ring {
@@ -110,7 +117,6 @@ html.lenis {
 }
 .site-loader .container .row .rings .ring img {
   width: 40vw;
-  position: relative;
   animation: rotateLoader infinite 2s linear;
   transition-duration: 1s;
   transition-delay: 4.5s;
