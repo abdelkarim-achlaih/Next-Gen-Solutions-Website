@@ -974,6 +974,8 @@ html.lenis {
 				color: white;
 				margin: 0;
 				transition: $duration;
+				cursor: pointer;
+				user-select: none;
 
 				&.active {
 					color: $second;

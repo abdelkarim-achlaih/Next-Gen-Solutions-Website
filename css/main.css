@@ -809,6 +809,10 @@ html.lenis {
   color: white;
   margin: 0;
   transition: 0.4s;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .steps .steps-container-mobile .step-mobile .step-mobile-toogler.active {
   color: #c5f404;
