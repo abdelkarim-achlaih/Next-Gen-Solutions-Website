@@ -81,7 +81,8 @@ html.lenis {
   transition: 0.4s;
 }
 .site-loader .container {
-  height: calc(100vh - 72px);
+  position: relative;
+  height: calc(100vh - 100px);
 }
 .site-loader .container .row {
   height: 100%;
@@ -90,7 +91,7 @@ html.lenis {
   height: 100%;
   position: relative;
   transition: 0.4s;
-  top: 72px;
+  top: 100px;
 }
 .site-loader .container .row .rings .ring {
   position: absolute;
@@ -98,9 +99,9 @@ html.lenis {
   top: 50%;
   left: 50%;
   transform: translate(calc(-100% - 12px), -50%);
-  transition: 1s;
-  transition-delay: 4.5s;
   text-align: center;
+  transition-duration: 1s;
+  transition-delay: 4.5s;
 }
 @media (max-width: 991px) {
   .site-loader .container .row .rings .ring {
@@ -108,11 +109,11 @@ html.lenis {
   }
 }
 .site-loader .container .row .rings .ring img {
-  transition: 1s;
-  transition-delay: 4.5s;
   width: 40vw;
   position: relative;
   animation: rotateLoader infinite 2s linear;
+  transition-duration: 1s;
+  transition-delay: 4.5s;
 }
 @media (max-width: 991px) {
   .site-loader .container .row .rings .ring img {
