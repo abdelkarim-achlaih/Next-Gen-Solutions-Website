@@ -183,8 +183,8 @@ panels.forEach((panel) => {
 
 gsap.from(".years .container-fluid div, .years .stagger", {
 	scrollTrigger: {
-		toggleActions: "restart none none none",
-		trigger: ".years",
+		toggleActions: "restart none none reverse",
+		trigger: ".years .title",
 		start: "-600px top",
 		end: "bottom center",
 	},
@@ -205,7 +205,7 @@ animatedTitleSections.forEach((title) => {
 			trigger: title,
 			start: "-300px top",
 			end: "bottom center",
-			toggleActions: "restart none none none",
+			toggleActions: "restart none none reverse",
 		},
 		opacity: 0,
 		duration: 0.7,
@@ -235,7 +235,7 @@ gsap.from(".impacts .impact .number", {
 		trigger: ".impacts .container",
 		start: "-300px top",
 		end: "bottom center",
-		toggleActions: "restart none none none",
+		toggleActions: "restart none none reverse",
 	},
 	innerHTML: 0,
 	snap: { innerHTML: 1 },
@@ -247,7 +247,7 @@ gsap.from(".impacts .impact", {
 		trigger: ".impacts .container",
 		start: "-600px top",
 		end: "bottom center",
-		toggleActions: "restart none none reset",
+		toggleActions: "restart none none reverse",
 	},
 	y: 300,
 	opacity: 0,
@@ -279,7 +279,7 @@ gsap.from(".steps .stagger", {
 		trigger: ".steps .title",
 		start: "-300px top",
 		end: "bottom center",
-		toggleActions: "restart none none none",
+		toggleActions: "restart none none reverse",
 		scrub: true,
 	},
 	opacity: 0.1,
@@ -360,13 +360,6 @@ window.onresize = (_) => {
 			ScrollTrigger.getById(".contact").kill(true);
 		}
 	}
-	// if (
-	// 	!document.querySelectorAll(".ring img")[0].classList.contains("reseized")
-	// ) {
-	// 	document.querySelectorAll(".ring img").forEach((img) => {
-	// 		img.classList.add("reseized");
-	// 	});
-	// }
 	ScrollTrigger.getById("impacts-pinned").kill(true);
 	pinImpactsBoxes();
 	animateContactSectionsHolder();
