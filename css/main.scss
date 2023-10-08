@@ -509,7 +509,7 @@ html.lenis {
 		position: absolute;
 		top: 0;
 		left: 20px;
-		z-index: 1000;
+		z-index: 8000000;
 
 		@include breakpoints('sm') {
 			display: none;
@@ -606,7 +606,13 @@ html.lenis {
 	}
 }
 
+.missions {
+	height: 300vh;
+}
+
 .years {
+	margin-top: 300vh;
+
 	.title {
 		margin-bottom: 40px;
 	}
@@ -842,8 +848,8 @@ html.lenis {
 }
 
 .steps {
-	padding-top: 0;
 	height: auto;
+	padding-top: 0;
 	position: relative;
 	z-index: 800001;
 	min-height: auto;
