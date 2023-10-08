@@ -330,10 +330,7 @@ let allowedWidth = 992;
 
 window.onload = (_) => {
 	document.querySelector(".page").style.display = "block";
-	/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-	// particlesJS.load("particles-js", "assets/particles.json", function () {
-	// 	console.log("callback - particles.js config loaded");
-	// });
+	particlesJS.load("particles-js", "assets/particles.json");
 	if (screen.width > allowedWidth) {
 		pinTitleOnScroll(".studies", 0.1);
 		pinTitleOnScroll(".contact", 1);
