@@ -1015,6 +1015,8 @@ html.lenis {
 	padding-bottom: 100px;
 	border-bottom: 1px solid;
 	overflow: hidden;
+	position: relative;
+	z-index: 800001;
 
 	.title {
 		padding: 0;

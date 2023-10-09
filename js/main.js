@@ -91,7 +91,7 @@ function canvasHeightCalc() {
 	let id = "particles-js";
 	canvasEle.id = id;
 	canvasContainer.append(canvasEle);
-	particlesJS.load(id, "assets/particles.json");
+	// particlesJS.load(id, "assets/particles.json");
 }
 // ------------------------------------------- Navs Logic
 
@@ -279,8 +279,6 @@ function pinImpactsBoxes() {
 			start: `100% ${impactBoxHeight}px`,
 			end: `200% ${impactBoxHeight * 1.5}px`,
 			pin: true,
-			pinSpacing: false,
-			pinnedContainer: ".impacts",
 		},
 	});
 }
@@ -299,10 +297,6 @@ gsap.from(".steps .stagger", {
 	duration: 0.3,
 	stagger: 0.3,
 });
-
-navsStepsPinAnimation(navsSteps[0]);
-navsStepsPinAnimation(navsSteps[1]);
-navsStepsPinAnimation(navsSteps[2], "transform");
 
 function navsStepsPinAnimation(step, pinType = "fixed") {
 	gsap.from(step.querySelector("img"), {
@@ -338,45 +332,6 @@ mobileStepsTogglers.forEach((toogler) => {
 });
 
 // ------------------------------------------- Studies + Contact Pin Animations
-
-let allowedWidth = 992;
-
-window.onload = (_) => {
-	document.querySelector(".page").style.display = "block";
-	document.querySelector(".site-loader").classList.add("loaded");
-	if (screen.width > allowedWidth) {
-		pinTitleOnScroll(".studies", 0.1);
-		pinTitleOnScroll(".contact", 1);
-		heroAnimationWide();
-	} else {
-		heroAnimationMobile();
-	}
-	pinImpactsBoxes();
-	animateContactSectionsHolder();
-	setTimeout(() => {
-		canvasHeightCalc();
-	}, 5000);
-};
-
-window.onresize = (_) => {
-	if (screen.width > allowedWidth) {
-		if (typeof ScrollTrigger.getById(".studies") !== "undefined") {
-			ScrollTrigger.getById(".studies").kill(true);
-			ScrollTrigger.getById(".contact").kill(true);
-		}
-		pinTitleOnScroll(".studies", 0.1);
-		pinTitleOnScroll(".contact", 1);
-	} else {
-		if (typeof ScrollTrigger.getById(".studies") !== "undefined") {
-			ScrollTrigger.getById(".studies").kill(true);
-			ScrollTrigger.getById(".contact").kill(true);
-		}
-	}
-	ScrollTrigger.getById("impacts-pinned").kill(true);
-	pinImpactsBoxes();
-	animateContactSectionsHolder();
-	canvasHeightCalc();
-};
 
 function pinTitleOnScroll(str, fromOpacity) {
 	let coor = document.querySelector(`${str} .holder`).getBoundingClientRect();
@@ -425,3 +380,48 @@ function gsapAnimationInit(x) {
 }
 
 translateDescription(".contact", 150);
+
+// ------------------------------------------- Window Events
+
+let allowedWidth = 992;
+
+window.onload = (_) => {
+	console.log(window.innerWidth);
+	document.querySelector(".page").style.display = "block";
+	document.querySelector(".site-loader").classList.add("loaded");
+	if (window.innerWidth > allowedWidth) {
+		pinTitleOnScroll(".studies", 0.1);
+		pinTitleOnScroll(".contact", 1);
+		heroAnimationWide();
+		navsStepsPinAnimation(navsSteps[0]);
+		navsStepsPinAnimation(navsSteps[1]);
+		navsStepsPinAnimation(navsSteps[2], "transform");
+	} else {
+		heroAnimationMobile();
+	}
+	pinImpactsBoxes();
+	animateContactSectionsHolder();
+	setTimeout(() => {
+		canvasHeightCalc();
+	}, 5000);
+};
+
+window.onresize = (_) => {
+	if (window.innerWidth > allowedWidth) {
+		if (typeof ScrollTrigger.getById(".studies") !== "undefined") {
+			ScrollTrigger.getById(".studies").kill(true);
+			ScrollTrigger.getById(".contact").kill(true);
+		}
+		pinTitleOnScroll(".studies", 0.1);
+		pinTitleOnScroll(".contact", 1);
+	} else {
+		if (typeof ScrollTrigger.getById(".studies") !== "undefined") {
+			ScrollTrigger.getById(".studies").kill(true);
+			ScrollTrigger.getById(".contact").kill(true);
+		}
+	}
+	ScrollTrigger.getById("impacts-pinned").kill(true);
+	pinImpactsBoxes();
+	animateContactSectionsHolder();
+	canvasHeightCalc();
+};
