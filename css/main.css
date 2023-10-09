@@ -81,8 +81,9 @@ html.lenis {
 }
 .site-loader .container {
   position: relative;
-  height: calc(100% - 100px);
-  top: 100px;
+  height: 100%;
+  transition: 0.4s;
+  top: 0;
 }
 @media (max-width: 991px) {
   .site-loader .container {
@@ -155,6 +156,10 @@ html.lenis {
   .site-loader.loaded {
     opacity: 0;
   }
+}
+.site-loader.loaded .container {
+  height: calc(100% - 100px);
+  top: 100px;
 }
 .site-loader.loaded .container .row .rings .ring {
   transform: translate(-50%, -50%);
