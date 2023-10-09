@@ -80,6 +80,19 @@ function heroAnimationMobile() {
 		});
 }
 
+// ------------------------------------------- Canvas Height Logic
+
+function canvasHeightCalc() {
+	let stepsTopInPaerent = document.querySelector(".steps").offsetTop;
+	let canvasContainer = document.querySelector(".bg-particles");
+	canvasContainer.innerHTML = "";
+	canvasContainer.style.height = `${stepsTopInPaerent}px`;
+	let canvasEle = document.createElement("div");
+	let id = "particles-js";
+	canvasEle.id = id;
+	canvasContainer.append(canvasEle);
+	particlesJS.load(id, "assets/particles.json");
+}
 // ------------------------------------------- Navs Logic
 
 const navsSections = document.querySelectorAll(
@@ -330,19 +343,21 @@ let allowedWidth = 992;
 
 window.onload = (_) => {
 	document.querySelector(".page").style.display = "block";
-	particlesJS.load("particles-js", "assets/particles.json");
+	document.querySelector(".site-loader").classList.add("loaded");
 	if (screen.width > allowedWidth) {
 		pinTitleOnScroll(".studies", 0.1);
 		pinTitleOnScroll(".contact", 1);
-		document.querySelector(".site-loader").classList.add("loaded");
 		heroAnimationWide();
 	} else {
-		document.querySelector(".site-loader").classList.add("loaded");
 		heroAnimationMobile();
 	}
 	pinImpactsBoxes();
 	animateContactSectionsHolder();
+	setTimeout(() => {
+		canvasHeightCalc();
+	}, 5000);
 };
+
 window.onresize = (_) => {
 	if (screen.width > allowedWidth) {
 		if (typeof ScrollTrigger.getById(".studies") !== "undefined") {
@@ -360,6 +375,7 @@ window.onresize = (_) => {
 	ScrollTrigger.getById("impacts-pinned").kill(true);
 	pinImpactsBoxes();
 	animateContactSectionsHolder();
+	canvasHeightCalc();
 };
 
 function pinTitleOnScroll(str, fromOpacity) {
