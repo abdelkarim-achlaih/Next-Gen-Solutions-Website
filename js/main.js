@@ -91,7 +91,7 @@ function canvasHeightCalc() {
 	let id = "particles-js";
 	canvasEle.id = id;
 	canvasContainer.append(canvasEle);
-	// particlesJS.load(id, "assets/particles.json");
+	particlesJS.load(id, "assets/particles.json");
 }
 // ------------------------------------------- Navs Logic
 
@@ -335,6 +335,7 @@ mobileStepsTogglers.forEach((toogler) => {
 		} else {
 			toogler.children[1].innerHTML = `<i class="fa-solid fa-plus display-5"></i>`;
 		}
+		lenis.destroy();
 	};
 });
 

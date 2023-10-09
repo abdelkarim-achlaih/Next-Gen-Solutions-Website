@@ -1,5 +1,5 @@
 const lenis = new Lenis({
-	duration: 5,
+	duration: 1,
 	easing: (x) => Math.sqrt(1 - Math.pow(x - 1, 2)),
 });
 
