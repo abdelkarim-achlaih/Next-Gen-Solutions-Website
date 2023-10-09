@@ -828,6 +828,7 @@ html.lenis {
   overflow-y: hidden;
   max-height: 0;
   transition: max-height 1.5s;
+  text-align: center;
 }
 .steps .steps-container-mobile .step-mobile .step-mobile-content.show {
   max-height: 999px;
@@ -835,6 +836,7 @@ html.lenis {
 .steps .steps-container-mobile .step-mobile .step-content {
   height: auto;
   padding: 0;
+  text-align: left;
 }
 
 .studies {

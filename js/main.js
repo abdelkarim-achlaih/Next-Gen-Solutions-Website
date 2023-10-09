@@ -91,7 +91,7 @@ function canvasHeightCalc() {
 	let id = "particles-js";
 	canvasEle.id = id;
 	canvasContainer.append(canvasEle);
-	// particlesJS.load(id, "assets/particles.json");
+	particlesJS.load(id, "assets/particles.json");
 }
 // ------------------------------------------- Navs Logic
 

@@ -994,6 +994,7 @@ html.lenis {
 				overflow-y: hidden;
 				max-height: 0;
 				transition: max-height 1.5s;
+				text-align: center;
 
 				&.show {
 					max-height: 999px;
@@ -1003,6 +1004,7 @@ html.lenis {
 			.step-content {
 				height: auto;
 				padding: 0;
+				text-align: left;
 			}
 		}
 
