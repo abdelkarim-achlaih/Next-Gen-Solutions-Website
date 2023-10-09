@@ -91,7 +91,7 @@ function canvasHeightCalc() {
 	let id = "particles-js";
 	canvasEle.id = id;
 	canvasContainer.append(canvasEle);
-	particlesJS.load(id, "assets/particles.json");
+	// particlesJS.load(id, "assets/particles.json");
 }
 // ------------------------------------------- Navs Logic
 
@@ -105,25 +105,33 @@ const stepsTogglers = document.querySelectorAll(".steps-nav li");
 toogleLisClassOnScroll(navsSections);
 toogleLisClassOnScroll(navsSteps);
 
+toogleClassOnClick(navTogglers);
+toogleClassOnClick(stepsTogglers);
+
+toggleNavClassForWhiteBgSections(".steps .title-container", ".studies");
+
+toggleShowClass();
+
 function toogleLisClassOnScroll(triggers) {
 	triggers.forEach((triggerEle) => {
 		gsap.from(`.${triggerEle.dataset.navClass} li`, {
 			scrollTrigger: {
+				id: triggerEle.id,
 				trigger: triggerEle,
 				start: "top 100%-=200px",
 				end: "bottom 100%-=200px",
 				onEnter: (_) => {
-					toogleLisClass(triggerEle);
+					toogleLisClassHelper(triggerEle);
 				},
 				onEnterBack: (_) => {
-					toogleLisClass(triggerEle);
+					toogleLisClassHelper(triggerEle);
 				},
 			},
 		});
 	});
 }
 
-function toogleLisClass(triggerEle) {
+function toogleLisClassHelper(triggerEle) {
 	document
 		.querySelectorAll(`.${triggerEle.dataset.navClass} li`)
 		.forEach((button) => {
@@ -136,9 +144,7 @@ function toogleLisClass(triggerEle) {
 		.classList.add("active");
 }
 
-toogleClass(navTogglers);
-toogleClass(stepsTogglers);
-function toogleClass(array) {
+function toogleClassOnClick(array) {
 	array.forEach((button) => {
 		button.onclick = (_) => {
 			array.forEach((button) => {
@@ -148,8 +154,6 @@ function toogleClass(array) {
 		};
 	});
 }
-
-toggleNavClassForWhiteBgSections(".steps .title-container", ".studies");
 
 function toggleNavClassForWhiteBgSections(...whiteSections) {
 	whiteSections.forEach((whiteSection) => {
@@ -165,17 +169,20 @@ function toggleNavClassForWhiteBgSections(...whiteSections) {
 	});
 }
 
-gsap.from(".sections-nav nav", {
-	scrollTrigger: {
-		start: "top 100%-=200px",
-		end: "bottom 100%-=200px",
-		trigger: ".sections-container",
-		toggleClass: { className: "show", targets: ".sections-nav nav" },
-		toggleActions: "restart reset restart reset",
-	},
-	duration: 1,
-	x: -200,
-});
+function toggleShowClass() {
+	gsap.from(".sections-nav nav", {
+		scrollTrigger: {
+			start: "top 100%-=200px",
+			end: "bottom 100%-=200px",
+			trigger: ".sections-container",
+			id: "sections-container",
+			toggleClass: { className: "show", targets: ".sections-nav nav" },
+			toggleActions: "restart reset restart reset",
+		},
+		duration: 1,
+		x: -200,
+	});
+}
 // ------------------------------------------- Panels Animations
 
 const panels = document.querySelectorAll(".missions .panel");
@@ -386,7 +393,6 @@ translateDescription(".contact", 150);
 let allowedWidth = 992;
 
 window.onload = (_) => {
-	console.log(window.innerWidth);
 	document.querySelector(".page").style.display = "block";
 	document.querySelector(".site-loader").classList.add("loaded");
 	if (window.innerWidth > allowedWidth) {

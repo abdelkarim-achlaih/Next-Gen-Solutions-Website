@@ -415,7 +415,7 @@ html.lenis {
   left: 20px;
   z-index: 8000000;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .sections-container .sections-nav {
     display: none;
   }
@@ -705,7 +705,8 @@ html.lenis {
 }
 
 .steps {
-  height: auto;
+  height: -moz-fit-content;
+  height: fit-content;
   padding-top: 0;
   position: relative;
   z-index: 800001;
