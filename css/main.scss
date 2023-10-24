@@ -271,7 +271,7 @@ html.lenis {
 
 					@include breakpoints('xs') {
 						width: fit-content;
-						width: 45vw;
+						width: 15vw;
 					}
 				}
 			}
@@ -998,7 +998,7 @@ html.lenis {
 				text-align: center;
 
 				&.show {
-					max-height: 999px;
+					max-height: 1999px;
 				}
 			}
 
@@ -1044,7 +1044,7 @@ html.lenis {
 		.study:first-of-type {
 
 			.layer {
-				background-image: url('../images/Study-2.jpg');
+				background-image: url('../images/Study-1.jpg');
 			}
 
 		}
@@ -1052,7 +1052,7 @@ html.lenis {
 		.study:nth-of-type(2) {
 
 			.layer {
-				background-image: url('../images/Study-1.jpg');
+				background-image: url('../images/Study-2.jpg');
 			}
 
 		}

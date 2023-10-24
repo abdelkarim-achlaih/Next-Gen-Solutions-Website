@@ -220,7 +220,7 @@ html.lenis {
   .hero .hero-content header .navbar-brand img {
     width: -moz-fit-content;
     width: fit-content;
-    width: 45vw;
+    width: 15vw;
   }
 }
 .hero .hero-content header .btn-header {
@@ -833,7 +833,7 @@ html.lenis {
   text-align: center;
 }
 .steps .steps-container-mobile .step-mobile .step-mobile-content.show {
-  max-height: 999px;
+  max-height: 1999px;
 }
 .steps .steps-container-mobile .step-mobile .step-content {
   height: auto;
@@ -871,10 +871,10 @@ html.lenis {
   padding: 0 1vw;
 }
 .studies .studies-container .study:first-of-type .layer {
-  background-image: url("../images/Study-2.jpg");
+  background-image: url("../images/Study-1.jpg");
 }
 .studies .studies-container .study:nth-of-type(2) .layer {
-  background-image: url("../images/Study-1.jpg");
+  background-image: url("../images/Study-2.jpg");
 }
 .studies .studies-container .study:nth-of-type(3) .layer {
   background-image: url("../images/Study-3.jpg");
