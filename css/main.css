@@ -369,6 +369,10 @@ html.lenis {
 .hero .hero-content .land .content .cta {
   overflow: hidden;
 }
+.hero .hero-content .land .content .cta div {
+  width: -moz-fit-content;
+  width: fit-content;
+}
 .hero .hero-content .land .content a {
   width: -moz-fit-content;
   width: fit-content;
