@@ -214,7 +214,7 @@ html.lenis {
   overflow: hidden;
 }
 .hero .hero-content header .navbar-brand img {
-  width: 200px;
+  width: 60px;
 }
 @media (max-width: 575px) {
   .hero .hero-content header .navbar-brand img {
