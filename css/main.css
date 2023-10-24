@@ -15,12 +15,12 @@ body {
 
 *::-moz-selection {
   color: #1a1a1a;
-  background-color: #87bd25;
+  background-color: #c5f404;
 }
 
 *::selection {
   color: #1a1a1a;
-  background-color: #87bd25;
+  background-color: #c5f404;
 }
 
 ul {
@@ -51,12 +51,12 @@ html.lenis {
 
 .btn {
   border: 4px solid white;
-  color: #87bd25;
+  color: #c5f404;
   text-transform: uppercase;
   transition: 0.4s;
 }
 .btn:hover {
-  background-color: #87bd25;
+  background-color: #c5f404;
   color: #111111;
   border-color: transparent;
 }
@@ -241,7 +241,7 @@ html.lenis {
 }
 .hero .hero-content header .btn-header:focus {
   box-shadow: none;
-  border-color: #87bd25;
+  border-color: #c5f404;
 }
 .hero .hero-content header .btn-header span {
   width: -moz-fit-content;
@@ -255,7 +255,7 @@ html.lenis {
   text-transform: capitalize;
 }
 .hero .hero-content header .nav-link:hover, .hero .hero-content header .nav-link.active, .hero .hero-content header .nav-link:focus {
-  color: #87bd25 !important;
+  color: #c5f404 !important;
 }
 .hero .hero-content header .dropdown-menu {
   background-color: #1a1a1a;
@@ -265,7 +265,7 @@ html.lenis {
   transition: 0.4s;
 }
 .hero .hero-content header .dropdown-menu a:hover {
-  background-color: #87bd25;
+  background-color: #c5f404;
 }
 .hero .hero-content .header-mobile {
   position: absolute;
@@ -354,7 +354,7 @@ html.lenis {
 .hero .hero-content .land .content h1 {
   overflow: hidden;
   font-family: Aquire;
-  color: #87bd25;
+  color: #c5f404;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4), 2px 2px 3px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 5px rgba(0, 0, 0, 0.6), 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 @media (max-width: 575px) {
@@ -510,7 +510,7 @@ html.lenis {
   margin-bottom: 40px;
 }
 .years .description {
-  color: #87bd25;
+  color: #c5f404;
   padding: 0 20vw 10vh;
   line-height: 1.8;
   color: white;
