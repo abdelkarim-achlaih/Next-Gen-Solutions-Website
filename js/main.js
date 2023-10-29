@@ -80,18 +80,13 @@ function heroAnimationMobile() {
 		});
 }
 
-// ------------------------------------------- Canvas Height Logic
+// ------------------------------------------- Background Video Height Logic
 
-function canvasHeightCalc() {
-	let stepsTopInPaerent = document.querySelector(".steps").offsetTop;
-	let canvasContainer = document.querySelector(".bg-particles");
-	canvasContainer.innerHTML = "";
-	canvasContainer.style.height = `${stepsTopInPaerent}px`;
-	let canvasEle = document.createElement("div");
-	let id = "particles-js";
-	canvasEle.id = id;
-	canvasContainer.append(canvasEle);
-	particlesJS.load(id, "assets/particles.json");
+function bgHeightCalc() {
+	let stepsTopInParent = document.querySelector(".steps").offsetTop;
+	let bgVideoContainer = document.querySelector(".background-video");
+	bgVideoContainer.innerHTML = "";
+	bgVideoContainer.style.height = `${stepsTopInParent}px`;
 }
 // ------------------------------------------- Navs Logic
 
@@ -409,7 +404,7 @@ window.onload = (_) => {
 	pinImpactsBoxes();
 	animateContactSectionsHolder();
 	setTimeout(() => {
-		canvasHeightCalc();
+		bgHeightCalc();
 	}, 5000);
 };
 
@@ -430,5 +425,5 @@ window.onresize = (_) => {
 	ScrollTrigger.getById("impacts-pinned").kill(true);
 	pinImpactsBoxes();
 	animateContactSectionsHolder();
-	canvasHeightCalc();
+	bgHeightCalc();
 };

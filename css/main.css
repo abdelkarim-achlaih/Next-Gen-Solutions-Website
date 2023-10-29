@@ -398,14 +398,14 @@ html.lenis {
   }
 }
 /* End Hero */
-.bg-particles {
+.background-video {
   position: absolute;
   width: 100%;
   top: 100vh;
   left: 0;
   z-index: 1000;
 }
-.bg-particles div {
+.background-video div {
   height: 100%;
 }
 
