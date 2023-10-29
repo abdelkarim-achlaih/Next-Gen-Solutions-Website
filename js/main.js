@@ -85,7 +85,7 @@ function heroAnimationMobile() {
 function bgHeightCalc() {
 	let stepsTopInParent = document.querySelector(".steps").offsetTop;
 	let bgVideoContainer = document.querySelector(".background-video");
-	bgVideoContainer.innerHTML = "";
+	// bgVideoContainer.innerHTML = "";
 	bgVideoContainer.style.height = `${stepsTopInParent}px`;
 }
 // ------------------------------------------- Navs Logic
@@ -389,12 +389,12 @@ translateDescription(".contact", 150);
 let allowedWidth = 992;
 
 window.onload = (_) => {
-	document.querySelector(".page").style.display = "block";
-	document.querySelector(".site-loader").classList.add("loaded");
+	// document.querySelector(".page").style.display = "block";
+	// document.querySelector(".site-loader").classList.add("loaded");
 	if (window.innerWidth > allowedWidth) {
 		pinTitleOnScroll(".studies", 0.1);
 		pinTitleOnScroll(".contact", 1);
-		heroAnimationWide();
+		// heroAnimationWide();
 		navsStepsPinAnimation(navsSteps[0]);
 		navsStepsPinAnimation(navsSteps[1]);
 		navsStepsPinAnimation(navsSteps[2], "transform");
