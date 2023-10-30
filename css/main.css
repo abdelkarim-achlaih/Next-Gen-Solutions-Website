@@ -408,6 +408,13 @@ html.lenis {
 .background-video div {
   height: 100%;
 }
+.background-video video {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: translate3d(0, 0, 0);
+}
 
 /* Start Sections Container */
 .sections-container {
@@ -489,7 +496,7 @@ html.lenis {
 .contact {
   min-height: 100vh;
   padding-top: 10vh;
-  background-color: #111111;
+  background-color: transparent;
 }
 .panel .title,
 .years .title,
@@ -716,6 +723,7 @@ html.lenis {
   position: relative;
   z-index: 800001;
   min-height: auto;
+  background-color: #111111;
 }
 .steps .title-container {
   background-color: white;
