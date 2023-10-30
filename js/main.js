@@ -89,7 +89,6 @@ function bgHeightCalc() {
 	let stepsTopInParent = document.querySelector(".steps").offsetTop;
 	let bgVideoContainer = document.querySelector(".background-video");
 	let video = bgVideoContainer.querySelector("video");
-	// bgVideoContainer.innerHTML = "";
 	bgVideoContainer.style.height = `${stepsTopInParent}px`;
 	let destination = 0;
 	let increment = 0;
