@@ -507,6 +507,9 @@ html.lenis {
   height: 300vh;
 }
 
+.years {
+  margin-top: 300vh;
+}
 .years .title {
   margin-bottom: 40px;
 }
