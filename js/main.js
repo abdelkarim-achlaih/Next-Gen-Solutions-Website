@@ -92,8 +92,8 @@ function bgHeightCalc() {
 
 	bgVideoContainer.style.height = `${stepsTopInParent}px`;
 	console.log(bgVideoContainer.style.height);
-	canvas.height = bgVideoContainer.style.height;
-	canvas.width = bgVideoContainer.style.width;
+	canvas.width = bgVideoContainer.getBoundingClientRect().width;
+	canvas.height = bgVideoContainer.getBoundingClientRect().height;
 	// let destination = 0;
 	// let increment = 0;
 	// gsap.from(".background-video video", {
