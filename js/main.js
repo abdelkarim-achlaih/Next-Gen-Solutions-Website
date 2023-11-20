@@ -94,6 +94,17 @@ function bgHeightCalc() {
 	console.log(bgVideoContainer.style.height);
 	canvas.width = bgVideoContainer.getBoundingClientRect().width;
 	canvas.height = bgVideoContainer.getBoundingClientRect().height;
+	let context = canvas.getContext("2d");
+
+	let video = document.createElement("video");
+	video.src = "../images/Earth.mp4";
+	video.play();
+	video.loop = true;
+	let draw = function () {
+		context.drawImage(video, 0, 0, canvas.width, canvas.height);
+		requestAnimationFrame(draw);
+	};
+	draw();
 	// let destination = 0;
 	// let increment = 0;
 	// gsap.from(".background-video video", {
