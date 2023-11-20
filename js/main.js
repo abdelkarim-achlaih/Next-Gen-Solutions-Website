@@ -93,43 +93,47 @@ function bgHeightCalc() {
 	bgVideoContainer.style.height = `${stepsTopInParent}px`;
 	console.log(bgVideoContainer.style.height);
 	canvas.width = bgVideoContainer.getBoundingClientRect().width;
-	canvas.height = bgVideoContainer.getBoundingClientRect().height;
+	// canvas.height = bgVideoContainer.getBoundingClientRect().height;
 	let context = canvas.getContext("2d");
 
 	let video = document.createElement("video");
 	video.src = "../images/Earth.mp4";
-	video.play();
+	video.addEventListener("load", (e) => {
+		video.play();
+	});
 	video.loop = true;
 	let draw = function () {
 		context.drawImage(video, 0, 0, canvas.width, canvas.height);
 		requestAnimationFrame(draw);
 	};
-	draw();
-	// let destination = 0;
-	// let increment = 0;
-	// gsap.from(".background-video video", {
-	// 	scrollTrigger: {
-	// 		trigger: bgVideoContainer,
-	// 		pin: bgVideoContainer,
-	// 		markers: true,
-	// 		onUpdate: (_) => {
-	// 			destination =
-	// 				video.duration * ((window.scrollY - heroHeight) / stepsTopInParent);
-	// 			increment = video.currentTime;
-	// 			function animateVid() {
-	// 				video.currentTime = increment;
-	// 				if (increment < destination) {
-	// 					increment += 0.005;
-	// 					requestAnimationFrame(animateVid);
-	// 				}
-	// 			}
-	// 			animateVid();
-	// 		},
-	// 		// scrub: 0.3,
-	// 	},
-	// 	// opacity: 0,
-	// 	// duration: 0.3,
-	// });
+	// draw();
+	let destination = 0;
+	let increment = 0;
+	gsap.from(video, {
+		scrollTrigger: {
+			trigger: bgVideoContainer,
+			pin: canvas,
+			markers: true,
+			toggleActions: "restart reset reverse reset",
+			onUpdate: (_) => {
+				destination =
+					video.duration * ((window.scrollY - heroHeight) / stepsTopInParent);
+				increment = video.currentTime;
+				function animateVid() {
+					if (increment < destination) {
+						increment += (window.scrollY - heroHeight) / stepsTopInParent;
+						context.drawImage(video, 0, 0, canvas.width, canvas.height);
+						requestAnimationFrame(animateVid);
+					}
+					video.currentTime = increment;
+				}
+				animateVid();
+			},
+			// scrub: 0.3,
+		},
+		// opacity: 0,
+		// duration: 0.3,
+	});
 }
 // ------------------------------------------- Navs Logic
 
@@ -446,9 +450,9 @@ window.onload = (_) => {
 	}
 	pinImpactsBoxes();
 	animateContactSectionsHolder();
-	setTimeout(() => {
-		bgHeightCalc();
-	}, 5000);
+	// setTimeout(() => {
+	bgHeightCalc();
+	// }, 5000);
 };
 
 window.onresize = (_) => {
