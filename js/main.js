@@ -88,33 +88,37 @@ function bgHeightCalc() {
 		.getBoundingClientRect().height;
 	let stepsTopInParent = document.querySelector(".steps").offsetTop;
 	let bgVideoContainer = document.querySelector(".background-video");
-	let video = bgVideoContainer.querySelector("video");
+	let canvas = bgVideoContainer.querySelector("canvas");
+
 	bgVideoContainer.style.height = `${stepsTopInParent}px`;
-	let destination = 0;
-	let increment = 0;
-	gsap.from(".background-video video", {
-		scrollTrigger: {
-			trigger: bgVideoContainer,
-			pin: bgVideoContainer,
-			markers: true,
-			onUpdate: (_) => {
-				destination =
-					video.duration * ((window.scrollY - heroHeight) / stepsTopInParent);
-				increment = video.currentTime;
-				function animateVid() {
-					video.currentTime = increment;
-					if (increment < destination) {
-						increment += 0.005;
-						requestAnimationFrame(animateVid);
-					}
-				}
-				animateVid();
-			},
-			// scrub: 0.3,
-		},
-		// opacity: 0,
-		// duration: 0.3,
-	});
+	console.log(bgVideoContainer.style.height);
+	canvas.height = bgVideoContainer.style.height;
+	canvas.width = bgVideoContainer.style.width;
+	// let destination = 0;
+	// let increment = 0;
+	// gsap.from(".background-video video", {
+	// 	scrollTrigger: {
+	// 		trigger: bgVideoContainer,
+	// 		pin: bgVideoContainer,
+	// 		markers: true,
+	// 		onUpdate: (_) => {
+	// 			destination =
+	// 				video.duration * ((window.scrollY - heroHeight) / stepsTopInParent);
+	// 			increment = video.currentTime;
+	// 			function animateVid() {
+	// 				video.currentTime = increment;
+	// 				if (increment < destination) {
+	// 					increment += 0.005;
+	// 					requestAnimationFrame(animateVid);
+	// 				}
+	// 			}
+	// 			animateVid();
+	// 		},
+	// 		// scrub: 0.3,
+	// 	},
+	// 	// opacity: 0,
+	// 	// duration: 0.3,
+	// });
 }
 // ------------------------------------------- Navs Logic
 
