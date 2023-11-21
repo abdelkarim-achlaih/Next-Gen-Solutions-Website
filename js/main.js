@@ -81,7 +81,7 @@ function heroAnimationMobile() {
 }
 
 // ------------------------------------------- Background Video Height Logic
-
+let direction;
 function bgHeightCalc() {
 	let heroHeight = document
 		.querySelector(".hero")
@@ -97,14 +97,21 @@ function bgHeightCalc() {
 			trigger: bgVideoContainer,
 			pin: bgVideoContainer,
 			markers: true,
+			onEnter: (_) => {
+				direction = 1;
+			},
+			onEnterBack: (_) => {
+				direction = -1;
+			},
 			onUpdate: (_) => {
 				destination =
 					video.duration * ((window.scrollY - heroHeight) / stepsTopInParent);
+				console.log(`Destination: ${destination}s`);
 				increment = video.currentTime;
 				function animateVid() {
 					video.currentTime = increment;
 					if (increment < destination) {
-						increment += 0.005;
+						increment += direction * 0.005;
 						requestAnimationFrame(animateVid);
 					}
 				}
@@ -213,7 +220,7 @@ panels.forEach((panel) => {
 	gsap.from(panel.querySelectorAll(".stagger"), {
 		scrollTrigger: {
 			trigger: panel,
-			pin: panel,
+			// pin: panel,
 			scrub: 0.3,
 		},
 		opacity: 0,
