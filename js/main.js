@@ -90,31 +90,14 @@ function bgHeightCalc() {
 		.getBoundingClientRect().height;
 	let stepsTopInParent = document.querySelector(".steps").offsetTop;
 	let bgVideoContainer = document.querySelector(".background-video");
-	let canvas = bgVideoContainer.querySelector("canvas");
-
+	let video = bgVideoContainer.querySelector("video");
 	bgVideoContainer.style.height = `${stepsTopInParent}px`;
-	console.log(bgVideoContainer.style.height);
-	canvas.width = bgVideoContainer.getBoundingClientRect().width;
-	// canvas.height = bgVideoContainer.getBoundingClientRect().height;
-	let context = canvas.getContext("2d");
-
-	let video = document.createElement("video");
-	video.src = "../images/Earth.mp4";
-	video.addEventListener("load", (e) => {
-		video.play();
-	});
-	video.loop = true;
-	let draw = function () {
-		context.drawImage(video, 0, 0, canvas.width, canvas.height);
-		requestAnimationFrame(draw);
-	};
-	// draw();
 	let destination = 0;
 	let increment = 0;
-	gsap.from(video, {
+	gsap.from(".background-video video", {
 		scrollTrigger: {
 			trigger: bgVideoContainer,
-			pin: canvas,
+			pin: bgVideoContainer,
 			markers: true,
 			onEnterBack: (_) => {
 				video.currentTime = video.duration;
@@ -150,7 +133,6 @@ function bgHeightCalc() {
 							animateVid();
 						}
 					}
-					video.currentTime = increment;
 				}
 				animateVid();
 			},
