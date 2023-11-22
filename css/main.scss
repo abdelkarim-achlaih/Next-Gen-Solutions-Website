@@ -503,6 +503,7 @@ html.lenis {
 	top: 100vh;
 	left: 0;
 	z-index: -1;
+	transform: translate3d(0, 0, 0);
 
 	div {
 		height: 100%;
@@ -619,15 +620,16 @@ html.lenis {
 	.title {
 		font-family: 'Bebas Neue', sans-serif;
 		padding: 0 10vw;
+		transform: translate3d(0, 0, 0);
 	}
 }
 
 .missions {
-	// height: 300vh;
+	height: 300vh;
 }
 
 .years {
-	// margin-top: 300vh;
+	margin-top: 300vh;
 
 	.title {
 		margin-bottom: 40px;
@@ -679,6 +681,7 @@ html.lenis {
 
 .solutions {
 	height: auto;
+	background-color: #1a1a1a6e;
 
 	.title {
 		margin-top: 0;
@@ -747,6 +750,7 @@ html.lenis {
 .impacts {
 	height: auto;
 	padding-top: 200px;
+	background-color: #1a1a1a6e;
 
 	@include breakpoints('md') {
 		padding-top: 0;

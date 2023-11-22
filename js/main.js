@@ -81,9 +81,11 @@ function heroAnimationMobile() {
 }
 
 // ------------------------------------------- Background Video Height Logic
+
+let currentY = 0;
 let direction;
 function bgHeightCalc() {
-	let heroHeight = document
+	let skippedHeight = document
 		.querySelector(".hero")
 		.getBoundingClientRect().height;
 	let stepsTopInParent = document.querySelector(".steps").offsetTop;
@@ -97,27 +99,44 @@ function bgHeightCalc() {
 			trigger: bgVideoContainer,
 			pin: bgVideoContainer,
 			markers: true,
-			onEnter: (_) => {
-				direction = 1;
-			},
 			onEnterBack: (_) => {
-				direction = -1;
+				video.currentTime = video.duration;
+				console.log("hi");
+				console.log(video.currentTime);
 			},
 			onUpdate: (_) => {
-				destination =
-					video.duration * ((window.scrollY - heroHeight) / stepsTopInParent);
-				console.log(`Destination: ${destination}s`);
+				if (window.scrollY > currentY) {
+					direction = 1;
+				} else {
+					direction = -1;
+				}
+				currentY = window.scrollY;
+				let tmp =
+					Math.round(
+						((window.scrollY - skippedHeight) / (stepsTopInParent + 100)) * 1000
+					) / 1000;
+				destination = Math.round(video.duration * tmp * 1000) / 1000;
 				increment = video.currentTime;
+				console.log(video.currentTime);
+				let diff = (direction * (destination - video.currentTime)) / 1;
 				function animateVid() {
 					video.currentTime = increment;
-					if (increment < destination) {
-						increment += direction * 0.005;
-						requestAnimationFrame(animateVid);
+					if (direction == 1) {
+						if (increment < destination) {
+							increment += direction * diff;
+							animateVid();
+						} else {
+						}
+					} else if (direction == -1) {
+						if (increment > destination) {
+							increment += direction * diff;
+							animateVid();
+						}
 					}
 				}
 				animateVid();
 			},
-			// scrub: 0.3,
+			scrub: 0.3,
 		},
 		// opacity: 0,
 		// duration: 0.3,
@@ -220,7 +239,7 @@ panels.forEach((panel) => {
 	gsap.from(panel.querySelectorAll(".stagger"), {
 		scrollTrigger: {
 			trigger: panel,
-			// pin: panel,
+			pin: panel,
 			scrub: 0.3,
 		},
 		opacity: 0,
