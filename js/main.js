@@ -82,8 +82,10 @@ function heroAnimationMobile() {
 
 // ------------------------------------------- Background Video Height Logic
 
+let currentY = 0;
+let direction;
 function bgHeightCalc() {
-	let heroHeight = document
+	let skippedHeight = document
 		.querySelector(".hero")
 		.getBoundingClientRect().height;
 	let stepsTopInParent = document.querySelector(".steps").offsetTop;
@@ -120,9 +122,20 @@ function bgHeightCalc() {
 				console.log(video.currentTime);
 			},
 			onUpdate: (_) => {
-				destination =
-					video.duration * ((window.scrollY - heroHeight) / stepsTopInParent);
+				if (window.scrollY > currentY) {
+					direction = 1;
+				} else {
+					direction = -1;
+				}
+				currentY = window.scrollY;
+				let tmp =
+					Math.round(
+						((window.scrollY - skippedHeight) / (stepsTopInParent + 100)) * 1000
+					) / 1000;
+				destination = Math.round(video.duration * tmp * 1000) / 1000;
 				increment = video.currentTime;
+				console.log(video.currentTime);
+				let diff = (direction * (destination - video.currentTime)) / 1;
 				function animateVid() {
 					video.currentTime = increment;
 					if (direction == 1) {
@@ -141,7 +154,7 @@ function bgHeightCalc() {
 				}
 				animateVid();
 			},
-			// scrub: 0.3,
+			scrub: 0.3,
 		},
 		// opacity: 0,
 		// duration: 0.3,
