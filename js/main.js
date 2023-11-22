@@ -114,16 +114,28 @@ function bgHeightCalc() {
 			trigger: bgVideoContainer,
 			pin: canvas,
 			markers: true,
-			toggleActions: "restart reset reverse reset",
+			onEnterBack: (_) => {
+				video.currentTime = video.duration;
+				console.log("hi");
+				console.log(video.currentTime);
+			},
 			onUpdate: (_) => {
 				destination =
 					video.duration * ((window.scrollY - heroHeight) / stepsTopInParent);
 				increment = video.currentTime;
 				function animateVid() {
-					if (increment < destination) {
-						increment += (window.scrollY - heroHeight) / stepsTopInParent;
-						context.drawImage(video, 0, 0, canvas.width, canvas.height);
-						requestAnimationFrame(animateVid);
+					video.currentTime = increment;
+					if (direction == 1) {
+						if (increment < destination) {
+							increment += direction * diff;
+							animateVid();
+						} else {
+						}
+					} else if (direction == -1) {
+						if (increment > destination) {
+							increment += direction * diff;
+							animateVid();
+						}
 					}
 					video.currentTime = increment;
 				}
