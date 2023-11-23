@@ -98,7 +98,6 @@ function bgHeightCalc() {
 		scrollTrigger: {
 			trigger: bgVideoContainer,
 			pin: bgVideoContainer,
-			markers: true,
 			onEnterBack: (_) => {
 				video.currentTime = video.duration;
 				console.log("hi");
