@@ -1,5 +1,5 @@
 const lenis = new Lenis({
-	duration: 1,
+	duration: 0.5,
 	easing: (x) => Math.sqrt(1 - Math.pow(x - 1, 2)),
 });
 
@@ -7,7 +7,7 @@ function raf(time) {
 	lenis.raf(time);
 	requestAnimationFrame(raf);
 }
-requestAnimationFrame(raf);
+raf();
 
 const sectionNavs = document.querySelectorAll(".sections-nav li a");
 const stepsNavs = document.querySelectorAll(".steps-nav li a");
