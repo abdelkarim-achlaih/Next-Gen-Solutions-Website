@@ -890,6 +890,19 @@
 	<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.25/bundled/lenis.min.js"></script>
 	<!-- <script src="js/smoothScroll.js"></script> -->
 	<script src="js/try.js"></script>
+	<!-- <script>
+		function canvasHeightCalc() {
+			let stepsTopInPaerent = document.querySelector(".steps").offsetTop;
+			let canvasContainer = document.querySelector(".bg-particles");
+			canvasContainer.innerHTML = "";
+			canvasContainer.style.height = `${stepsTopInPaerent}px`;
+			let canvasEle = document.createElement("div");
+			let id = "particles-js";
+			canvasEle.id = id;
+			canvasContainer.append(canvasEle);
+			particlesJS.load(id, "assets/particles.json");
+		} canvasHeightCalc();
+	</script> -->
 	<script src="js/main.js" type="module"></script>
 </body>
 
